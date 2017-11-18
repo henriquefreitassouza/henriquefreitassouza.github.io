@@ -8,7 +8,7 @@ post_class: post-template
 <header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
         <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Feed / RSS</a>
     </nav>
 </header>
 
@@ -21,8 +21,10 @@ post_class: post-template
             <section class="post-meta">
                 <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
                 {% if page.categories.size > 0 %}
-                    {{ page.categories | array_to_sentence_string | prepend: 'em ' }}
+                    {{ page.categories | array_to_sentence_string | prepend: 'em ' }}.
                 {% endif %}
+                {% capture time %}{{ content | reading_time }}{% endcapture %}
+                Tempo estimado para leitura: {{ content | reading_time | pluralize: "minuto" }}.
             </section>
             <section class="post-featured-image">
               <img src="{{ page.image }}" alt="{{ page.title }}">
