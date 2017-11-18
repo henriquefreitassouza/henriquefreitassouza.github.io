@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 'O sujeito que garimpa dados'
+image: '/assets/images/about-me.jpg'
 ---
 
 Integração. Esta palavra resume basicamente todas as minhas experiências profissionais e boa parte das pessoais. Integrar já teve o sentido de construir sistemas tecnológicos capazes de transferir informações de um lado para o outro e também de conectar as pessoas certas nos momentos certos. A integração com a qual trabalho hoje é uma que une as duas definições anteriores: unir pessoas e máquinas com características comuns usando tecnologia.
@@ -12,8 +13,8 @@ Propósito, impacto e integração são a tríade pela qual tomo minhas decisõe
 <h2>As quatro habilidades básicas do sujeito que garimpa dados</h2>
 
 <ul>
-  <li>Data Availability, Quality and Integrity: garantir a disponibilidade, a qualidade e a integridade dos dados de todas as fontes disponíveis.</li>
-  <li>Data Processing: segmentar e filtrar dados de acordo com regras pré estabelecidas.</li>
-  <li>Data Mining: extrair informações novas de fontes de dados conhecidas.</li>
-  <li>Machine Learning: treinar modelos de aprendizado de máquina com base nos dados disponíveis para prever novas informações.</li>
+  <li><strong>Data Availability, Quality and Integrity</strong>: garantir a disponibilidade, a qualidade e a integridade dos dados de todas as fontes disponíveis.</li>
+  <li><strong>Data Processing</strong>: segmentar e filtrar dados de acordo com regras pré estabelecidas.</li>
+  <li><strong>Data Mining</strong>: extrair informações novas de fontes de dados conhecidas.</li>
+  <li><strong>Machine Learning</strong>: treinar modelos de aprendizado de máquina com base nos dados disponíveis para prever novas informações.</li>
 </ul>

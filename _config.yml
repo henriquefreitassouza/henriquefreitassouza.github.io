@@ -3,13 +3,13 @@ description: Um blog que une pessoas e tecnologia
 meta_description: "Neste espaço você vai ler histórias de um personagem que passa mais tempo buscando perguntas do que respostas. Acompanhe :)"
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 logo: false
 paginate: 15
-baseurl: https://henriquefreitassouza.github.io/
+baseurl: /
 domain_name: 'http://henriquefreitas.com.br'
 google_analytics: 'UA-87608325-3'
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-auto-image]
 repository: 'github.com/henriquefreitassouza/henriquefreitassouza.github.io'
 
 # Details for the RSS feed generator

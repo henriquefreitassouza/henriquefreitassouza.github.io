@@ -21,8 +21,11 @@ post_class: post-template
             <section class="post-meta">
                 <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
                 {% if page.categories.size > 0 %}
-                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+                    {{ page.categories | array_to_sentence_string | prepend: 'em ' }}
                 {% endif %}
+            </section>
+            <section class="post-featured-image">
+              <img src="{{ page.image }}" alt="{{ page.title }}">
             </section>
         </header>
 
