@@ -6,7 +6,7 @@ markdown: kramdown
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: ''
+# baseurl: /
 domain_name: 'http://henriquefreitas.com.br'
 google_analytics: 'UA-87608325-3'
 plugins: [jekyll-paginate, jekyll-auto-image, liquid_reading_time, liquid_pluralize]
