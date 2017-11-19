@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Growth Value"
+title:  'Growth Value'
 date:   2017-11-17 20:36:00
-categories: Growth
+category: Growth
 image: '/assets/images/blog/2017-11-17-growth-value-featured.jpg'
 ---
 
