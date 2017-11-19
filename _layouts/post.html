@@ -23,8 +23,7 @@ post_class: post-template
                 {% if page.categories.size > 0 %}
                     {{ page.categories | array_to_sentence_string | prepend: 'em ' }}.
                 {% endif %}
-                {% capture time %}{{ content | reading_time }}{% endcapture %}
-                <span>Tempo estimado para leitura: {{ content | reading_time | pluralize: "minuto" }}.</span>
+                <span>Tempo estimado para leitura: {{ content | number_of_words | divided_by:180 | pluralize: "minuto" }}.</span>
             </section>
             <section class="post-featured-image">
               <img src="{{ page.image }}" alt="{{ page.title }}">
