@@ -70,7 +70,7 @@ post_class: post-template
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
                 <figure class="author-image">
-                    <a class="img" href="{{ site.absolute_url }}/" style="background-image: url(/assets/images/profile.png)">
+                    <img class="img" src="{{ site.absolute_url }}/assets/images/profile.png">
                     <span class="hidden">Foto de perfil do {{site.author}}</span></a>
                 </figure>
                 <section class="author">
@@ -78,7 +78,7 @@ post_class: post-template
                     <h4> {{ site.author }} </h4>
                     <!-- Author Bio -->
                     <p>
-                        Growth hacker que possui sempre mais perguntas do que respostas. Como também sou músico, não fique surpreso se encontrar algum post sobre o assunto por aqui :)
+                        Growth hacker que possui sempre mais perguntas do que respostas e busca fazer coisas legais com dados. <a href="https://linkedin.com/in/henriquefreitassouza" target="_blank">LinkedIn</a>
                     </p>
                 </section>
             {% endif %}
