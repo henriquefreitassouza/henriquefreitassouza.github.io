@@ -38,9 +38,11 @@ about: 'about.html'
 
     <article class="post">
         <header class="post-header">
+            {% if post.image %}
             <section class="post-featured-image">
               <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image">
             </section>
+            {% endif %}
             <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
         </header>
         <section class="post-excerpt">

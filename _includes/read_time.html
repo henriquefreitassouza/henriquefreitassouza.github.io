@@ -1,6 +1,6 @@
 {% assign words = content | number_of_words %}
   {% if words < 360 %}
-    <strong>menos de 1 minuto</strong>.
+    <span>cerca de 1 minuto</span>.
   {% else %}
-    <strong>{{ words | divided_by:180 }} minutos</strong>.
+    <span>{{ words | divided_by:180 }} minutos</span>.
   {% endif %}

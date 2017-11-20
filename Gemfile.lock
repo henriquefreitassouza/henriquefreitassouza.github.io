@@ -173,8 +173,6 @@ GEM
       jekyll (>= 3.0)
     kramdown (1.14.0)
     liquid (4.0.0)
-    liquid_pluralize (1.0.3)
-      liquid (>= 2.6, < 5.0)
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -183,7 +181,6 @@ GEM
     minima (2.1.1)
       jekyll (~> 3.3)
     minitest (5.10.3)
-    multi_json (1.12.2)
     multipart-post (2.0.0)
     net-dns (0.8.0)
     nokogiri (1.8.1-x64-mingw32)
@@ -193,8 +190,6 @@ GEM
     pathutil (0.16.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
-    pygments.rb (1.2.0)
-      multi_json (>= 1.0.0)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -224,8 +219,8 @@ PLATFORMS
 DEPENDENCIES
   github-pages!
   jekyll-auto-image!
-  liquid_pluralize!
-  pygments.rb!
+  kramdown!
+  rouge!
   wdm (>= 0.1.0)!
 
 BUNDLED WITH
