@@ -12,13 +12,13 @@ No meu [último post]({% post_url 2017-11-19-geracao-de-relatorios-automatizados
 
 Usei o Google Apps Script pela primeira vez quando precisei trazer dados de fontes externas para dentro de uma planilha que estava no Google Sheets. O trabalho que fiz foi parecido com o que descrevi no post anterior: consumir os dados pra tratar e alimentar as células corretas na planilha. Meu interesse na ferramenta me levou a estudá-la mais a fundo para saber o que mais é possível realizar. Acabei descobrindo umas coisas bem legais e úteis que irei compartilhar neste post.
 
-## O Google Apps script
+## O Google Apps Script
 
 A ferramenta nada mais é do que um editor de scripts. A linguagem usada é um porte do Javascript para ser usado em aplicações de pequeno porte, como o caso de scripts de automação. Quem já está acostumado a trabalhar com Javascript ou linguagens similares não precisa aprender uma nova linguagem para usar o editor de scripts. A diferença do Javascript usado dentro do Google Apps Script é que ele possui diversas classes já implementadas para manipular outros aplicativos do Google e auxiliadores para realizar tarefas como chamadas a documentos externos.
 
 Além de modificar conteúdo dentro de documentos criados em aplicativos como o Google Docs, o Google Spreadsheets ou o Google Slides, os scripts permitem fazer uma infinidade de coisas como criar novos menus dentro dos documentos, disparar e-mails pelo Gmail, criar e organizar documentos no Drive, consumir APIs como a do Google Maps e construir workflows inteiros para citar apenas algumas coisas. Dentro da documentação da ferramenta há uma página dedicada a [cases](https://developers.google.com/apps-script/guides/support/case-studies){:target="\_blank"} feitos por usuários.
 
-## Como usar o Google Apps script
+## Como usar o Google Apps Script
 
 Essencialmente há duas formas de criar scripts com a ferramenta: criar o script vinculado a um documento do Google existente no Drive ou criar um script sem associação a documentos.
 
@@ -48,7 +48,7 @@ Logger.log("Hello World!");
 
 ![Acesso ao editor de scripts]({{ "/assets/images/blog/2017-11-20-uma-introducao-ao-google-apps-script-image-5.jpg" | absolute_url }})
 
-Outra funcionalidade interessante do Google Apps Scripts é configurar os chamados triggers, que ficam a espera de um determinado evento para executar uma ação associada a ele. Triggers possuem duas categorias: temporais e com base em evento. Triggers temporais disparam periodicamente, sendo o período determinado pelo usuário, e triggers baseados em evento disparam quando determinado evento ocorre. Alguns destes triggers são:
+Outra funcionalidade interessante do Google Apps Script é configurar os chamados triggers, que ficam a espera de um determinado evento para executar uma ação associada a ele. Triggers possuem duas categorias: temporais e com base em evento. Triggers temporais disparam periodicamente, sendo o período determinado pelo usuário, e triggers baseados em evento disparam quando determinado evento ocorre. Alguns destes triggers são:
 
 {% highlight javascript %}
 function onEdit(e) {
@@ -103,6 +103,6 @@ O retorno delas deve ser um objeto contendo HTML ou texto e ser do tipo HtmlOutp
 
 ## Recursos adicionais
 
-Essas são apenas algumas das funcionalidades do Google Apps Scripts. Minha sugestão é que você coloque o [site da documentação](https://developers.google.com/apps-script/){:target="\_blank"} nos seus favoritos pois você fará muito uso dela. No link de [guias](https://developers.google.com/apps-script/overview){:target="\_blank"} há projetos de fácil execução para quem já quer colocar a mão na massa e aprender fazendo na seção "5-Minute Quickstarts" e em [suporte](https://developers.google.com/apps-script/support){:target="\_blank"} há links para perguntas feitas no Stack Overflow e outros recursos.
+Essas são apenas algumas das funcionalidades do Google Apps Script. Minha sugestão é que você coloque o [site da documentação](https://developers.google.com/apps-script/){:target="\_blank"} nos seus favoritos pois você fará muito uso dela. No link de [guias](https://developers.google.com/apps-script/overview){:target="\_blank"} há projetos de fácil execução para quem já quer colocar a mão na massa e aprender fazendo na seção "5-Minute Quickstarts" e em [suporte](https://developers.google.com/apps-script/support){:target="\_blank"} há links para perguntas feitas no Stack Overflow e outros recursos.
 
 Bora automatizar!
