@@ -1,6 +1,6 @@
-name: Garbage Collector
+name: Garimpo de dados
 description: Um blog sobre como transformar dados em coisas úteis
-meta_description: "Neste espaço você vai ler relatos de quem passa o tempo vasculhando dados pela internet. Acompanhe :)"
+meta_description: "Neste espaço você vai ler relatos de quem passa o tempo vasculhando dados pela internet afora. Acompanhe :)"
 
 markdown: kramdown
 

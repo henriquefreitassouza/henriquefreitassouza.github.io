@@ -1,20 +1,23 @@
 ---
 layout: page
-title: 'O sujeito que garimpa dados'
+title: 'Esse tal de garimpeiro'
 image: '/assets/images/about-me.jpg'
 ---
 
-Integração. Esta palavra resume basicamente todas as minhas experiências profissionais e boa parte das pessoais. Integrar já teve o sentido de construir sistemas tecnológicos capazes de transferir informações de um lado para o outro e também de conectar as pessoas certas nos momentos certos. A integração com a qual trabalho hoje é uma que une as duas definições anteriores: unir pessoas e máquinas com características comuns usando tecnologia.
+As vezes eu me perco entre as definições de growth hacker e cientista de dados. A insersecção, ao meu ver, é bem forte (ou a métrica de correlação é próxima do 1, ou -1 talvez). Meu trabalho me levou a conhecer e participar de projetos nestas duas áreas e manipulação de dados se tornou meu expertise.
 
-A integração com a qual trabalho está fortemente pautada na ideia de propósito. Acredito que meu trabalho sempre deve ter um propósito maior que um salário no fim do mês. O trabalho que faço têm potencial para melhorar a qualidade de vida de muita gente se generalizado e acessível. A forma como isto é feito também é importante. Dou o nome de impacto e representa o resultado do trabalho feito. O impacto deve ser positivo para quem usufrui do trabalho.
+Meu nome é Henrique e eu adoro tecnologia. Descobri desde cedo que queria trabalhar com algo que envolvesse tecnologia e cá estou, garimpando dados como eu mesmo defini. Já fui desenvolvedor de software, analista de sistemas, coordenador de infraestrutura, UX designer, especialista em CRO e hoje uso o chapéu de cientista de dados, que no final do dia significa ser todos os profissionais citados anteriormente. Minha segunda paixão também tem nome: música. Estudo violão há alguns anos e já lecionei teoria musical.
 
-Propósito, impacto e integração são a tríade pela qual tomo minhas decisões de carreira. Elas representam minhas crenças profissionais, o que me permite entender que tipo de organização combina com o meu perfil. Dito isto, o que significa garimpar dados pra mim? Significa encontrar informações úteis nos dados que ajudem a fazer com que a tecnologia melhor atenda os interesses das pessoas.
+Se tivesse que resumir em poucas palavras o que faço hoje, diria que faço experimentos. Experimentos para entender como pessoas usam produtos e como eu posso tornar o uso desses produtos melhor. Muito se fala em método científico na minha área, nos consideramos cientistas tanto por trabalhar de forma metódica quanto pelo ímpeto questionador de querer saber como as coisas funcionam. É um trabalho fascinante pois seu resultado é sentido diretamente por todos aqueles que são impactados por ele. Isso não quer dizer que o impacto é bom, visto que experimentos nem sempre são certeiros, mas o aprendizado sempre vêm para fazer melhor na próxima. Por mais clichê que soe, a ideia por trás disso é ajudar pessoas. Sério.
 
-<h2>As quatro habilidades básicas do sujeito que garimpa dados</h2>
+## Como?
 
-<ul>
-  <li><strong>Data Availability, Quality and Integrity</strong>: garantir a disponibilidade, a qualidade e a integridade dos dados de todas as fontes disponíveis.</li>
-  <li><strong>Data Processing</strong>: segmentar e filtrar dados de acordo com regras pré estabelecidas.</li>
-  <li><strong>Data Mining</strong>: extrair informações novas de fontes de dados conhecidas.</li>
-  <li><strong>Machine Learning</strong>: treinar modelos de aprendizado de máquina com base nos dados disponíveis para prever novas informações.</li>
-</ul>
+Meu trabalho é dividido em duas grandes etapas: preparar o terreno e fazer experimentos.
+
+### Preparar o terreno
+
+Aprender com todas as fontes de informação disponíveis e preparar o "laboratório" para estudos demanda tempo. É necessário pensar desde a infraestrutura necessária até a arquitetura do fluxo da informação, isto é, que tipo de informação preciso saber e como ela deve trafegar entre diferentes bases / repositórios / sistemas e afins. Aqui o chapeu de cientista de dados é bem útil, sempre que tenho um ambiente de desenvolvimento com bibliotecas para data science à disposição faço uso extenso. As possibilidades para manipulação de dados e até geração de modelos preditivos são inúmeras. Uma vez que os dados estão dispostos para consumo, é hora de interpretá-los para gerar... peguntas.
+
+### Fazer experimentos
+
+Experimentos começam com perguntas. Aquela dúvida que não quer calar. O primeiro trabalho é levantar hipóteses com base em qualquer informação relevante disponível. Essa etapa exploratória é fascinante pois as possibilidades podem chegar ao infinito. Nem sempre são porque orçamentos são geralmente limitados e o tempo é curto então foco é importantíssimo. Perguntas e dados geram hipóteses e o teste das hipóteses leva aos experimentos. Experimentos geram aprendizados sem o peso de uma implementação completa.
