@@ -99,7 +99,7 @@ function doPost(e) {
 }
 {% endhighlight %}
 
-O retorno delas deve ser um objeto contendo HTML ou texto e ser do tipo HtmlOutput ou TextOutput, respectivamente. Para interagir com o script via uma aplicação web basta acessar seu endereço e passar os dados que serão manipulados pelo script.
+O retorno delas deve ser um objeto contendo HTML ou texto e ser do tipo HtmlOutput ou TextOutput, respectivamente. Para interagir com o script via uma aplicação web basta publicar esse script como um Web App, acessar seu endereço e passar os dados que serão manipulados pelo script.
 
 ## Recursos adicionais
 
