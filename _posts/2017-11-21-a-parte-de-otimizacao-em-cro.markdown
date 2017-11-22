@@ -16,7 +16,7 @@ Para os não iniciados, CRO significa Conversion Rate Optimization e representa 
 - Ferramentas: há centenas delas. Falarei sobre algumas adiante.
 - Metodologias: o trabalho de um CRO é muito pautado em métodos mas cabe a ele entender qual o melhor para cada necessidade.
 - Sistemática: técnicas, ferramentas e métodos são empregados de acordo com regras definidas.
-- Conversão: uma métrica que mede o trabalho do CRO. Pode ser número de vendas, faturamento, acessos a um site ou app e tantas outras.
+- Conversão: uma métrica que represente a conversão ou esteja ligada a ela. Pode ser número de vendas, faturamento, acessos a um site ou app e muitas outras.
 
 Para esta definição, assume-se que metodologia é o estudo de métodos e um método é uma forma organizada de atingir um objetivo.
 
