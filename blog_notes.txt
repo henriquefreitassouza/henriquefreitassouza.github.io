@@ -1,0 +1,50 @@
+-- DIA 2 --
+
+## Fundamentos de estatística para testes
+
+Dado o contexto para o aprendizado de estatística, os fundamentos abordados aqui não serão focados em fórmulas matemáticas ou em aspéctos filosóficos de seu funcionamento. O intuito é apresentar os conceitos e mostrar como usá-los para configurar testes apropriadamente.
+
+### População x amostra
+
+A distinção entre os dois termos é de suma importância conceitualmente falando. Uma população representa todos os indivíduos de algum grupo. A população de um país, por exemplo, é composta por todos os indivíduos que vivem em determinado país. No mundo de software online, uma população é todo o tráfego de visitantes. Já a amostra representa uma porção da população. A amostra é usada para inferir informações que se apliquem a toda uma população. No caso de estudos online ou sobre populações de um país, por exemplo, é impossível estudar todos os indivíduos para inferir informações da população. Nestes casos, são usadas amostras para o estudo e os resultados são usados para descrever a população como um todo. Uma amostra precisa ser:
+- Significante: isto é, ser grande os suficiente para o estudo em questão.
+- Representativa: as características da amostra precisam ser fiéis aquelas da população.
+- Randômica: a seleção da amostra precisa ser randômica para evitar análises tendenciosas.
+
+Ferramentas de teste irão garantir a seleção randômica da amostra, mas a significância e a representatividade serão determinadas pelo projetista de testes. A significância é o tamanho da amostra para o estudo e a representatividade é a característica do grupo a ser estudado.
+
+### O início de tudo: hipóteses
+
+Como mencionei anteriormente, há várias formas de fazer testes com amostras. A mais comum no mundo online e também a adotada pelas ferramentas de testes mais conhecidas é o teste baseado em hipóteses. Uma hipótese é uma afirmação feita com base na leitura de dados sobre determinados comportamentos ou eventos. O objetivo de um teste é então pôr esta hipótese à prova para dizer se ela é verdadeira ou falsa. Estudos baseados em testes admitem dois tipos de hipóteses, em termos estatísticos: a **hipótese nula** e a **hipótese alternativa** (também chamada de hipótese alfa). Uma hipótese alternativa é um efeito esperado após um teste e a hipótese nula é a não existência desse efeito. Um exemplo em testes online de hipótese alternativa é de que trocar a cor de um botão na home de um site trará 10% mais acessos na página de produto enquanto na hipótese nula a troca do botão não influencia a taxa de conversão.
+
+A definição das hipóteses é importante pois servirá de base para configurar um teste. Lembra do tamanho do efeito? No exemplo acima, 10% é a configuração do tamanho do efeito a ser detectado. Algumas empresas costumam trabalhar com duas definições de hipóteses: Uma hipótese conceitual e uma hipótese matemática. A hipótese conceitual é a descrição da crença com base na leitura de dados e a hipótese matemática é a tradução da hipótese conceitual para termos matemáticos. Essa distinção é feita para quantificar a hipótese e assim torná-la possível de ser analisada de forma mais detalhada após os resultados de um teste. Uma hipótese conceitual, continuando o exemplo anterior, é que fazer ajustes no botão da home irá fazer com que mais pessoas naveguem pelas páginas de produto. A hipótese matemática então vai dar o contexto do tamanho da melhoria ao dizer que um botão vermelho e em negrito irá atrair 10% a mais dos visitantes para páginas de produto.
+
+Ao final da execução de um teste será obtido um de dois possíveis resultados: a hipótese nula foi **rejeitada** ou **aceita**. Aceitar a hipótese nula significa que a alteração induzida no teste não teve o efeito esperado e rejeitar a hipótese nula significa que há evidências que sugerem que a alteração induzida no teste causou uma mudança de comportamento do grupo de estudo. A nomenclatura pode parecer estranha mas na prática ela significa que não é só porque o pesquisador induziu uma alteração para parte do grupo de estudo que essa alteração foi a causa de uma mudança de comportamento, caso ela exista. No exemplo do botão na home de um site, assumindo que a cor do botão foi trocada e o texto foi formatado como negrito, quem garante que foi essa a alteração que causou uma mudança de comportamento dos usuários do site, assumindo que a mudança de comportamento tenha de fato ocorrido? Rejeitar a hipótese nula não significa aceitar de imediato a hipótese alternativa. A probabilidade de que a mudança de comportamento observada foi induzida pelo projetista de testes é calculada e será definida em outro post.
+
+Existe ainda a possibilidade de uma leitura errônea do resultado de um teste. Essa possibilidade abre margem para dois tipos de erros, conhecidos em termos estatísticos como **erro do tipo I** (também chamado de alfa ou falso positivo) e **erro do tipo II** (também chamado de beta ou falso negativo).
+
+- O erro do tipo I acontece quando a hipótese nula é rejeitada quando ela deveria ter sido aceita. Em outras palavras, **afirmar que algo é verdadeiro quando não é**.
+- O erro do tipo II acontece quando a hipótese nula é aceita quando ela deveria ter sido rejeitada. Em outras palavras, **afirmar que algo é falso quando não é**.
+
+Uma forma de entender a relação entre hipóteses nula e alternativa, bem como os possíveis erros na determinação da veracidade de hipóteses, é fazer um paralelo com o sistema jurídico penal. Imagine que um juiz precisa decidir se um réu é inocente ou culpado. Pela lei, presume-se que um cidadão é inocente (hipótese nula) até que se prove o contrário (hipótese alternativa). Dispostos em uma tabela, os possíveis desfechos do julgamento são:
+
+![Estratégias de crescimento]({{ "/assets/images/blog/2017-11-22-estatistica-em-testes-para-nao-matematicos-part-1-image-1.jpg" | absolute_url }})
+
+Hipóteses estabelecem a base para a configuração de testes e o que analisar nos dados coletados. Por mais contra intuitívo que hipóteses possam parecer em um projeto de testes baseado em dados, dada sua aparente subjetividade, elas são úteis pois refletem as características do negócio em questão. As hipóteses são construídas com base na realidade de cada negócio e por isso faz sentido analisar os dados levantados contra estas hipóteses. No fim, a análise dos dados de um teste se torna mais certeira.
+
+Acompanhe este blog para conhecer mais sobre estatística em testes e diminuir suas chances de erro na condição de testes com amostras.
+
+Bora criar hipóteses!
+
+-- DIA 3 --
+
+### Proporção
+
+Para testes em software, os testes são baseados em ações que os indivíduos de uma amostra são ou não capazes de concluir e a principal medição é o percentual dos indivíduos da amostra que concluem a determinada ação. Este percentual é conhecido como **taxa de conversão**. Em termos estatísticos, o número é representado de forma absoluta e chamado de **proporção** (ou probabilidade) de sucesso (representado pela letra P). É impossível saber qual a verdadeira taxa de conversão (P) quando o tamanho da população é desconhecido (e esta é a realidade de produtos digitais). Com estatística, o projetista de testes calcula a taxa de conversão média de cada amostra, para calcular a **taxa de conversão média das amostras**, e também uma **margem de erro**. A soma e a subtração da margem de erro com a taxa de conversão média das amostras forma um intervalo que representa as potenciais taxas de conversão para amostras estudadas, chamado de **intervalo de confiança**.
+
+- A importância de entender estatística para testes
+- Hipóteses
+- Probabilidades
+- Histogramas e curvas de densidade
+- P-valor e alfa
+- Setup de testes e configuração de calculadoras
