@@ -4,6 +4,7 @@ title:  'A parte de otimização em CRO'
 date:   2017-11-21 06:42:00
 category: Growth
 image: '/assets/images/blog/2017-11-21-a-parte-de-otimizacao-em-cro-featured.jpg'
+image_credit: 'Unsplash'
 ---
 
 Por mais que uma organização e suas vertentes de negócio estejam sólidas no mercado com bons produtos, tenham muitas pessoas usando e o lucro esteja bom, existe sempre espaço para melhoria. Ou pelo menos essa é uma das premissas de quem trabalha com CRO. Falarei um pouco sobre como empresas de todos os tamanhos estão hoje usando CRO para dar tração aos seus negócios.

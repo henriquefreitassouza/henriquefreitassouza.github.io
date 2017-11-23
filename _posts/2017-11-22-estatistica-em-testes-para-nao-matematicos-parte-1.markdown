@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  'Estatística em testes para não matemáticos - Parte 1'
+title:  'Estatística em testes para não matemáticos - A importância de saber estatística'
 date:   2017-11-22 10:35:00
 category: Growth
 image: '/assets/images/blog/2017-11-22-estatistica-em-testes-para-nao-matematicos-part-1-featured.jpg'
+image_credit: 'Evan Miller'
 ---
 
 Você costuma fazer testes do tipo a/b, split ou outros e se pergunta se os dados que a ferramenta de testes fornece são válidos? Se a resposta é não, você deveria. Para tirar o máximo de proveito de testes online é necessário conhecer alguns tópicos em estatística. Neste e nos próximos 5 posts vou falar quais são esses tópicos e como configurar corretamente as ferramentas e calculadoras disponíveis para garantir a veracidade dos dados que são mostrados.

@@ -4,6 +4,7 @@ title:  'Geração de relatórios automatizados por APIs'
 date:   2017-11-19 13:13:00
 category: Growth
 image: '/assets/images/blog/2017-11-19-geracao-de-relatorios-automatizados-por-apis-featured.jpg'
+image_credit: 'Unsplash'
 ---
 
 Recentemente me envolvi em um projeto em que eu precisava construir um repositório de alimentação de relatórios. As fontes que continham as informações de interesse estavam espalhadas em pelo menos 6 sistemas diferentes e juntar essas informações semanalmente demandava algumas horas de um dia, o que tornava a manutenção desses relatórios bem cara se pensarmos no valor/hora de uma pessoa.

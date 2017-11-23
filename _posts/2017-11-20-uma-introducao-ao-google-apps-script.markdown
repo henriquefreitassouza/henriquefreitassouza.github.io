@@ -4,6 +4,7 @@ title:  'Uma introdução ao Google Apps Script'
 date:   2017-11-20 15:05:00
 category: Growth
 image: '/assets/images/blog/2017-11-20-uma-introducao-ao-google-apps-script-featured.jpg'
+image_credit: 'Google'
 ---
 
 No meu [último post]({% post_url 2017-11-19-geracao-de-relatorios-automatizados-por-apis %}) falei brevemente sobre o [Google Apps Script](https://www.google.com/script/){:target="\_blank"}, um produto do Google usado para estender as capacidades dos demais produtos da empresa e fazer automações. Irei entrar mais a fundo nas capacidades da ferramenta e como ela pode poupar um tempo considerável de quem trabalha com marketing ou produto e está sempre coletando e tratando dados para relatórios.

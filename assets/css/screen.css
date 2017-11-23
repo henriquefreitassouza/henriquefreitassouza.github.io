@@ -758,6 +758,12 @@ body:not(.post-template) .post-title {
   max-width: 100%;
 }
 
+.post-featured-image-author {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 1.75rem;
+}
+
 .post-title a {
     text-decoration: none;
 }
