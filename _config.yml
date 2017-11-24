@@ -9,7 +9,6 @@ kramdown:
   syntax_highlighter: rouge
 
 logo: false
-paginate: 15
 baseurl: ''
 domain_name: 'http://henriquefreitas.com.br'
 google_analytics: 'UA-87608325-3'

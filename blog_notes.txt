@@ -1,9 +1,5 @@
 -- DIA 3 --
 
-### Proporção
-
-Para testes em software, os testes são baseados em ações que os indivíduos de uma amostra são ou não capazes de concluir e a principal medição é o percentual dos indivíduos da amostra que concluem a determinada ação. Este percentual é conhecido como **taxa de conversão**. Em termos estatísticos, o número é representado de forma absoluta e chamado de **proporção** (ou probabilidade) de sucesso (representado pela letra P). É impossível saber qual a verdadeira taxa de conversão (P) quando o tamanho da população é desconhecido (e esta é a realidade de produtos digitais). Com estatística, o projetista de testes calcula a taxa de conversão média de cada amostra, para calcular a **taxa de conversão média das amostras**, e também uma **margem de erro**. A soma e a subtração da margem de erro com a taxa de conversão média das amostras forma um intervalo que representa as potenciais taxas de conversão para amostras estudadas, chamado de **intervalo de confiança**.
-
 - A importância de entender estatística para testes
 - Hipóteses
 - Probabilidades
