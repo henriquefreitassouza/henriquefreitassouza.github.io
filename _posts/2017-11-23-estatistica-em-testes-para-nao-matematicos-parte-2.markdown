@@ -17,7 +17,7 @@ Este post é o segundo de uma série com 6 em que vou destrinchar os principais 
 - Hipóteses (este post)
 - Probabilidades
 - Histogramas e curvas de densidade
-- P-valor e alfa
+- P-valor, alfa, beta e tamanho do efeito
 - Setup de testes e configuração de calculadoras
 
 ## Fundamentos de estatística para testes

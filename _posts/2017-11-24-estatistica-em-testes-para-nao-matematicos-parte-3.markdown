@@ -17,7 +17,7 @@ Este post é o terceiro de uma série com 6 em que vou destrinchar os principais
 - [Hipóteses]({{ absolute_url }}{% post_url 2017-11-23-estatistica-em-testes-para-nao-matematicos-parte-2 %})
 - Probabilidades (este post)
 - Histogramas e curvas de densidade
-- P-valor e alfa
+- P-valor, alfa, beta e tamanho do efeito
 - Setup de testes e configuração de calculadoras
 
 ## Estatística descritiva e estatística inferencial
@@ -55,6 +55,8 @@ O intervalo de confiança será explorado em mais detalhes no próximo post, sob
 
 O número P que chamamos de probabilidade de sucesso é a base para as demais projeções usadas para estimar diferenças entre dois grupos de estudo, inclusive em testes online. No post seguinte irei detalhar sua relação com outros termos estatísticos e como eles se relacionam.
 
-## Recursos adicionais
+## Leitura complementar
 
-Parte desses conceitos eu aprendi [neste site](http://jukebox.esc13.net/untdeveloper/RM/Stats_Module_2/){:target="\_blank"}. Inclusive os exemplos que usei foram tirados dele. Vale a pena ler os capítulos, que estão ilustrados e possuem exercícios matemáticos para fixação dos conceitos.
+Parte desses conceitos eu aprendi [neste site](http://jukebox.esc13.net/untdeveloper/RM/Stats_Module_2/){:target="\_blank"}. Inclusive os exemplos que usei foram tirados dele. Vale a pena ler os capítulos, que estão ilustrados, a linguagem é bem didática e possuem exercícios matemáticos para fixação dos conceitos.
+
+Bora estimar probabilidades!

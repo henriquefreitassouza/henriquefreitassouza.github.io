@@ -17,7 +17,7 @@ Este post é o primeiro de uma série com 6 em que vou destrinchar os principais
 - Hipóteses
 - Probabilidades
 - Histogramas e curvas de densidade
-- P-valor e alfa
+- P-valor, alfa, beta e tamanho do efeito
 - Setup de testes e configuração de calculadoras
 
 Farei em posts separados para não tornar a leitura muito difícil. Este post será dedicado a esclarecer a importância de compreender alguns dos conceitos estatísticos envolvidos em testes com amostras e quais são os tipos de testes disponíveis para aplicações online.
@@ -57,3 +57,5 @@ Em geral o teste a/b é o mais usado pois dá mais certeza ao pesquisador sobre 
 ## Estatística para testes
 
 Nos posts seguintes irei entrar nos tópicos importantes da estatística para testes. Acompanhe este blog para conhecê-los e saber como aplicá-los em testes online.
+
+Bora aprender estatística!
