@@ -53,7 +53,7 @@ Ainda dentro do contexto de testes com amostras online, o número em estudo é a
 
 O intervalo de confiança será explorado em mais detalhes no próximo post, sobre histogramas e curvas de densidade.
 
-O número P que chamamos de probabilidade de sucesso é a base para as demais projeções usadas para estimar diferenças entre dois grupos de estudo, inclusive em testes online. No post seguinte irei detalhar sua relação com outros termos estatísticos e como eles se relacionam.
+O número P que chamamos de probabilidade de sucesso é a base para as demais projeções usadas para estimar diferenças entre dois grupos de estudo, inclusive em testes online, assunto que explorarei mais a fundo no próximo post.
 
 ## Leitura complementar
 
