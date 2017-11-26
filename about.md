@@ -25,3 +25,5 @@ Experimentos começam com perguntas. Aquela dúvida que não quer calar. O prime
 ## E depois?
 
 Dúvidas sempre existirão. Na verdade, escassas são as respostas, dúvidas estão por todos os lados. Começamos denovo, com dados, dúvidas, hipóteses, experimentos e aprendizados numa forma cíclica para aprender mais e, novamente o clichê, fazer a diferença.
+
+Você pode me encontrar no [LinkedIn](https://linkedin.com/in/henriquefreitassouza){:target="\_blank"}. Sempre posto conteúdos por lá então fique a vontade para me seguir e acompanhar as postagens :)
