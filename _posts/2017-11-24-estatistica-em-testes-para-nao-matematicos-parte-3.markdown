@@ -53,7 +53,7 @@ Probabilidades ainda podem ser combinadas, contanto que os eventos probabilísti
 
 Ainda dentro do contexto de testes com amostras online, o número em estudo é a probabilidade de sucessos de acordo com a hipótese formuladada, ou a taxa de conversão. O projetista de testes calcula a taxa de conversão média de cada amostra, para calcular a **taxa de conversão média das amostras**, e também uma **margem de erro**. A soma e a subtração da margem de erro com a taxa de conversão média das amostras forma um intervalo que representa as potenciais taxas de conversão para amostras estudadas, chamado de **intervalo de confiança**. Como cada amostra provavelmente possui algum grau de diferença entre as demais colhidas, um intervalo de possíveis taxas de conversão é estimado para inferir a taxa de conversão média de toda a população.
 
-O intervalo de confiança será explorado em mais detalhes no próximo post, sobre histogramas e curvas de densidade.
+O intervalo de confiança será explorado em mais detalhes no post sobre p-valor, alfa, beta e tamanho do efeito.
 
 O número P que chamamos de probabilidade de sucesso é a base para as demais projeções usadas para estimar diferenças entre dois grupos de estudo, inclusive em testes online, assunto que explorarei mais a fundo no próximo post.
 
