@@ -7,7 +7,7 @@ image: '/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematico
 image_credit: 'Optimizely, VWO, Oracle, Google, Adobe, Unbounce'
 ---
 
-Configurar testes com amostras online requer alguns cuidados. Configurações erradas podem invalidar os achados do estudo e levar negócios a tomarem decisões com base em dados inverídicos – o que é potencialmente pior do que não ter dados. Neste sentido, realizar testes online pode ser um tiro no pé se não feito com cautela. Irei enumerar algumas armadilhas por trás da configuração de testes e calculadoras e como evitá-las para tirar proveito máximo dos testes.
+Configurar testes com amostras online requer alguns cuidados. Configurações erradas podem invalidar os achados do estudo e levar negócios a tomarem decisões com base em dados inverídicos – o que é potencialmente pior do que não ter dados. Neste sentido, realizar testes online pode ser um tiro no pé se não feito com cautela.
 
 <!--more-->
 
