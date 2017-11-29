@@ -33,6 +33,16 @@ A distinção entre os dois termos é de suma importância conceitualmente falan
 
 Ferramentas de teste irão garantir a seleção randômica da amostra, mas a significância e a representatividade serão determinadas pelo projetista de testes.
 
+Populações e amostras apresentam traços comuns de comportamento. Matematicamente, esses traços são calculados usando **médias**. A média é útil para sumarizar esses traços em um único número. Um possível exemplo é “em média, 32% das pessoas que usam nosso produto acessam a página que fala sobre a empresa”. Quando não é possível ter acesso a toda uma população para um estudo, a média é simplesmente desconhecida. Essa média da população é chamada de **média populacional**. Quando a média populacional é desconhecida, a média usada é a **média amostral**. Quanto mais significativa e representativa a amostra for, mais próxima essa média estará da média populacional.
+
+## Amostra x grupo de estudo
+
+O grupo de estudo compreende todos os indivíduos participantes do teste e consequentemente todas as amostras envolvidas.
+
+## Amostra x indivíduo
+
+Uma amostra é composta por n indivíduos (ou observações), que são os participantes do teste. A classificação em amostras acontece para que a ferramenta consiga simular os resultados dos testes diversas vezes antes de dar uma resposta final. Pense em uma moeda e a probabilidade de cair coroa quando jogada. As probabilidades são 50/50 para cara ou para coroa. Agora pode acontecer de você jogar uma moeda para o alto dez vezes e cair em coroa 8. Nas próximas dez jogadas pode ser que caiam 3 coroas e nas próximas dez podem cair 10 coroas. Cada dez jogadas representa uma amostra de jogadas e cada jogada em sí seria uma observação. Quanto mais amostras, mais próxima a probabilidade fica de 50/50. Explicarei isso com mais detalhes em outro post.
+
 ## O início de tudo: hipóteses
 
 Como mencionei anteriormente, há várias formas de fazer testes com amostras. A mais comum no mundo online e também a adotada pelas ferramentas de testes mais conhecidas é o teste baseado em hipóteses. Uma hipótese é uma afirmação feita com base na leitura de dados sobre determinados comportamentos ou eventos. O objetivo de um teste é então pôr esta hipótese à prova para dizer se ela é verdadeira ou falsa. Estudos baseados em testes admitem dois tipos de hipóteses, em termos estatísticos: a **hipótese nula** e a **hipótese alternativa** (também chamada de hipótese alfa). Uma hipótese alternativa é um efeito esperado após um teste e a hipótese nula é a não existência desse efeito. Um exemplo em testes online de hipótese alternativa é de que trocar a cor de um botão na home de um site trará 10% mais acessos na página de produto enquanto na hipótese nula a troca do botão não influencia a taxa de conversão.
