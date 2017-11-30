@@ -50,7 +50,7 @@ O workaround para o problema de diferença de números será através do registr
 
 Em geral, ferramentas de testes possuem tanto um editor de sites do tipo “drag n'drop” quanto um para inserção de código manual. Esses editores de código aceitam HTML, CSS e Javascript e em algumas ferramentas possuem dois níveis: um global e um local. O editor de scripts global injeta trechos de código no produto independente da variação configurada. Tanto o grupo de controle quanto os grupos de tratamentos recebem as alterações e o editor de scripts local injeta trechos de código apenas na variação do teste selecionada. O editor de scripts usado será o local, pois o código a ser injetado precisa ser alterado conforme a variação no teste.
 
-Com o GTM instalado, basta chamar o método push do objeto {% ihighlight javascript %} dataLayer {% endihighlight %} e enviar os dados para um evento que tenha sido registrado no GTM:
+Com o GTM instalado, basta chamar o método push do objeto dataLayer e enviar os dados para um evento que tenha sido registrado no GTM:
 
 {% highlight javascript %}
   dataLayer.push({
@@ -95,9 +95,9 @@ Category será igual em todas as chamadas ao código de disparo, label e action 
 
 Sempre que puder dar preferência a javascript puro opte por ele, assim o teste não depende do carregamento de mais uma biblioteca (assumindo que você teria usado JQuery ou alguma biblioteca similar).
 
-O uso de {% ihighlight javascript %} window.onload {% endihighlight %} garante que o botão só será acessado após ter sido carregado. Pode acontecer de o trecho de código javascript carregar antes da página e ele tentar acessar elementos que ainda não foram carregados. O uso de {% ihighlight javascript %} DOMContentLoaded {% endihighlight %} fica a cargo do desenvolvedor, lembrando que {% ihighlight javascript %} DOMContentLoaded {% endihighlight %} [não possui suporte ao Internet Explorer 9 e versões anteriores](https://caniuse.com/#search=DOMContentLoaded){:target="\_blank"}.
+O uso de window.onload garante que o botão só será acessado após ter sido carregado. Pode acontecer de o trecho de código javascript carregar antes da página e ele tentar acessar elementos que ainda não foram carregados. O uso de DOMContentLoaded fica a cargo do desenvolvedor, lembrando que DOMContentLoaded [não possui suporte ao Internet Explorer 9 e versões anteriores](https://caniuse.com/#search=DOMContentLoaded){:target="\_blank"}.
 
-Para a função de captura de evento poderia ter sido usada a {% ihighlight javascript %} addEventListener {% endihighlight %}, a decisão pela função fica a cargo do desenvolvedor, lembrando que ela possui a mesma restrição de {% ihighlight javascript %} DOMContentLoaded {% endihighlight %} quanto ao navegador Internet Explorer.
+Para a função de captura de evento poderia ter sido usada a addEventListener, a decisão pela função fica a cargo do desenvolvedor, lembrando que ela possui a mesma restrição de DOMContentLoaded quanto ao navegador Internet Explorer.
 
 A configuração completa usando o dataLayer, um teste de exemplo cujo o clique em um botão representa o evento de conversão e um cenário em que o visitante caiu no grupo de controle fica:
 
