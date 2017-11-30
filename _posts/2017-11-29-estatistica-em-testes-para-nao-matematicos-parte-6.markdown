@@ -134,9 +134,9 @@ Neste exemplo, o teste é com duas caudas e por isso é possível determinar pio
 
 ## Diferenças entre números reportados no painel de uma ferramenta de testes e em uma ferramenta de analytics
 
-É normal que os números de acessos e conversões reportados no painel de ferramentas de teste sejam diferente daqueles visualizados em um software de analytics. Há diversos motivos pra isso mas alguns deles são a diferença na forma como um software de analytics e um de testes registram visitantes únicos, sessões e eventos de conversão, erros na implementação de algum dos scripts e a diferença de tempo no carregamento dos scripts. Dada a dificuldade de identificar visitantes online cada fabricante encontrou uma solução para o problema que apresenta diferenças em relação as demais.
+É normal que os números de acessos e conversões reportados no painel de ferramentas de teste sejam diferente daqueles visualizados em um software de analytics. Há diversos motivos pra isso mas alguns deles são a diferença na forma como um software de analytics e um de testes registram visitantes únicos, sessões e eventos de conversão, erros na implementação de algum dos scripts e a diferença de tempo no carregamento dos scripts.
 
-Uma forma de igualar as visualizações é usar a ferramenta de analytics como painel de relatórios e enviar dados de testes para lá.
+Uma forma de diminuir as diferenças entre as visualizações é usar a ferramenta de analytics como painel de relatórios e enviar dados de testes para dentro dela.
 
 ## O viés comercial de ferramentas para testes online
 
