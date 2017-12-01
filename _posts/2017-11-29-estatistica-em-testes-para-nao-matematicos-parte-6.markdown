@@ -66,7 +66,7 @@ Outra calculadora que [aparece nos primeiros resultados de uma busca online](htt
 
 ![calculadora de tamanho de amostra da Optimizely]({{ "/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematicos-part-6-image-2.jpg" | absolute_url }})
 
-Ela é mais simples se comparada à calculadora anterior e assume um poder estatístico de 100% (ou 1) de acordo com a documentação, o que explica o tamanho de amostra ser maior do que a calculada usando a calculadora do [Evan Miller](https://www.evanmiller.org/){:target="\_blank"} usando os mesmos parâmetros. Quanto maior o poder estatístico (1 - beta), menor é o beta (menor a margem de falsos positivos) e maior a amostra precisa ser.
+Ela é mais simples se comparada à calculadora anterior e assume um poder estatístico de 100% (ou 1) de acordo com a documentação, o que explica o tamanho de amostra ser maior do que a calculada usando a calculadora do [Evan Miller](https://www.evanmiller.org/){:target="\_blank"} usando os mesmos parâmetros. Quanto maior o poder estatístico (1 - beta), menor é o beta (menor a margem de falsos negativos) e maior a amostra precisa ser.
 
 Calculadoras podem diferir também entre cálculos com uma e duas caudas. Algumas calculadoras assumem que o pesquisador queira saber apenas de melhoria da taxa de conversão na hipótese alternativa e não de pioras. Essencialmente o que muda é a distribuição de alfa pelas extremidades da distribuição da hipótese nula. Como p-valor precisa ser ainda menor considerando duas caudas, o tamanho da amostra precisa ser maior. Recomendo sempre a leitura da documentação da calculadora, caso o projetista for usar uma calculadora online. Outra opção é o projetista usar planilhas excel para calcular tamanho da amostra.
 
