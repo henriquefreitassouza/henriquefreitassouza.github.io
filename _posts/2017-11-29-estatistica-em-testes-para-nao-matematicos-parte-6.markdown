@@ -59,7 +59,7 @@ Ela diz qual a quantidade de indivíduos cada variação do teste precisa ter. O
 
 - Baseline conversion rate: é a taxa de conversão média do negócio atual. Essa taxa é assumida na hipótese nula.
 - Minimum detectable effect: é o tamanho da diferença que o pesquisador quer ver entre as conversões do grupo de controle e grupos de tratamentos. Quanto maior esse número, maior a diferença a ser detectada e menor a amostragem necessária. A leitura dele é feita em conjunto com o baseline conversion rate. Considerando os 20% de conversão média atuais e efeito mínimo detectável de 5%, taxas abaixo de 15% e acima de 25% serão corretamente detectadas considerando a margem de erro estabelecida em beta.
-- Statistical power (1 - beta): é a probabilidade de corretamente rejeitar a hipótese nula quando a alternativa é verdadeira. Beta é a probabilidade de falso positivo e 1 - beta é o poder estatístico.
+- Statistical power (1 - beta): é a probabilidade de corretamente rejeitar a hipótese nula quando a alternativa é verdadeira. Beta é a probabilidade de falso negativo e 1 - beta é o poder estatístico.
 - Significance level (alfa): é a probabilidade de encontrar um falso positivo. Alfa e nível de significância são sinônimos. No exemplo, alfa está configurado para 5% (ou 0,05).
 
 Outra calculadora que [aparece nos primeiros resultados de uma busca online](https://www.google.com.br/search?ei=tpweWq-mCIKYwAS6yrlg&q=ab+test+sample+size+calculator&oq=ab+test+sample+size&gs_l=psy-ab.3.0.0j0i67k1j0.621269.622274.0.623710.11.7.0.1.1.0.220.799.0j2j2.4.0....0...1c.1.64.psy-ab..7.4.586...0i22i30k1.0.qS3_ax37bpo){:target="\_blank"} é a do Optimizely.
