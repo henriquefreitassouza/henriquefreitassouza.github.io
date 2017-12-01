@@ -18,7 +18,7 @@ Este post é o último de uma série com 6 em que vou destrinchar os principais 
 - [Probabilidades]({{ absolute_url }}{% post_url 2017-11-24-estatistica-em-testes-para-nao-matematicos-parte-3 %})
 - [Histogramas e curvas de densidade]({{ absolute_url }}{% post_url 2017-11-26-estatistica-em-testes-para-nao-matematicos-parte-4 %})
 - [P-valor, alfa, beta e tamanho do efeito]({{ absolute_url }}{% post_url 2017-11-27-estatistica-em-testes-para-nao-matematicos-parte-5 %})
-- Setup de testes e configuração de calculadoras (este post)
+- **Setup de testes e configuração de calculadoras** (este post)
 
 ## O processo de execução de testes
 

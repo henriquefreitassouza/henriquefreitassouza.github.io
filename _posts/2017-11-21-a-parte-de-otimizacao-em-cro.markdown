@@ -83,7 +83,7 @@ O stack de ferramentas quantitativas é formado por ferramentas que coletam e ar
 
 ### Ferramentas qualitativas
 
-Enquanto as ferramentas quantitativas mostram o que as pessoas estão fazendo dentro de um produto, as qualitativas buscam registras as motivações por trás dos comportamentos. Algumas ferramentas são:
+Enquanto as ferramentas quantitativas mostram o que as pessoas estão fazendo dentro de um produto, as qualitativas buscam explicar as motivações por trás dos comportamentos. Algumas ferramentas são:
 
 - [Hotjar](https://www.hotjar.com/){:target="\_blank"}
 - [Crazy Egg](https://www.crazyegg.com/){:target="\_blank"}
@@ -118,7 +118,7 @@ Isso não significa que uma organização neste estágio não deva validar hipó
 
 ![Estratégias de crescimento]({{ "/assets/images/blog/2017-11-21-a-parte-de-otimizacao-em-cro-image-1.jpg" | absolute_url }})
 
-Ele sugere que testes, de forma geral, devem ser grandes, especialmente em organizações em seus estágios iniciais de vida. Exemplos são testes com fluxos diferentes, públicos alvo diferentes e propostas de valor. Conforme a organização vai ganhando maturidade e conhecendo seu modelo de negócio, bem como seu público alvo, os testes poder ser mais específicos baseado em uma estratégia de crescimento mais direcionada. Acrescento aqui a oportunidade de trabalhar com stacks de ferramentas quantitativas com foco em teste.
+Ele sugere que testes, de forma geral, devem ser grandes, especialmente em organizações em seus estágios iniciais de vida. Exemplos são testes com fluxos diferentes, públicos alvo diferentes e propostas de valor. Conforme a organização vai ganhando maturidade e conhecendo seu modelo de negócio, bem como seu público alvo, os testes poder ser mais específicos baseado em uma estratégia de crescimento mais direcionada. Acrescento aqui a oportunidade de trabalhar com stacks de ferramentas quantitativas com foco em teste quando a organização possui bastante informações quantitativas para analisar.
 
 ## CRO em apps
 

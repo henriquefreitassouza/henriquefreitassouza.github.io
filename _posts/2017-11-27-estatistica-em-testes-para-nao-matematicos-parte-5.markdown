@@ -17,8 +17,8 @@ Este post é o quinto de uma série com 6 em que vou destrinchar os principais c
 - [Hipóteses]({{ absolute_url }}{% post_url 2017-11-23-estatistica-em-testes-para-nao-matematicos-parte-2 %})
 - [Probabilidades]({{ absolute_url }}{% post_url 2017-11-24-estatistica-em-testes-para-nao-matematicos-parte-3 %})
 - [Histogramas e curvas de densidade]({{ absolute_url }}{% post_url 2017-11-26-estatistica-em-testes-para-nao-matematicos-parte-4 %})
-- P-valor, alfa, beta e tamanho do efeito (este post)
-- Setup de testes e configuração de calculadoras
+- **P-valor, alfa, beta e tamanho do efeito** (este post)
+- [Setup de testes e configuração de calculadoras]({{ absolute_url }}{% post_url 2017-11-29-estatistica-em-testes-para-nao-matematicos-parte-6 %})
 
 ## Um pouco mais sobre regra empírica
 

@@ -13,12 +13,12 @@ Você costuma fazer testes do tipo a/b, split ou outros e se pergunta se os dado
 
 Este post é o primeiro de uma série com 6 em que vou destrinchar os principais conceitos estatísticos para testes online. Os tópicos serão:
 
-- A importância de entender estatística para testes (este post)
-- Hipóteses
-- Probabilidades
-- Histogramas e curvas de densidade
-- P-valor, alfa, beta e tamanho do efeito
-- Setup de testes e configuração de calculadoras
+- **A importância de entender estatística para testes** (este post)
+- [Hipóteses]({{ absolute_url }}{% post_url 2017-11-23-estatistica-em-testes-para-nao-matematicos-parte-2 %})
+- [Probabilidades]({{ absolute_url }}{% post_url 2017-11-24-estatistica-em-testes-para-nao-matematicos-parte-3 %})
+- [Histogramas e curvas de densidade]({{ absolute_url }}{% post_url 2017-11-26-estatistica-em-testes-para-nao-matematicos-parte-4 %})
+- [P-valor, alfa, beta e tamanho do efeito]({{ absolute_url }}{% post_url 2017-11-27-estatistica-em-testes-para-nao-matematicos-parte-5 %})
+- [Setup de testes e configuração de calculadoras]({{ absolute_url }}{% post_url 2017-11-29-estatistica-em-testes-para-nao-matematicos-parte-6 %})
 
 Farei em posts separados para não tornar a leitura muito difícil. Este post será dedicado a esclarecer a importância de compreender alguns dos conceitos estatísticos envolvidos em testes com amostras e quais são os tipos de testes disponíveis para aplicações online.
 

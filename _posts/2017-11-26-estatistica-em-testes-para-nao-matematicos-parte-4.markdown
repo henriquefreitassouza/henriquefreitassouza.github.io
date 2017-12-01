@@ -16,9 +16,9 @@ Este post é o quarto de uma série com 6 em que vou destrinchar os principais c
 - [A importância de entender estatística para testes]({{ absolute_url }}{% post_url 2017-11-22-estatistica-em-testes-para-nao-matematicos-parte-1 %})
 - [Hipóteses]({{ absolute_url }}{% post_url 2017-11-23-estatistica-em-testes-para-nao-matematicos-parte-2 %})
 - [Probabilidades]({{ absolute_url }}{% post_url 2017-11-24-estatistica-em-testes-para-nao-matematicos-parte-3 %})
-- Histogramas e curvas de densidade (este post)
-- P-valor, alfa, beta e tamanho do efeito
-- Setup de testes e configuração de calculadoras
+- **Histogramas e curvas de densidade** (este post)
+- [P-valor, alfa, beta e tamanho do efeito]({{ absolute_url }}{% post_url 2017-11-27-estatistica-em-testes-para-nao-matematicos-parte-5 %})
+- [Setup de testes e configuração de calculadoras]({{ absolute_url }}{% post_url 2017-11-29-estatistica-em-testes-para-nao-matematicos-parte-6 %})
 
 ## Medidas de tendência central e distribuição dos dados
 
