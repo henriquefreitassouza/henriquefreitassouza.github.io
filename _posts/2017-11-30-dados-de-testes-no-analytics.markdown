@@ -42,7 +42,7 @@ Dada a introdução aos eventos, eles podem ser úteis para registrar acessos e 
 
 ## Mapeamento de eventos de teste no Google Analytics
 
-O workaround para o problema de diferença de números será através do registro de eventos na ferramenta de analytics em dois momentos: um quando o visitante acessa o produto e um quando o visitante realiza o evento de conversão. Os eventos possuirão praticamente as mesmas propriedades em Event, Action e Label. Value pode ou não ser usado dependendo da complexidade do teste, como mostrarei adiante. O que vai mudar é o Action, que vai assumir um valor quando um visitante for selecionado para participar do teste e outro quando o visitante executar o evento de conversão. Um diagrama da solução proposta se parece com este:
+O workaround para o problema de diferença de números será através do registro de eventos na ferramenta de analytics em dois momentos: um quando o visitante acessa o produto e um quando o visitante realiza o evento de conversão. Os eventos possuirão praticamente as mesmas propriedades em Event, Action e Label. Value pode ou não ser usado dependendo da complexidade do teste. O que vai mudar é o Action, que vai assumir um valor quando um visitante for selecionado para participar do teste e outro quando o visitante executar o evento de conversão. Um diagrama da solução proposta se parece com este:
 
 ![diagrama de organização dos eventos no Google Analytics]({{ "/assets/images/blog/2017-11-30-dados-de-testes-no-analytics-image-1.jpg" | absolute_url }})
 
