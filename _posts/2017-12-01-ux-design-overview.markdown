@@ -25,7 +25,7 @@ Já a experiência está associada a vivência e ao conhecimento. Experiência t
 
 ## As caras do UX designer
 
-Independente de suas características técnicas, designers possuem algo em comum: **empatia**. A empatia é uma forma pela qual uma pessoa sente as emoções do próximo. Ela é uma ponte. Se empatia nasce nas pessoas ou se ela é desenvolvida ao longo da vida é assunto pra debates. O que é possível afimar é que designers possuem a capacidade de não só se passar pelo outro mas ser o outro, em maior ou menor grau.
+Independente de suas características técnicas, designers possuem algo em comum: **empatia**. A empatia é uma forma pela qual uma pessoa sente as emoções do próximo se colocando no lugar dela, ou a personificando. Ela é uma ponte. Se empatia nasce nas pessoas ou se ela é desenvolvida ao longo da vida é assunto pra debates. O que é possível afimar é que designers possuem a capacidade de não só se passar pelo outro mas ser o outro, em maior ou menor grau.
 
 E como o propósito do UX designer se concretiza no dia a dia? Projetando produtos que entregam experiências. Por mais simples que a resposta seja, o que acontece por trás dos panos deixa as coisas um pouco mais complicadas. Dificilmente um UX designer domina todas as competências ligadas a área e por isso há uma divisão de profissionais dentro do guarda chuva de UX. Vejamos as especializações mais comuns deste profissional.
 
