@@ -21,7 +21,7 @@ A palavra design possui relação com projetar. Projetar está ligado a tirar do
 
 Design é fazer para todos. Design de experiências é projetar experiências para todos. Todos podem ser pessoas, animais, objetos ou máquinas, para citar alguns.
 
-Já a experiência está associada a vivência e ao conhecimento. Experiência torna pessoas versões melhores delas mesmas. É isto o que um designer de experiências entrega: **versões melhores de nós mesmos**. Organizações movidas por propósito entregam para pessoas versões melhores delas mesmas e o designer de experiências é o representante físico deste propósito.
+Já a experiência está associada a vivência e ao conhecimento. Experiência torna pessoas versões melhores delas mesmas. É isto o que um designer de experiências e uma organização movida pelo propósito entregam: **versões melhores de nós mesmos**. O designer de experiências é o representante físico do propósito de tornar pessoas melhores.
 
 ## As caras do UX designer
 
