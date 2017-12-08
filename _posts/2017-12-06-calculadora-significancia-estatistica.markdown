@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Calculadora de significância estatística'
+title:  'Calculadora para testes com amostras online'
 date:   2017-12-06 11:36:00
 category: Growth
 image: '/assets/images/blog/2017-12-06-calculadora-significancia-estatistica-featured.jpg'
