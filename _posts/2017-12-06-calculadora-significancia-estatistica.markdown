@@ -7,7 +7,7 @@ image: '/assets/images/blog/2017-12-06-calculadora-significancia-estatistica-fea
 image_credit: 'Henrique Freitas Souza'
 ---
 
-Criei uma calculadora de significância estatística para fins didáticos e explicarei seu funcionamento ao longo deste post.
+Construí uma calculadora para testes com amostras online. Ela retorna o tamanho da amostra necessária para o teste, a duração estimada de dias para que o teste seja concluído e a significância estatística de todas as variações. Explicarei neste post como esta calculadora funciona e como usá-la em projetos que envolvam testes com amostras.
 
 <!--more-->
 
