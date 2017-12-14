@@ -117,7 +117,7 @@ Uma forma menos comum de autenticar com chave é enviá-la no corpo da requisiç
 
 ### Oauth
 
-Dado que chaves de autenticação precisam ser armazenadas com segurança e sua gestão manual pode se tornar complicada, surgiu um protocolo de autenticação que é bem usado hoje em dia, chamado Open Authentication (Oauth). Este protocolo é seguro pois faz a gestão das chaves necessárias e faz uma espécie de autenticação em duas etapas por trás dos panos. Há algumas variações em sua implementação mas em geral funciona da seguinte forma:
+Dado que chaves de autenticação precisam ser armazenadas com segurança e sua gestão manual pode se tornar complicada, surgiu um protocolo de autenticação que é bem usado hoje em dia, chamado Open Authentication (Oauth). Este protocolo é seguro pois faz a gestão das chaves necessárias e faz uma espécie de autenticação em duas etapas por trás dos panos. A especificação atual do protocolo é a Oauth2. Há algumas variações na implementação do Oauth2 mas em geral funciona da seguinte forma:
 
 - Uma solicitação de acesso ao sistema é enviada ao servidor.
 - O solicitante é redirecionado para o servidor para se autenticar com usuário e senha.
