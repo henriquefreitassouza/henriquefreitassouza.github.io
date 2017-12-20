@@ -7,7 +7,7 @@ image: '/assets/images/blog/2017-12-20-experimentos-em-negocios-featured.jpg'
 image_credit: 'Unsplash'
 ---
 
-Com a simplicidade e acessibilidade trazidas por software de gestão de experimentos e aprendizados online, organizações de diversos tamanhos se aventuram na arte de aprender de forma rápida e enxuta. No entanto, essas mesmas simplicidade e acessibilidade podem atuar contra a organização se não conduzidos de maneira correta. O que é importante levar em conta ao conduzir um experimento corretamente?
+O conceito de aprendizado é um que está espalhado em organizações de diversos tamanhos. O estímulo a experimentação é cada vez mais comum e é suportado por novas tecnologias que surgem a cada dia, a preços acessíveis e uma infinidade de recursos. Um assunto menos comum, no entanto, é o de experimentar usando métodos científicos. Qual sua importância no contexto de negócios e como isso ajuda a garantir a qualidade do aprendizado?
 
 <!--more-->
 
@@ -25,7 +25,7 @@ O chamado método científico é uma forma de aprendizado que se baseia na organ
 
 ## A adoção da cultura de experimentação em organizações
 
-Uma organização orientada a testes e experimentos possui como membros pessoas que norteiam suas decisões com base em aprendizados comprovados. Nada é feito sem antes passar por um processo de validação que suporte a tomada de decisão. Em contrapartida, organizações que tiveram e continuam tendo sucesso com decisões mais diretas podem não encontrar sentido na abordagem científica de testes, já que o negócio funciona bem há tantos anos. Ambos os tipos de organização baseiam suas decisões em dados, o que as diferencia é a quantidade de peso que é dado à experiência pessoal dos tomadores de decisão. Tenha como exemplo a imagem a seguir, da [Marketoonist](https://marketoonist.com/campaigns/all/how-google-works){:target="\_blank"}:
+Uma organização orientada a testes e experimentos possui como membros pessoas que norteiam suas decisões com base em aprendizados comprovados. Nada é feito sem antes passar por um processo de validação que suporte a tomada de decisão. Em contrapartida, organizações que tiveram e continuam tendo sucesso com decisões menos embasadas em dados podem não encontrar sentido na abordagem científica de testes, já que o negócio funciona bem há tantos anos. Ambos os tipos de organização baseiam suas decisões em dados, o que as diferencia é a quantidade de peso que é dado a um tipo de dado em especial: a experiência pessoal dos tomadores de decisão. Tenha como exemplo a imagem a seguir, da [Marketoonist](https://marketoonist.com/campaigns/all/how-google-works){:target="\_blank"}:
 
 ![Highest Paid Person's Opinion]({{ "/assets/images/blog/2017-12-20-experimentos-em-negocios-image-1.jpg" | absolute_url }})
 
