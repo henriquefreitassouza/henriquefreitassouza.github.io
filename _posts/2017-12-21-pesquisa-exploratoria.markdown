@@ -15,7 +15,7 @@ Por mais próximas que organizações sejam de seus consumidores, é extremament
 
 Personas são arquétipos. Elas materializam grupos de pessoas com características, ações, necessidades e desejos representativos do grupo. Não são pessoas fisicamente presentes. São representações que estão sempre junto com com as pessoas de dentro da organização. Personas possuem traços com os quais pessoas se identificam. Esses traços em comum têm como objetivo ajudar a organização a enxergar o mundo pelos olhos de seus consumidores para entender como eles se comportam, o que fazem, o que ouvem, o que pensam, o que falam, o que sentem, o que precisam e o que desejam. Esse entendimento norteia as demais ações dentro da organização, desde a forma de atendimento até o desenvolvimento do produto.
 
-Personas não são inventadas baseado no que a organização acredita ser seu consumidor. Personas são descobertas com base no conhecimento sobre pessoas reais que interagem ou são o público alvo de determinado produto ou serviço. Esse conhecimento é obtido de algumas formas, sendo a mais eficáz e barata o bom e velho **bate papo**.
+Personas não são inventadas baseado no que a organização acredita ser seu consumidor. Personas são descobertas com base no conhecimento sobre pessoas reais que interagem ou são o público alvo de determinado produto ou serviço. Esse conhecimento é obtido de algumas formas, sendo a mais eficaz e barata o bom e velho **bate papo**.
 
 ## Pesquisa como ferramenta de exploração
 
