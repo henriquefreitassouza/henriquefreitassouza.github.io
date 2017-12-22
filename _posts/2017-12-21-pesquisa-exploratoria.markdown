@@ -7,7 +7,7 @@ image: '/assets/images/blog/2017-12-21-pesquisa-exploratoria-featured.jpg'
 image_credit: 'Unsplash'
 ---
 
-Personas são muito usadas como norte para a produção de produtos e serviços desejados. Ter uma definição de persona ajuda a definir não só a direção do produto mas outros processos ligados a satisfação das pessoas como a comunicação e o suporte. Como usar métodos de pesquisa para descobrir quem são as personas de uma organização?
+Personas são muito usadas como norte para a produção de produtos e serviços desejados. Ter uma definição de persona ajuda a definir não só a direção do produto mas outros processos ligados a satisfação das pessoas como a comunicação e o suporte. Mapear personas, no entanto, é um trabalho que exige pesquisa. Como usar métodos de pesquisa para descobrir quem são as personas de uma organização?
 
 <!--more-->
 
@@ -68,14 +68,32 @@ Há algumas variações desse bate papo, sendo a ideal para mapeamento de person
 
 Dentro dos tópicos costuma haver uma seção de abertura, que serve para deixar o entrevistado confortável, e uma seção de encerramento que serve para colher do entrevistado alguma informação que não foi comentada ao longo da entrevista. Perguntas de abertura não necessariamente estão ligadas ao tema principal, podem ser coisas como:
 
-- Foi difícil chegar até aqui (o local da entrevista)?
+- Foi difícil chegar até aqui? (o local da entrevista)
 - Com o que você trabalha?
 
 E a pergunta de encerramento:
 
 - Há mais alguma coisa que você gostaria de comentar?
 
+Entre esses conjuntos de perguntas são exploradas as perguntas relacionadas ao tema. São as respostas delas que compõem a informação buscada. O pesquisador pode optar por não seguir o roteiro à risca se ver que há espaço para exploração de tópicos com perguntas não pensadas anteriormente. O roteiro, neste caso, é chamado de **semi estruturado**. O roteiro foi estabelecido mas serve como um guia, adaptado conforme o andamento da entrevista. Em contrapartida, há roteiros **estruturados** e **não estruturados**. Um roteiro estruturado é similar a um questionário e o não estruturado a uma conversa informal.
+
+Este tipo de pesquisa costuma ser feita com duas pessoas: um **moderador**, responsável por conversar e interagir com o entrevistado, e um **facilitador**, que anota todas as informações passadas na entrevista, bem como expressões corporais do entrevistado.
+
 ## Geração de personas
+
+Não há consenso sobre técnicas mais eficientes para pesquisa e criação de personas. A forma como é feita varia entre organizações mas o processo segue um racional similar. Com os dados coletados, a equipe os organiza em um mapa que separe traços em comum observados, ou padrões de comportamento. Uma forma de categorizar as informações é gerar o chamado **mapa de empatia**: uma representação da persona com sentimentos, ações, dores (ou necessidades) e ganhos (desejos).
+
+![mapa de empatia]({{ "/assets/images/blog/2017-12-21-pesquisa-exploratoria-image-1.png" | absolute_url }})
+
+Há várias versões desse mapa, a mostrada neste post foi criada pela [Event Model Generation](http://www.eventmodelgeneration.com/){:target="\_blank"}.
+
+O nível de detalhe das personas também varia entre organizações. Um exemplo mais completo é apresentado no site [Keep It Usable](http://www.keepitusable.com){:target="\_blank"}:
+
+![mapa de empatia]({{ "/assets/images/blog/2017-12-21-pesquisa-exploratoria-image-2.png" | absolute_url }})
+
+O princípio é que essa quantidade de traços permite que a organização consiga se relacionar mais facilmente e mais profundamente com a persona. É como um personagem bem desenvolvido em filmes e jogos. Ao longo da história, vamos nos apegando a certos personagens (e até detestando outros). A conexão é emocional. A ideia da persona é despertar esse mesmo sentimento, pois sentir o que as pesssoas sentem dá a organização um profundo entendimento de como melhor servir seu propósito de existência.
+
+## Mapear personas é um trabalho contínuo
 
 Construir personas é um trabalho que exige conhecer pessoas e compreender a sua percepção de mundo. O esforço é recompensado quando uma definição real de persona é encontrada pois ela norteia as decisões da organização. A definição não é constante, no entanto. A organização deve sempre manter suas personas atualizadas, o que significa ocasionalmente sair do escritório e conversar com pessoas. É uma atividade saudável para a organização e há retorno imediato para a organização em forma de conhecimento.
 
