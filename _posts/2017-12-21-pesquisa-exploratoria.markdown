@@ -81,4 +81,4 @@ Construir personas é um trabalho que exige conhecer pessoas e compreender a sua
 
 ## Leitura complementar
 
-A [Envato](http://www.christhelwell.com/live/wp-content/uploads/2015/11/LEAN_SURVEY_CANVAS.pdf){:target="\_blank"} produziu um canvas para pesquisa muito útil para estruturação de pesquisas em profundidade.
+A Envato produziu [um canvas](http://www.christhelwell.com/live/wp-content/uploads/2015/11/LEAN_SURVEY_CANVAS.pdf){:target="\_blank"} para pesquisa muito útil para estruturação de pesquisas em profundidade.
