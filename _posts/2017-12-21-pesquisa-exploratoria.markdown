@@ -77,7 +77,7 @@ E a pergunta de encerramento:
 
 ## Geração de personas
 
-Construir personas é um trabalho que exige ida a campo. O esforço é recompensado quando uma definição real de persona é encontrada pois ela norteia as decisões da organização. A definição não é constante, no entanto. A organização deve sempre manter suas personas atualizadas, o que significa ocasionalmente sair do escritório e conversar com pessoas. É uma atividade saudável para a organização e há retorno imediato para a organização em forma de conhecimento.
+Construir personas é um trabalho que exige conhecer pessoas e compreender a sua percepção de mundo. O esforço é recompensado quando uma definição real de persona é encontrada pois ela norteia as decisões da organização. A definição não é constante, no entanto. A organização deve sempre manter suas personas atualizadas, o que significa ocasionalmente sair do escritório e conversar com pessoas. É uma atividade saudável para a organização e há retorno imediato para a organização em forma de conhecimento.
 
 ## Leitura complementar
 
