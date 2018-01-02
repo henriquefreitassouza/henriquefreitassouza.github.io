@@ -42,10 +42,15 @@ A linguagem de template padrão usada no Jekyll é a [Liquid](http://shopify.git
 Posts em Jekyll são escritos em [Markdown](https://daringfireball.net/projects/markdown/){:target="\_blank"} por padrão. Um post em Jekyll precisa ter o nome de arquivo seguindo a convenção **ano-mês-dia-nome.md** ou **ano-mês-dia-nome.markdown** sendo ano com 4 dígitos e mês e dia com 2 dígitos. A extensão pode ser md ou markdown. Todo post também precisa ter o Front Matter em seu início:
 
 \-\-\-
+
 layout: post
+
 title:  "Hello world!"
+
 date:   2018-01-01 19:47:00
+
 category: geral
+
 \-\-\-
 
 Qualquer coisa entre os dois conjuntos de três traços será compilado no momento de execução.
