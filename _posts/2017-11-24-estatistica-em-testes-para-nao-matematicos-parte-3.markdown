@@ -2,7 +2,7 @@
 layout: post
 title:  'Estatística em testes para não matemáticos - Probabilidades'
 date:   2017-11-24 11:21:00
-category: Growth
+categories: [Matemática]
 image: '/assets/images/blog/2017-11-24-estatistica-em-testes-para-nao-matematicos-part-3-featured.jpg'
 image_credit: 'Henrique Freitas Souza'
 ---

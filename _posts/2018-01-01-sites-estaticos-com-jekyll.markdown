@@ -2,7 +2,7 @@
 layout: post
 title:  'Sites estáticos com Jekyll e GitHub Pages'
 date:   2018-01-01 19:47:00
-category: Growth
+categories: [Desenvolvimento]
 image: '/assets/images/blog/2018-01-01-sites-estaticos-com-jekyll-featured.jpg'
 image_credit: 'Henrique Freitas Souza, Jekyll'
 ---

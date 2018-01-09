@@ -2,7 +2,7 @@
 layout: post
 title:  'SEO + CRO: otimização de ponta a ponta'
 date:   2017-12-03 08:34:00
-category: Growth
+categories: [Marketing, Performance]
 image: '/assets/images/blog/2017-12-03-seo-e-cro-featured.jpg'
 image_credit: 'Four Dots'
 ---

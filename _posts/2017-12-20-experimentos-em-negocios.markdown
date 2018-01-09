@@ -2,7 +2,7 @@
 layout: post
 title:  'Experimentos científicos no mundo dos negócios'
 date:   2017-12-20 09:51:00
-category: Growth
+categories: [Marketing, Data Science]
 image: '/assets/images/blog/2017-12-20-experimentos-em-negocios-featured.jpg'
 image_credit: 'Unsplash'
 ---

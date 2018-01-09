@@ -2,7 +2,7 @@
 layout: post
 title:  'Uma introdução ao Google Apps Script'
 date:   2017-11-20 15:05:00
-category: Growth
+categories: [Marketing, Desenvolvimento]
 image: '/assets/images/blog/2017-11-20-uma-introducao-ao-google-apps-script-featured.jpg'
 image_credit: 'Google'
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  'Pesquisas exploratórias para descoberta de personas'
 date:   2017-12-21 21:04:00
-category: Growth
+categories: [Marketing, Design]
 image: '/assets/images/blog/2017-12-21-pesquisa-exploratoria-featured.jpg'
 image_credit: 'Unsplash'
 ---

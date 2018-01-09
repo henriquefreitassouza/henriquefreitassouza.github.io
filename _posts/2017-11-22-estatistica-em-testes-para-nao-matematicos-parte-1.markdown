@@ -2,7 +2,7 @@
 layout: post
 title:  'Estatística em testes para não matemáticos - A importância de saber estatística'
 date:   2017-11-22 10:35:00
-category: Growth
+categories: [Matemática]
 image: '/assets/images/blog/2017-11-22-estatistica-em-testes-para-nao-matematicos-part-1-featured.jpg'
 image_credit: 'Evan Miller'
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  'UX Design: por trás da projeção de experiências'
 date:   2017-12-01 09:16:00
-category: Growth
+categories: [Design]
 image: '/assets/images/blog/2017-12-01-ux-design-overview-featured.jpg'
 image_credit: 'Nicole Saidy'
 ---

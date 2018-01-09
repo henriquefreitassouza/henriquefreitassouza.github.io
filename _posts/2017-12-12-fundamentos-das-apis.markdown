@@ -2,7 +2,7 @@
 layout: post
 title:  'Os fundamentos das APIs'
 date:   2017-12-12 21:34:00
-category: Growth
+categories: [Desenvolvimento]
 image: '/assets/images/blog/2017-12-12-fundamentos-das-apis-featured.png'
 image_credit: 'Pixabay'
 ---

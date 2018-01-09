@@ -2,7 +2,7 @@
 layout: post
 title:  'Estatística em testes para não matemáticos - Setup de testes e configuração de calculadoras'
 date:   2017-11-29 09:12:00
-category: Growth
+categories: [Matemática]
 image: '/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematicos-part-6-featured.jpg'
 image_credit: 'Optimizely, VWO, Oracle, Google, Adobe, Unbounce'
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  'Estatística em testes para não matemáticos - P-valor, alfa, beta e tamanho do efeito'
 date:   2017-11-27 09:47:00
-category: Growth
+categories: [Matemática]
 image: '/assets/images/blog/2017-11-27-estatistica-em-testes-para-nao-matematicos-part-5-featured.jpg'
 image_credit: 'Henrique Freitas Souza'
 ---

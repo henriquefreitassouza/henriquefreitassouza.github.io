@@ -2,7 +2,7 @@
 layout: post
 title:  'Lidando com diferentes números de sessões e usuários em ferramentas de teste e ferramentas de analytics'
 date:   2017-11-30 08:39:00
-category: Growth
+categories: [Marketing, Desenvolvimento]
 image: '/assets/images/blog/2017-11-30-dados-de-testes-no-analytics-featured.jpg'
 image_credit: 'Henrique Freitas Souza'
 ---

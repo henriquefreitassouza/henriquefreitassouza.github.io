@@ -2,7 +2,7 @@
 layout: post
 title:  'Growth Value'
 date:   2017-11-17 20:36:00
-category: Growth
+categories: [Marketing]
 image: false
 ---
 

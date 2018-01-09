@@ -2,7 +2,7 @@
 layout: post
 title:  'A parte de otimização em CRO'
 date:   2017-11-21 06:42:00
-category: Growth
+categories: [Marketing, Performance]
 image: '/assets/images/blog/2017-11-21-a-parte-de-otimizacao-em-cro-featured.jpg'
 image_credit: 'Unsplash'
 ---

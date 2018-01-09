@@ -2,7 +2,7 @@
 layout: post
 title:  'Geração de relatórios automatizados por APIs'
 date:   2017-11-19 13:13:00
-category: Growth
+categories: [Marketing, Desenvolvimento]
 image: '/assets/images/blog/2017-11-19-geracao-de-relatorios-automatizados-por-apis-featured.jpg'
 image_credit: 'Unsplash'
 ---

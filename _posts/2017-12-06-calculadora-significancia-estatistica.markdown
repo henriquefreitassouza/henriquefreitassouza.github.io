@@ -2,7 +2,7 @@
 layout: post
 title:  'Calculadora para testes com amostras online'
 date:   2017-12-06 11:36:00
-category: Growth
+categories: [Marketing, Produto, Matemática]
 image: '/assets/images/blog/2017-12-06-calculadora-significancia-estatistica-featured.jpg'
 image_credit: 'Henrique Freitas Souza'
 ---
