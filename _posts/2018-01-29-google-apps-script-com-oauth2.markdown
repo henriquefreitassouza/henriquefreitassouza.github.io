@@ -217,7 +217,6 @@ O código foi montado desta forma pensando em reúso. É possível fazer diferen
 Esse número de chaves tem a ver com a forma como objeto javascript de retorno está estruturado:
 
 {% highlight javascript %}
-
 {
   {
     keys: {
@@ -238,10 +237,9 @@ Esse número de chaves tem a ver com a forma como objeto javascript de retorno e
     position: 1.2
   }
 }
-
 {% endhighlight %}
 
-a seção keys contém as dimensões e as métricas estão nas demais propriedades do objeto. O parâmetro que informa o número de chaves basicamente informa quantas dimensões o arquivo de retorno tem para que a função de imprimir os dados na tela monte a tabela corretamente. O último parâmetro informa a partir de qual coluna o relatório deve ser gerado.
+A seção keys contém as dimensões e as métricas estão nas demais propriedades do objeto. O parâmetro que informa o número de chaves basicamente informa quantas dimensões o arquivo de retorno tem para que a função de imprimir os dados na tela monte a tabela corretamente. O último parâmetro informa a partir de qual coluna o relatório deve ser gerado.
 
 A função getSearchConsoleData consulta o objeto OAuth2 pela função getSearvice e verifica se o usuário está autorizado a puxar os daos do Search Console. Caso esteja, prepara uma chamada a API usando um método estático do Google Apps Script: UrlFetchApp.fetch(url, options). Esse método retorna um objeto HTTPResponse contendo os dados e cabeçalhos de resposta. A função showDialog, usada caso a chamada a API não tenha dado certo, será criada em outro arquivo e dá instruções para que o usuário se autentique caso não esteja autenticado.
 
