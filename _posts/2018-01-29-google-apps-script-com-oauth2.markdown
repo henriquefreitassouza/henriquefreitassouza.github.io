@@ -34,7 +34,7 @@ De forma geral, um fluxo OAuth2 funciona da seguinte forma:
 - O usuário requisita dados protegidos e passa seu token de acesso
 - Se o token e o usuário são reconhecidos, os dados são concedidos
 
-Este fluxo se parece com o da imagem a seguir, criada pela [Digital Ocean](https://www.digitalocean.com/){:target="\_blank"}.
+Este fluxo se parece com o da imagem a seguir, criada pela [Digital Ocean](https://www.digitalocean.com/){:target="\_blank"}:
 
 ![Google Apps Script]({{ "/assets/images/blog/2018-01-29-google-apps-script-com-oauth2-featured.jpeg" | absolute_url }})
 
@@ -134,7 +134,7 @@ function authCallback(request) {
 }
 {% endhighlight %}
 
-Repare que as variáveis criadas no arquivo de variáveis são reconhecidas neste novo arquivo. A função getService é a responsável por criar e retornar um objeto OAuth2 com escopo e autenticação definidos. Vários métoods são encadeados para obter o resultado final:
+Repare que as variáveis criadas no arquivo de variáveis são reconhecidas neste novo arquivo. A função getService é a responsável por criar e retornar um objeto OAuth2 com escopo e autenticação definidos. Vários métodos são encadeados para obter o resultado final:
 
 - setAuthorizationBaseUrl monta a URL base de autenticação. Essa URL é composta por informações como o CLIENT ID e o CLIENT SECRET portanto ela muda para cada usuário. A porção base, no entanto, é especificada neste método.
 - setTokenUrl é a URL que retorna tokens de autenticação para usuários autorizados.
@@ -224,7 +224,7 @@ Esse número de chaves tem a ver com a forma como objeto javascript de retorno e
 {
   {
     keys: {
-      'query': 'palavra_chave'
+      query: 'palavra_chave'
     },
     clicks: 1000,
     impressions: 1000,
@@ -233,7 +233,7 @@ Esse número de chaves tem a ver com a forma como objeto javascript de retorno e
   },
   {
     keys: {
-      'query': 'outra_palavra'
+      query: 'outra_palavra'
     },
     clicks: 2000,
     impressions: 3000,
