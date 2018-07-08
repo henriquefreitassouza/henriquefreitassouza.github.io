@@ -19,13 +19,10 @@ Não sei você, caro leitor, mas aprendi com minha familia a fazer as tais compr
 
 O processo de ir às compras é similar ao que ocorre no ambiente digital. Dando nome aos bois:
 
-**Carrinho de supermercado**: A representação das nossas queridas APIs.
-
-**Supermercado**: Um banco de dados cheio de coisas que queremos comprar.
-
-**Caixa**: Um guardião que garante que temos permissão para comprar o que queremos comprar.
-
-**Produtos**: Dados. Muitos dados!!! (ou não).
+* **Carrinho de supermercado**: A representação das nossas queridas APIs.
+* **Supermercado**: Um banco de dados cheio de coisas que queremos comprar.
+* **Caixa**: Um guardião que garante que temos permissão para comprar o que queremos comprar.
+* **Produtos**: Dados. Muitos dados!!! (ou não).
 
 E a jornada de compras digital fica assim:
 
@@ -41,6 +38,12 @@ Carrinhos de compras possuem uma capacidade em relação ao tanto de objetos que
 4. APIs são bem objetivas: olham o que está na listinha, passam nos corredores certos pra pegar e tchau! Sem rodeios ~~(e sem guloseimas que possam diminuir minha expectativa de vida, pra bem ou pra mal)~~.
 
 Fazer compras com a ajuda da API é rápido, eficiente e o custo do frete é baixíssimo (eletricidade gasta no processo). O dono do supermercado pode parecer um tanto ranzinza mas ele faz isso para garantir que os produtos de sua loja sejam bem usados por quem pode usá-los.
+
+## O estoque do supermercado
+
+Para que possamos comprar em um supermercado, é necessário que haja produtos em estoque. Este estoque é, portanto, abastecido de alguma forma para que os produtuos estejam disponíveis nas gôndolas. Em nosso hipotético supermercado, o comerciante geralmente compra produtos de clientes para fazer o abastecimento desde que a seguinte condição seja aceita: **apenas o cliente que vendeu o produto para o lojista ou quem o cliente permitir pode comprá-lo novamente**. Isso significa que se eu plantar tomates e vender para o supermercado, darei instruções para o lojista para que apenas eu e pessoas de minha confiança possam comprar os tomates fresquinhos. O comerciante e a administração do supermercado são responsáveis pela gestão de todo o estoque mas eu tenho participação na gestão de tudo o que eu vendo para o supermercado. Posso pedir para trocar os tomates por laranjas e em alguns supermercados posso até pegar de volta o que eu deixei. Nosso carrinho API faz o meio de campo pra tudo isso.
+
+Quando precisar fazer compras no mundo digital, já sabe: APIs são uma ótima opção!
 
 ## Explicações cotidianas to the rescue
 
