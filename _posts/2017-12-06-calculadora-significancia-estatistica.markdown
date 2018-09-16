@@ -49,13 +49,13 @@ Essa tabela de z-scores é usada apenas para calcular o tamanho da amostra com u
 
 ![tamanho da amostra por variação, total e estimativa de dias para o teste]({{ "/assets/images/blog/2017-12-06-calculadora-significancia-estatistica-image-3.jpg" | absolute_url }})
 
-O tamanho de amostra é calculado usando a equação **numerador * (σ / (p * efeito))**, onde numerador é **2 * (α + β)²**, p é a taxa de conversão atual e efeito é o efeito mínimo detectável, ou o tamanho da mudança que o pesquisador deseja ver entre os grupos de estudo de controle e tratamentos. Esse numerador é definido na [equação de Lehr](http://www.vanbelle.org/chapters/webchapter2.pdf){:target="\_blank"}, uma equação para cálculo de tamanho de amostra, e a larga maioria das calculadoras e ferramenta assume o número 16. Para que numerador seja 16, α precisa ser 0,05 e β precisa ser 0,2. Em outras palavras, significância estatística deve ser 95% e poder estatístico deve ser 80%. O valor exato que a equação do numerador produz com esses parâmetros é 15,68. O número é, então, arrendondado para 16. Esta calculadora calcula o numerador sem usar a regra dos 16, como é conhecida, o que faz com que o tamanho da amostra discorde das demais calculadoras e ferramentas.
+O tamanho de amostra é calculado usando a equação **numerador * (σ / (p * efeito))**, onde numerador é **2 * (α + β)²**, p é a taxa de conversão atual e efeito é o efeito mínimo detectável, ou o tamanho da mudança que o pesquisador deseja ver entre os grupos de estudo de controle e tratamentos. Esse numerador é definido na [equação de Lehr](http://www.vanbelle.org/chapters/webchapter2.pdf){:target="_blank"}, uma equação para cálculo de tamanho de amostra, e a larga maioria das calculadoras e ferramenta assume o número 16. Para que numerador seja 16, α precisa ser 0,05 e β precisa ser 0,2. Em outras palavras, significância estatística deve ser 95% e poder estatístico deve ser 80%. O valor exato que a equação do numerador produz com esses parâmetros é 15,68. O número é, então, arrendondado para 16. Esta calculadora calcula o numerador sem usar a regra dos 16, como é conhecida, o que faz com que o tamanho da amostra discorde das demais calculadoras e ferramentas.
 
 Ao lado do tamanho da amostra por variação é mostrado o tamanho da amostra usada no teste. O número varia conforme o tráfego que será considerado para o teste.
 
 O tamanho do grupo de estudo é a multiplicação do tamanho da amostra pelo número de variações. Se não for usado 100% do tráfego para o teste é usada a equação **((((1 - tráfego) * amostra) + (amostra * tráfego)) * variações) - 1**, onde tráfego é o percentual do tráfego do site a participar do teste, amostra é o tamanho da amostra por variação e variações é o número de variações do teste (controle + tratamentos). A subtração de 1 no final aproxima o tamanho do tráfego total com a soma de cada variação. O objetivo é manter o tamanho do tráfego necessário para o teste intácto, já que ele independe do tanto de tráfego que será usado no teste.
 
-Estimativa de dias para o teste é a divisão do tamanho total do grupo de estudo pelo número médio de visitantes, considerando o tráfego que será usado para o teste. Note que essa estimativa pode diferir bastante do número de dias estimado em outras calculadoras. A [calculadora de duração estimada da VWO](https://vwo.com/ab-split-test-duration/){:target="\_blank"} por exemplo, estima que um teste dure 37 dias se usados estes parâmetros:
+Estimativa de dias para o teste é a divisão do tamanho total do grupo de estudo pelo número médio de visitantes, considerando o tráfego que será usado para o teste. Note que essa estimativa pode diferir bastante do número de dias estimado em outras calculadoras. A [calculadora de duração estimada da VWO](https://vwo.com/ab-split-test-duration/){:target="_blank"} por exemplo, estima que um teste dure 37 dias se usados estes parâmetros:
 
 - Estimated existing conversion rate: 30%
 - Minimum improvement in conversion rate you want to detect: 10%
@@ -92,7 +92,7 @@ Por fim, a calculadora informa se é possível parar o teste ou não. Este cálc
 
 Se o teste é multivariável, a significância estatística é verificada após a correção de Bonferroni.
 
-[Faça uma cópia da calculadora](https://docs.google.com/spreadsheets/d/1VkdOYPxlTluoPJcIwP-JQlMC8SJ9tg8OkAX4TkWIerg/edit#gid=0){:target="\_blank"} e divirta-se!
+[Faça uma cópia da calculadora](https://docs.google.com/spreadsheets/d/1VkdOYPxlTluoPJcIwP-JQlMC8SJ9tg8OkAX4TkWIerg/edit#gid=0){:target="_blank"} e divirta-se!
 
 ## Referências
 
@@ -100,11 +100,11 @@ Há várias calculadoras online para cálculo de tamanho de amostra, significân
 
 As calculadoras que usei de referência foram:
 
-- [Calculadora de duração de testes da VWO - web](https://vwo.com/ab-split-test-duration/){:target="\_blank"}
-- [Calculadora de significância estatística da VWO](https://vwo.com/blog/ab-testing-significance-calculator-spreadsheet-in-excel/){:target="\_blank"}
-- [Calculadora de duração de testes da VWO - Excel](https://vwo.com/blog/ab-test-duration-calculator/){:target="\_blank"}
-- [Calculadora de significância estatística do Rik Higham](https://medium.com/@rikhigham/a-free-excel-p-value-significance-calculator-ebaae9dc8c68){:target="\_blank"}
-- [Calculadora de tamanho de amostra do Evan Miller](https://www.evanmiller.org/ab-testing/sample-size.html){:target="\_blank"}
+- [Calculadora de duração de testes da VWO - web](https://vwo.com/ab-split-test-duration/){:target="_blank"}
+- [Calculadora de significância estatística da VWO](https://vwo.com/blog/ab-testing-significance-calculator-spreadsheet-in-excel/){:target="_blank"}
+- [Calculadora de duração de testes da VWO - Excel](https://vwo.com/blog/ab-test-duration-calculator/){:target="_blank"}
+- [Calculadora de significância estatística do Rik Higham](https://medium.com/@rikhigham/a-free-excel-p-value-significance-calculator-ebaae9dc8c68){:target="_blank"}
+- [Calculadora de tamanho de amostra do Evan Miller](https://www.evanmiller.org/ab-testing/sample-size.html){:target="_blank"}
 
 Caso precise refrescar a memória quanto aos conceitos matemáticos, leia minha série de posts sobre o assunto:
 

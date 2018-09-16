@@ -51,7 +51,7 @@ O tamanho da amostra depende de quatro fatores:
 - Beta
 - A taxa de conversão atual (ou a taxa de conversão da hipótese nula)
 
-Algumas calculadoras assumem pelo menos o beta como 0,2, sem possibilidade para mudar a taxa de falsos negativos. Ao colocar esses valores em uma calculadora ela pode mostrar a quantidade de indivíduos em uma amostra que são necessários em cada variação do grupo de estudo ou a quantidade total de participantes necessários no teste. Vou usar a [calculadora do Evan Miller](https://www.evanmiller.org/ab-testing/sample-size.html){:target="\_blank"} por exemplo, uma das mais conhecidas:
+Algumas calculadoras assumem pelo menos o beta como 0,2, sem possibilidade para mudar a taxa de falsos negativos. Ao colocar esses valores em uma calculadora ela pode mostrar a quantidade de indivíduos em uma amostra que são necessários em cada variação do grupo de estudo ou a quantidade total de participantes necessários no teste. Vou usar a [calculadora do Evan Miller](https://www.evanmiller.org/ab-testing/sample-size.html){:target="_blank"} por exemplo, uma das mais conhecidas:
 
 ![calculadora de tamanho de amostra do Evan Miller]({{ "/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematicos-part-6-image-1.jpg" | absolute_url }})
 
@@ -62,11 +62,11 @@ Ela diz qual a quantidade de indivíduos cada variação do teste precisa ter. O
 - Statistical power (1 - beta): é a probabilidade de corretamente rejeitar a hipótese nula quando a alternativa é verdadeira. Beta é a probabilidade de falso negativo e 1 - beta é o poder estatístico.
 - Significance level (alfa): é a probabilidade de encontrar um falso positivo. Alfa e nível de significância são sinônimos. No exemplo, alfa está configurado para 5% (ou 0,05).
 
-Outra calculadora que [aparece nos primeiros resultados de uma busca online](https://www.google.com.br/search?ei=tpweWq-mCIKYwAS6yrlg&q=ab+test+sample+size+calculator&oq=ab+test+sample+size&gs_l=psy-ab.3.0.0j0i67k1j0.621269.622274.0.623710.11.7.0.1.1.0.220.799.0j2j2.4.0....0...1c.1.64.psy-ab..7.4.586...0i22i30k1.0.qS3_ax37bpo){:target="\_blank"} é a do Optimizely.
+Outra calculadora que [aparece nos primeiros resultados de uma busca online](https://www.google.com.br/search?ei=tpweWq-mCIKYwAS6yrlg&q=ab+test+sample+size+calculator&oq=ab+test+sample+size&gs_l=psy-ab.3.0.0j0i67k1j0.621269.622274.0.623710.11.7.0.1.1.0.220.799.0j2j2.4.0....0...1c.1.64.psy-ab..7.4.586...0i22i30k1.0.qS3_ax37bpo){:target="_blank"} é a do Optimizely.
 
 ![calculadora de tamanho de amostra da Optimizely]({{ "/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematicos-part-6-image-2.jpg" | absolute_url }})
 
-Ela é mais simples se comparada à calculadora anterior e assume um poder estatístico de 100% (ou 1) de acordo com a documentação, o que explica o tamanho de amostra ser maior do que a calculada usando a calculadora do [Evan Miller](https://www.evanmiller.org/){:target="\_blank"} usando os mesmos parâmetros. Quanto maior o poder estatístico (1 - beta), menor é o beta (menor a margem de falsos negativos) e maior a amostra precisa ser.
+Ela é mais simples se comparada à calculadora anterior e assume um poder estatístico de 100% (ou 1) de acordo com a documentação, o que explica o tamanho de amostra ser maior do que a calculada usando a calculadora do [Evan Miller](https://www.evanmiller.org/){:target="_blank"} usando os mesmos parâmetros. Quanto maior o poder estatístico (1 - beta), menor é o beta (menor a margem de falsos negativos) e maior a amostra precisa ser.
 
 Calculadoras podem diferir também entre cálculos com uma e duas caudas. Algumas calculadoras assumem que o pesquisador queira saber apenas de melhoria da taxa de conversão na hipótese alternativa e não de pioras. Essencialmente o que muda é a distribuição de alfa pelas extremidades da distribuição da hipótese nula. Como p-valor precisa ser ainda menor considerando duas caudas, o tamanho da amostra precisa ser maior. Recomendo sempre a leitura da documentação da calculadora, caso o projetista for usar uma calculadora online. Outra opção é o projetista usar planilhas excel para calcular tamanho da amostra.
 
@@ -94,7 +94,7 @@ De alguma forma isso pode estar ligado ao problema de cross browser e múltiplos
 
 ### Múltiplos experimentos
 
-Testes podem ser encadeados. Em empresas onde são feitos muitos testes, um cuidado a se tomar é a interferência que experimentos possuem entre sí. Testes encadeados geralmente são feitos de forma **mutuamente exclusíva**, o que significa que os participantes do experimento 1 não serão expostos ao experimento 2 e vice e versa. Outra forma é executar testes de forma **sequencial**, onde um teste termina para que outro comece. Testes mutuamente exclusivos e sequenciais reduzem o possível ruído causado pelas induções de tratamento feitas pelo pesquisador. Um [post na documentação do Optimizely](https://help.optimizely.com/Build_Campaigns_and_Experiments/Mutually_exclusive_experiments_in_Optimizely_Classic){:target="\_blank"} explica bem a questão usando um exemplo de um teste na home de um site e outro na busca:
+Testes podem ser encadeados. Em empresas onde são feitos muitos testes, um cuidado a se tomar é a interferência que experimentos possuem entre sí. Testes encadeados geralmente são feitos de forma **mutuamente exclusíva**, o que significa que os participantes do experimento 1 não serão expostos ao experimento 2 e vice e versa. Outra forma é executar testes de forma **sequencial**, onde um teste termina para que outro comece. Testes mutuamente exclusivos e sequenciais reduzem o possível ruído causado pelas induções de tratamento feitas pelo pesquisador. Um [post na documentação do Optimizely](https://help.optimizely.com/Build_Campaigns_and_Experiments/Mutually_exclusive_experiments_in_Optimizely_Classic){:target="_blank"} explica bem a questão usando um exemplo de um teste na home de um site e outro na busca:
 
 ![múltiplos experimentos]({{ "/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematicos-part-6-image-4.png" | absolute_url }})
 
@@ -108,9 +108,9 @@ Pelo fato de visitantes de sites e apps serem basicamente anônimos, o cookie é
 - Não são cross browser ou multi plataforma
 - Possuem data de validade
 
-Em suma, sem cookies a garantia de qualidade da amostra é zero. Com cookies a garantia de qualidade da amostra é algo acima de zero. A data de expiração de cookies varia conforme a ferramenta sendo usada. A documentação do [VWO](https://vwo.com/knowledge/what-are-the-cookies-stored-by-vwo/){:target="\_blank"} por exemplo, diz que o tempo de vida dos cookies que a ferramenta instala é de 100 dias. Geralmente isso pode ser modificado pelo projetista de testes conforme a necessidade e não pode ser modificado após o início de um teste.
+Em suma, sem cookies a garantia de qualidade da amostra é zero. Com cookies a garantia de qualidade da amostra é algo acima de zero. A data de expiração de cookies varia conforme a ferramenta sendo usada. A documentação do [VWO](https://vwo.com/knowledge/what-are-the-cookies-stored-by-vwo/){:target="_blank"} por exemplo, diz que o tempo de vida dos cookies que a ferramenta instala é de 100 dias. Geralmente isso pode ser modificado pelo projetista de testes conforme a necessidade e não pode ser modificado após o início de um teste.
 
-Dada a instabilidade de cookies para identificar participantes de teste, não é possível afirmar que amostras online estão livres de ruídos, por mais cuidado que o projetista de testes tenha tido. Quanto maior o tempo do teste, mais ruído vai sendo acrescentado às amostras. Um teste que roda por tempo demais, por exemplo, pode ter um percentual razoavelmente grande da amostra com ruídos, a ponto de invalidar os achados do teste. É comum assumir que [testes que rodam por mais de 30 dias já tenham uma quantidade considerável de ruídos](https://conversionxl.com/blog/sample-pollution/){:target="\_blank"} no grupo de estudo.
+Dada a instabilidade de cookies para identificar participantes de teste, não é possível afirmar que amostras online estão livres de ruídos, por mais cuidado que o projetista de testes tenha tido. Quanto maior o tempo do teste, mais ruído vai sendo acrescentado às amostras. Um teste que roda por tempo demais, por exemplo, pode ter um percentual razoavelmente grande da amostra com ruídos, a ponto de invalidar os achados do teste. É comum assumir que [testes que rodam por mais de 30 dias já tenham uma quantidade considerável de ruídos](https://conversionxl.com/blog/sample-pollution/){:target="_blank"} no grupo de estudo.
 
 ### Sazonalidade e características temporais
 
@@ -120,13 +120,13 @@ Além da sazonalidade, o grupo de estudo pode se comportar de maneira diferente 
 
 ### Cross browser e múltiplos dispositivos
 
-A maior das dificuldades quando se trata de testes é identificar a experiência entre vários browsers e dispositivos. Mesmo dentro de um browser, o visitante pode optar por usar o modo de navegação anônima e depois voltar em uma sessão normal, contabilizando duas vezes a mesmsa pessoa. Diferentes browsers serão contabilizados como diferentes usuários e o mesmo vale para diferentes dispositivos, mesmo que pertençam a mesma pessoa. Há algumas formas para diminuir o ruído gerado mas não há formas conhecidas de eliminar completamente o problema, como testar com base em [regiões geográficas](https://www.goinflow.com/ab-testing-cross-device-world/){:target="\_blank"} ou [usar o Google Analytics Universal com User IDs](https://conversionxl.com/blog/sample-pollution/){:target="\_blank"}, o que requer um sistema de login implementado e uma view específica no Google Analytics para contabilizar sessões entre múltiplos dispositivos.
+A maior das dificuldades quando se trata de testes é identificar a experiência entre vários browsers e dispositivos. Mesmo dentro de um browser, o visitante pode optar por usar o modo de navegação anônima e depois voltar em uma sessão normal, contabilizando duas vezes a mesmsa pessoa. Diferentes browsers serão contabilizados como diferentes usuários e o mesmo vale para diferentes dispositivos, mesmo que pertençam a mesma pessoa. Há algumas formas para diminuir o ruído gerado mas não há formas conhecidas de eliminar completamente o problema, como testar com base em [regiões geográficas](https://www.goinflow.com/ab-testing-cross-device-world/){:target="_blank"} ou [usar o Google Analytics Universal com User IDs](https://conversionxl.com/blog/sample-pollution/){:target="_blank"}, o que requer um sistema de login implementado e uma view específica no Google Analytics para contabilizar sessões entre múltiplos dispositivos.
 
 Amostras sempre terão algum ruído, o que dá pra fazer é colocar alguma das medidas de segurança citadas para tentar diminuir esse ruído.
 
 ## Significância estatística e tamanho da amostra
 
-Além de calcular tamanho de amostra e duração do teste, há calculadoras de significância estatística. Significância estatística é conhecida também como o complemento de alfa, ou 1 - alfa. Esse número é muito mais comum de ser usado por calculadoras ou ferramentas de teste pois é de mais fácil compreensão por quem não tem uma base estatística e precisa executar testes. As calculadoras de significância estatística recebem como entrada o nível de significância estatística, o número de visitantes e de eventos de conversão observados em cada variação. A calculadora do [AB Test Guide](https://abtestguide.com/calc/){:target="\_blank"} aceita como entrada também a opção de escolha entre testes com uma cauda e duas caudas.
+Além de calcular tamanho de amostra e duração do teste, há calculadoras de significância estatística. Significância estatística é conhecida também como o complemento de alfa, ou 1 - alfa. Esse número é muito mais comum de ser usado por calculadoras ou ferramentas de teste pois é de mais fácil compreensão por quem não tem uma base estatística e precisa executar testes. As calculadoras de significância estatística recebem como entrada o nível de significância estatística, o número de visitantes e de eventos de conversão observados em cada variação. A calculadora do [AB Test Guide](https://abtestguide.com/calc/){:target="_blank"} aceita como entrada também a opção de escolha entre testes com uma cauda e duas caudas.
 
 ![calculadora de significância estatística da AB Test Guide]({{ "/assets/images/blog/2017-11-29-estatistica-em-testes-para-nao-matematicos-part-6-image-5.jpg" | absolute_url }})
 
@@ -144,6 +144,6 @@ A proposta de valor oferecida pela maioria das ferramentas mais conhecidas é qu
 
 ## Leitura complementar
 
-Dois posts da ConversionXL que recomendo são a [execução de múltiplos testes simultaneamente](https://conversionxl.com/blog/can-you-run-multiple-ab-tests-at-the-same-time/){:target="\_blank"} e os motivos que levam a [poluição de amostras](https://conversionxl.com/blog/sample-pollution/){:target="\_blank"}.
+Dois posts da ConversionXL que recomendo são a [execução de múltiplos testes simultaneamente](https://conversionxl.com/blog/can-you-run-multiple-ab-tests-at-the-same-time/){:target="_blank"} e os motivos que levam a [poluição de amostras](https://conversionxl.com/blog/sample-pollution/){:target="_blank"}.
 
 Bora otimizar conversões!

@@ -38,7 +38,7 @@ O JSON é um formato útil por ser padronizado e entendido por diferentes lingua
 
 ## Um exemplo prático de funcionamento de APIs
 
-Imagine que você queira saber as avaliações dadas pela crítica ao filme Batman: O Cavaleiro Das Trevas Retorna. Uma base de dados como a [OMDB](http://www.omdbapi.com/){:target="\_blank"} possui as informações que você busca e disponibiliza uma API para fazer a consulta. Basta acessar o endpoint http://www.omdbapi.com/?apikey=<strong>suaapi</strong>&t=Batman+The+Dark+Knight e você terá uma informação como esta:
+Imagine que você queira saber as avaliações dadas pela crítica ao filme Batman: O Cavaleiro Das Trevas Retorna. Uma base de dados como a [OMDB](http://www.omdbapi.com/){:target="_blank"} possui as informações que você busca e disponibiliza uma API para fazer a consulta. Basta acessar o endpoint http://www.omdbapi.com/?apikey=<strong>suaapi</strong>&t=Batman+The+Dark+Knight e você terá uma informação como esta:
 
 {% highlight JSON %}
 {
@@ -60,7 +60,7 @@ A porção do endereço com o termo "suaapi" se refere a autenticação, que nad
 
 ## De volta ao projeto de automação
 
-As ferramentas com as quais trabalhei para extrair as informações que precisava possuem APIs com vasta documentação e diversos endpoints para puxar dados diferentes. Uma vez que capturei os objetos JSON o trabalho foi alimentar a fonte normalizada, isto é, o local que recebeu e tratou os dados vindos dos sistemas. Esse local, que serviria de fonte para o painel de relatórios, foi uma planilha criada no Google Sheets. O Google Sheets foi escolhido por possuir uma ferramenta de criação de scripts chamada [Google Apps Script](https://www.google.com/script/){:target="\_blank"}, usada para estender as capacidades padrão das ferramentas do Google. Uma de suas maiores vantagens, no entanto, está em possuir uma forma de se comunicar com a internet e fazer a leitura de arquivos externos. Nesse caso, precisava fazer a leitura dos objetos JSON e colocá-los em uma planilha então foi perfeito.
+As ferramentas com as quais trabalhei para extrair as informações que precisava possuem APIs com vasta documentação e diversos endpoints para puxar dados diferentes. Uma vez que capturei os objetos JSON o trabalho foi alimentar a fonte normalizada, isto é, o local que recebeu e tratou os dados vindos dos sistemas. Esse local, que serviria de fonte para o painel de relatórios, foi uma planilha criada no Google Sheets. O Google Sheets foi escolhido por possuir uma ferramenta de criação de scripts chamada [Google Apps Script](https://www.google.com/script/){:target="_blank"}, usada para estender as capacidades padrão das ferramentas do Google. Uma de suas maiores vantagens, no entanto, está em possuir uma forma de se comunicar com a internet e fazer a leitura de arquivos externos. Nesse caso, precisava fazer a leitura dos objetos JSON e colocá-los em uma planilha então foi perfeito.
 
 Com o editor de scripts aberto, algumas poucas linhas de código já me trouxeram os objetos JSON que precisava:
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'APIs e Carrinhos de Supermercado'
+title:  'APIs e carrinhos de supermercado'
 date:   2018-07-04 21:20:00
 categories: [Desenvolvimento]
 image: '/assets/images/blog/2018-06-04-apis-e-carrinhos-de-supermercado-featured.jpg'

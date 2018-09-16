@@ -35,7 +35,7 @@ Além das medidas de tendência central existem as medidas de distribuição de 
 - Variância: a variabilidade média dos dados.
 - Desvio padrão: a raiz quadrada da variância, usada em conjunto com a média para estimar a variabilidade média dos dados.
 
-A melhor explicação que encontrei para a existência dessas duas medidas está [aqui](https://stats.stackexchange.com/questions/35123/whats-the-difference-between-variance-and-standard-deviation){:target="\_blank"}. A comunidade diz que a variância é melhor para explicar dispersão em termos matemáticos enquanto o desvio padrão é mais usado para determinar a dispersão dos dados em relação a média, já que ambos os números estão na mesma escala. É como se o desvio padrão fosse uma “normalização” da variância.
+A melhor explicação que encontrei para a existência dessas duas medidas está [aqui](https://stats.stackexchange.com/questions/35123/whats-the-difference-between-variance-and-standard-deviation){:target="_blank"}. A comunidade diz que a variância é melhor para explicar dispersão em termos matemáticos enquanto o desvio padrão é mais usado para determinar a dispersão dos dados em relação a média, já que ambos os números estão na mesma escala. É como se o desvio padrão fosse uma “normalização” da variância.
 
 ## A classificação das probabilidades de sucesso
 

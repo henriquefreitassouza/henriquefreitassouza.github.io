@@ -13,7 +13,7 @@ Design de experiências é aquele tipo de coisa que acredito que todo mundo deve
 
 Se você leu os posts anteriores deste blog, viu que os assuntos estão muito ligados a integrações, análise de dados, gestão de experimentos, otimização de conversões e ciência de dados. O que então um post sobre design tem a ver com os assuntos anteriores? Simples. Tudo... Por mais técnicas que sejam as áreas ligadas a análise de dados, no final do dia servimos a um propósito maior de entregar algo de valor para alguém. Design é uma forma de pensar que nos conecta a este propósito. Irei explicar o que eu entendo ser um designer e como ferramentas usadas por UX designers têm utilidade em ciência de dados.
 
-A palavra design possui relação com projetar. Projetar está ligado a tirar do papel, que está ligado com inovação. [A melhor definição que encontrei para inovação](http://assets.perestroika.com.br.s3.amazonaws.com/vlef/vlef.pdf){:target="\_blank"} é materializar. Inovação não está ligado a novo e também difere de termos como imaginação ou ideia. As definições são:
+A palavra design possui relação com projetar. Projetar está ligado a tirar do papel, que está ligado com inovação. [A melhor definição que encontrei para inovação](http://assets.perestroika.com.br.s3.amazonaws.com/vlef/vlef.pdf){:target="_blank"} é materializar. Inovação não está ligado a novo e também difere de termos como imaginação ou ideia. As definições são:
 
 - Imaginação: pensar em coisas que não podem ser materializadas e que não possuem utilidade no mundo real.
 - Ideia: pensar em coisas que podem ser materializadas e que possuem utilidade no mundo real.

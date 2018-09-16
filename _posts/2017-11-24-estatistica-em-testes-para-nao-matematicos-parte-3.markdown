@@ -59,6 +59,6 @@ O número P que chamamos de probabilidade de sucesso é a base para as demais pr
 
 ## Leitura complementar
 
-Parte desses conceitos eu aprendi [neste site](http://jukebox.esc13.net/untdeveloper/RM/Stats_Module_2/){:target="\_blank"}. Inclusive os exemplos que usei foram tirados dele. Vale a pena ler os capítulos, que estão ilustrados, a linguagem é bem didática e possuem exercícios matemáticos para fixação dos conceitos.
+Parte desses conceitos eu aprendi [neste site](http://jukebox.esc13.net/untdeveloper/RM/Stats_Module_2/){:target="_blank"}. Inclusive os exemplos que usei foram tirados dele. Vale a pena ler os capítulos, que estão ilustrados, a linguagem é bem didática e possuem exercícios matemáticos para fixação dos conceitos.
 
 Bora estimar probabilidades!

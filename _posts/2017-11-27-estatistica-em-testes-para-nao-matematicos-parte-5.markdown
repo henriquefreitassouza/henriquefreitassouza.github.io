@@ -62,7 +62,7 @@ Quando o teste é com uma cauda, o valor de alfa é concentrado na extremidade �
 
 ## O deslocamento de p-valor na distribuição normal
 
-Para saber se p-valor é menor ou maior do que alfa é preciso saber o quanto ele se desloca da média para ter a estimativa de diferença entre efeitos observados nas variações de um teste. A diferença é medida em número de desvios padrão e esse número é chamado de **z-score**. Os deslocamentos em z-scores ao longo da distribuição normal [estão disponíveis na internet em tabelas para consulta](http://www.z-table.com/){:target="\_blank"}. Para cada “passo” em z-scores a tabela mostra uma respectiva área da distribuição normal em um número que vai de quase zero a quase um, sendo que quanto mais próximo de zero menor é a área da distribuição coberta e quanto mais próximo de um, maior é a área. Uma tabela de z-scores que mostra as áreas acima da média por exemplo se parece com a desta imagem:
+Para saber se p-valor é menor ou maior do que alfa é preciso saber o quanto ele se desloca da média para ter a estimativa de diferença entre efeitos observados nas variações de um teste. A diferença é medida em número de desvios padrão e esse número é chamado de **z-score**. Os deslocamentos em z-scores ao longo da distribuição normal [estão disponíveis na internet em tabelas para consulta](http://www.z-table.com/){:target="_blank"}. Para cada “passo” em z-scores a tabela mostra uma respectiva área da distribuição normal em um número que vai de quase zero a quase um, sendo que quanto mais próximo de zero menor é a área da distribuição coberta e quanto mais próximo de um, maior é a área. Uma tabela de z-scores que mostra as áreas acima da média por exemplo se parece com a desta imagem:
 
 ![tabela de z-scores]({{ "/assets/images/blog/2017-11-27-estatistica-em-testes-para-nao-matematicos-part-5-image-5.jpg" | absolute_url }})
 
@@ -120,7 +120,7 @@ Ajustar alfa e beta apropriadamente significa dizer o quanto de erro um negócio
 
 ## Leitura complementar
 
-- [Este vídeo](https://www.youtube.com/watch?v=zTABmVSAtT0){:target="\_blank"} explica de maneira bem didática a distinção entre os termos p-valor, alfa, valor crítico e z-score e como eles se relacionam.
-- [Estes vídeos](https://theebmproject.wordpress.com/power-type-ii-error-and-beta/){:target="\_blank"} descrevem em detalhes os conceitos de beta, tamanho do efeito e poder estatístico.
+- [Este vídeo](https://www.youtube.com/watch?v=zTABmVSAtT0){:target="_blank"} explica de maneira bem didática a distinção entre os termos p-valor, alfa, valor crítico e z-score e como eles se relacionam.
+- [Estes vídeos](https://theebmproject.wordpress.com/power-type-ii-error-and-beta/){:target="_blank"} descrevem em detalhes os conceitos de beta, tamanho do efeito e poder estatístico.
 
 Bora validar hipóteses!

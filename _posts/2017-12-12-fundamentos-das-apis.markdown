@@ -72,7 +72,7 @@ E JSON é bem similar a objetos Javascript:
 }
 {% endhighlight %}
 
-Além de serem baseadas no protocolo HTTP e usarem formatos de dados já estabecidos, a forma como APIs são construídas também possuem padrões. Os dois padrões mais conhecidos são **SOAP** e **REST**. Enquanto SOAP é um protocolo, REST é um estilo arquitetural, ou uma forma de organização dos componentes usados na comunicação entre sistemas. [As principais diferenças entre os dois](https://blog.smartbear.com/apis/understanding-soap-and-rest-basics/){:target="\_blank"} são:
+Além de serem baseadas no protocolo HTTP e usarem formatos de dados já estabecidos, a forma como APIs são construídas também possuem padrões. Os dois padrões mais conhecidos são **SOAP** e **REST**. Enquanto SOAP é um protocolo, REST é um estilo arquitetural, ou uma forma de organização dos componentes usados na comunicação entre sistemas. [As principais diferenças entre os dois](https://blog.smartbear.com/apis/understanding-soap-and-rest-basics/){:target="_blank"} são:
 
 - SOAP pode ser usado com outros protocolos que não o HTTP e usa XML.
 - REST é baseado em HTTP e consegue trabalhar com diferentes formatos de arquivo.
@@ -95,7 +95,7 @@ Autenticação com usuário e senha é feito enviando as credenciais codificadas
 
 ### Autenticação com usuário e senha
 
-O envio de usuários e senhas pelo header Authentication é feito da seguinte forma, exemplificado em [cURL](https://curl.haxx.se/){:target="\_blank"}:
+O envio de usuários e senhas pelo header Authentication é feito da seguinte forma, exemplificado em [cURL](https://curl.haxx.se/){:target="_blank"}:
 
 **curl -H "Authorization: Bearer base64(\<usuário>:\<senha>)" \<url\>**
 
@@ -158,7 +158,7 @@ O método usado no header neste caso foi o GET. Este é o método usado para rec
 - PUT: atualiza informações gravadas no servidor.
 - DELETE: exclui dados do servidor.
 
-Uma requisição do tipo POST terá um endpoint similar ao do GET e em seu corpo serão transmitidos os dados que serão gravados no servidor. Um exemplo de tal requisição usando o [Google Apps Script](https://developers.google.com/apps-script/){:target="\_blank"} seria:
+Uma requisição do tipo POST terá um endpoint similar ao do GET e em seu corpo serão transmitidos os dados que serão gravados no servidor. Um exemplo de tal requisição usando o [Google Apps Script](https://developers.google.com/apps-script/){:target="_blank"} seria:
 
 {% highlight javascript %}
   var customer = {
@@ -177,10 +177,10 @@ Uma requisição do tipo POST terá um endpoint similar ao do GET e em seu corpo
 
 Onde customer recebe o conteúdo que será enviado no corpo da requisição. O método foi declarado como POST na chave "method" das opções. Os métodos PUT e DELETE funcionam de forma similar ao POST.
 
-APIs são extremamente simples de usar e fornecem uma interface segura para manipulação de dados. Elas são uma ponte que integra os mais variados tipos de serviço e tornam a web mais rica a cada dia. Embora possuam um padrão seguido pela indústria, cada aplicação possui seus detalhes que a diferem das demais. A documentação de uso da API é, então, fundamental para um bom entendimento das suas capacidades. E o [Stack Overflow](https://stackoverflow.com/){:target="\_blank"}, claro!
+APIs são extremamente simples de usar e fornecem uma interface segura para manipulação de dados. Elas são uma ponte que integra os mais variados tipos de serviço e tornam a web mais rica a cada dia. Embora possuam um padrão seguido pela indústria, cada aplicação possui seus detalhes que a diferem das demais. A documentação de uso da API é, então, fundamental para um bom entendimento das suas capacidades. E o [Stack Overflow](https://stackoverflow.com/){:target="_blank"}, claro!
 
 ## Leitura complementar
 
-A Zapier possui [um curso](HTTPs://zapier.com/learn/apis/){:target="\_blank"} bem detalhado sobre os fundamentos de APIs que vai desde o conceito até a forma de implementação em uma aplicação.
+A Zapier possui [um curso](HTTPs://zapier.com/learn/apis/){:target="_blank"} bem detalhado sobre os fundamentos de APIs que vai desde o conceito até a forma de implementação em uma aplicação.
 
 Bora integrar e automatizar!

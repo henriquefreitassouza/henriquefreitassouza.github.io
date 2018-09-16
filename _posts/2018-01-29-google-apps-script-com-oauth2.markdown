@@ -7,13 +7,13 @@ image: '/assets/images/blog/2018-01-29-google-apps-script-com-oauth2-featured.jp
 image_credit: 'Digital Ocean'
 ---
 
-[Já escrevi em posts anteriores]({% post_url 2017-11-20-uma-introducao-ao-google-apps-script %}) sobre o [Google Apps Script](https://www.google.com/script/){:target="\_blank"} e como aproveitá-lo em projetos de automação de marketing. Essa ferramenta faz parte da suíte de aplicativos do Google e serve para criar extensões e plugins para os demais produtos da empresa. Vou explorar neste post um conceito importante para comunicação entre diferentes ferramentas e como usá-lo dentro do Google Apps Script: **OAuth2**.
+[Já escrevi em posts anteriores]({% post_url 2017-11-20-uma-introducao-ao-google-apps-script %}) sobre o [Google Apps Script](https://www.google.com/script/){:target="_blank"} e como aproveitá-lo em projetos de automação de marketing. Essa ferramenta faz parte da suíte de aplicativos do Google e serve para criar extensões e plugins para os demais produtos da empresa. Vou explorar neste post um conceito importante para comunicação entre diferentes ferramentas e como usá-lo dentro do Google Apps Script: **OAuth2**.
 
 <!--more-->
 
 ## O que é OAuth2?
 
-Se trata da segunda versão de um protocolo de autorização em que recursos protegidos de algum tipo de sistema são acessados por usuários que possuam as devidas permissões. O que difere OAuth de outras formas de autorização é que o dono dos recursos protegidos não precisa compartilhar senhas de acesso. A implementação mais comum do protocolo é usada por empresas como [Google](https://developers.google.com/identity/sign-in/web/sign-in){:target="\_blank"} e [Facebook](https://developers.facebook.com/docs/facebook-login){:target="\_blank"}, que disponibilizam APIs para que sites e aplicativos possam criar sistemas de login com base na tecnologia desenvolvida por estas empresas. A segunda versão do protocolo OAuth é o padrão normalmente usado e não possui retrocompatibilidade. Caso precise de um refresh sobre o que são APIs e como funcionam, [leia meu post sobre o assunto]({% post_url 2017-12-12-fundamentos-das-apis %}).
+Se trata da segunda versão de um protocolo de autorização em que recursos protegidos de algum tipo de sistema são acessados por usuários que possuam as devidas permissões. O que difere OAuth de outras formas de autorização é que o dono dos recursos protegidos não precisa compartilhar senhas de acesso. A implementação mais comum do protocolo é usada por empresas como [Google](https://developers.google.com/identity/sign-in/web/sign-in){:target="_blank"} e [Facebook](https://developers.facebook.com/docs/facebook-login){:target="_blank"}, que disponibilizam APIs para que sites e aplicativos possam criar sistemas de login com base na tecnologia desenvolvida por estas empresas. A segunda versão do protocolo OAuth é o padrão normalmente usado e não possui retrocompatibilidade. Caso precise de um refresh sobre o que são APIs e como funcionam, [leia meu post sobre o assunto]({% post_url 2017-12-12-fundamentos-das-apis %}).
 
 ## Por que usar OAuth?
 
@@ -34,7 +34,7 @@ De forma geral, um fluxo OAuth2 funciona da seguinte forma:
 - O usuário requisita dados protegidos e passa seu token de acesso
 - Se o token e o usuário são reconhecidos, os dados são concedidos
 
-Este fluxo se parece com o da imagem a seguir, criada pela [Digital Ocean](https://www.digitalocean.com/){:target="\_blank"}:
+Este fluxo se parece com o da imagem a seguir, criada pela [Digital Ocean](https://www.digitalocean.com/){:target="_blank"}:
 
 ![Google Apps Script]({{ "/assets/images/blog/2018-01-29-google-apps-script-com-oauth2-featured.jpeg" | absolute_url }})
 
@@ -54,7 +54,7 @@ Com exceção do arquivo Code.gs, os demais arquivos foram criados por mim. A pr
 
 ### 2. Configure o projeto associado ao script da planilha no Google Cloud Console
 
-O [Google Cloud Console](https://console.cloud.google.com/){:target="\_blank"} é uma plataforma sobre a qual são construídos aplicativos usados pelos serviços do Google, como plugins. Nesta plataforma são gerenciados os aplicativos criados por desenvolvedores e as credenciais de acesso que esses aplicativos possuem aos serviços do Google. Para acessar o Google Cloud Console vá em Resources > Cloud Platform project. Abrirá um modal com um link cujo texto possui o formato [nome-do-script]-project-id-[id-do-projeto], onde [nome-do-script] é o nome dado ao script associado a planilha e [id-do-projeto] é um identificador único atribuído pelo Google Cloud Console.
+O [Google Cloud Console](https://console.cloud.google.com/){:target="_blank"} é uma plataforma sobre a qual são construídos aplicativos usados pelos serviços do Google, como plugins. Nesta plataforma são gerenciados os aplicativos criados por desenvolvedores e as credenciais de acesso que esses aplicativos possuem aos serviços do Google. Para acessar o Google Cloud Console vá em Resources > Cloud Platform project. Abrirá um modal com um link cujo texto possui o formato [nome-do-script]-project-id-[id-do-projeto], onde [nome-do-script] é o nome dado ao script associado a planilha e [id-do-projeto] é um identificador único atribuído pelo Google Cloud Console.
 
 ![Google Apps Script]({{ "/assets/images/blog/2018-01-29-google-apps-script-com-oauth2-image-3.jpeg" | absolute_url }})
 
@@ -96,7 +96,7 @@ var startDate = Utilities.formatDate(new Date(new Date().getTime() - 7 * 24 * 60
 var endDate = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd');
 {% endhighlight %}
 
-CLIENT_ID e CLIENT_SECRET são as credenciais fornecidas pelo Google Cloud Console na criação no método de autorização. Coloque-as nos locais indicados por "SEU_CLIENT_ID" E "SEU_CLIENT_SECRET". O escopo de acesso é necessário para qualquer fluxo OAuth2 e representa o conjunto de permissões a que um usuário tem acesso. Todos os escopos de produtos do Google para uso em autorizações OAuth2 estão disponíveis [neste link](https://developers.google.com/identity/protocols/googlescopes){:target="\_blank"}. O Search Console possui dois escopos: https://www.googleapis.com/auth/webmasters.readonly, para apenas leitura e https://www.googleapis.com/auth/webmasters, para leitura e modificação das informações. Neste post será usado o escopo de somente leitura. A variável SITE contém o site cadastrado no Search Console cujos dados iremos consultar. O nome do site deve ser informado da forma como está no search console. Se o site é, por exemplo, http://henriquefreitas.com, a variável deve ser preenchida de acordo.
+CLIENT_ID e CLIENT_SECRET são as credenciais fornecidas pelo Google Cloud Console na criação no método de autorização. Coloque-as nos locais indicados por "SEU_CLIENT_ID" E "SEU_CLIENT_SECRET". O escopo de acesso é necessário para qualquer fluxo OAuth2 e representa o conjunto de permissões a que um usuário tem acesso. Todos os escopos de produtos do Google para uso em autorizações OAuth2 estão disponíveis [neste link](https://developers.google.com/identity/protocols/googlescopes){:target="_blank"}. O Search Console possui dois escopos: https://www.googleapis.com/auth/webmasters.readonly, para apenas leitura e https://www.googleapis.com/auth/webmasters, para leitura e modificação das informações. Neste post será usado o escopo de somente leitura. A variável SITE contém o site cadastrado no Search Console cujos dados iremos consultar. O nome do site deve ser informado da forma como está no search console. Se o site é, por exemplo, http://henriquefreitas.com, a variável deve ser preenchida de acordo.
 
 Renomeie a pasta criada no arquivo do Google Sheets para "Search Console". Esta pasta irá receber as informações do Search Console pela API. A variável searchConsoleData carrega essa pasta para uso.
 
@@ -263,7 +263,7 @@ function showSidebar() {
     var authorizationUrl = service.getAuthorizationUrl();
     template = HtmlService.createTemplate(
       '<h1>Autentication</h1> ' +
-      '<a href="<?= authorizationUrl ?>" target="\_blank">Authorize the use of data from Search Console and Analytics</a>. ' +
+      '<a href="<?= authorizationUrl ?>" target="_blank">Authorize the use of data from Search Console and Analytics</a>. ' +
       '<p>Why do I need to do this?</p> ' +
       '<p>This application extract data from Search Console and Analytics on your behalf, using your credentials and permissions. Such operation must be approved by you.</p>' +
       '<p>Google Sheets should present you with an authentication screen automatically but if that doesn\'t happen you can use the link available on this sidebar.</p>'
@@ -323,13 +323,13 @@ Scripts como o deste post são extremamente úteis para automatizar tarefas repe
 
 Leia os seguintes conteúdos para se aprofundar mais nestes assuntos:
 
-- [Biblioteca OAuth2](https://github.com/googlesamples/apps-script-oauth2){:target="\_blank"} disponibilizada pelo próprio Google e usada neste post
-- [Documentação do Google Apps Script](https://developers.google.com/apps-script/overview){:target="\_blank"}
+- [Biblioteca OAuth2](https://github.com/googlesamples/apps-script-oauth2){:target="_blank"} disponibilizada pelo próprio Google e usada neste post
+- [Documentação do Google Apps Script](https://developers.google.com/apps-script/overview){:target="_blank"}
 - [Meu post de introdução a APIs]({% post_url 2017-12-12-fundamentos-das-apis %})
 - [Meu post sobre os fundamentos do Google Apps Script]({% post_url 2017-11-20-uma-introducao-ao-google-apps-script %})
-- [Os fundamentos de OAuth, por Aaron Parecki](https://aaronparecki.com/oauth-2-simplified/){:target="\_blank"}
-- [OAuth2 com Google Apps](https://developers.google.com/identity/protocols/OAuth2){:target="\_blank"}
-- [Playground de experimentação com OAuth2 para os serviços do Google](https://developers.google.com/oauthplayground/){:target="\_blank"}
-- [Lista de endpoints e testes de chamadas as APIs do Google](https://developers.google.com/apis-explorer/#p/){:target="\_blank"}
+- [Os fundamentos de OAuth, por Aaron Parecki](https://aaronparecki.com/oauth-2-simplified/){:target="_blank"}
+- [OAuth2 com Google Apps](https://developers.google.com/identity/protocols/OAuth2){:target="_blank"}
+- [Playground de experimentação com OAuth2 para os serviços do Google](https://developers.google.com/oauthplayground/){:target="_blank"}
+- [Lista de endpoints e testes de chamadas as APIs do Google](https://developers.google.com/apis-explorer/#p/){:target="_blank"}
 
 Bora automatizar!
