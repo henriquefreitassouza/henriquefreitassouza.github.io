@@ -13,6 +13,14 @@ Se tem uma coisa que não parece ter uma forma correta de fazer ([ou tem até ce
 
 **[WARNING] Irei assumir que você tenha familiaridade com desenvolvimento em WordPress, saber usar o NPM e conhece gerenciadores de tarefas. [/WARNING]**
 
+Vou dividir o assunto nos seguintes tópicos:
+
+* Download e instalação dos boilerplates de plugins e temas
+* Criação da estrutura de pastas dos projetos
+* Criação dos pacotes dos projetos com o NPM
+* Download do Gulp e dependências para os projetos
+* Criação da automação para compilar os arquivos e gerar as versões de produção
+
 ## A Manutenção do WordPress
 
 Manter o WordPress atualizado e livre de erros é uma tarefa bem desafiadora. Isso porque várias partes dele são feitas por desenvolvedoras e desenvolvedores independentes entre sí e disponibilizadas ao público como plugins e temas. Para garantir consistência em todo o ecossistema, a [Automattic](https://automattic.com/){:target="_blank"} impõe uma série de regras para a criação de [temas](https://developer.wordpress.org/themes/release/theme-review-guidelines/){:target="_blank"} e [plugins](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/){:target="_blank"} que a comunidade precisa seguir antes de terem seus trabalhos aprovados para serem exibidos nos repositórios online do [WordPress.org](https://wordpress.org/themes/){:target="_blank"}. Isso já ajuda, mas um plugin ou tema conflitante com outro ainda aparece por hora. Já tive até mesmo a experiência de desenvolver um plugin que funciona perfeitamente com versões do WordPress que usam o editor de páginas e posts nativo [TinyMCE](https://codex.wordpress.org/TinyMCE){:target="_blank"}, ou seja, todas pelo menos desde a versão 3.1, mas que certas partes deixam de funcionar quando instalo o plugin do [Gutenberg](https://wordpress.org/gutenberg/){:target="_blank"} e faço uso da [WP REST API](https://developer.wordpress.org/rest-api/){:target="_blank"} com JavaScript.
