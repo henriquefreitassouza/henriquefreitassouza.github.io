@@ -381,7 +381,7 @@ Apenas para recapitular, fizemos o seguinte para preparar o ambiente de desenvol
 * Instalamos o Node.js e o NPM
 * Dentro da pasta raiz do plugin, que até então continha as pastas src e dist, criamos um pacote com o comando npm init
 * Usamos o NPM para instalar a interface de linha de comando do gulp no escopo global
-* Usamos o NPM para instalar o gulp e diversas dependências no projeto usando a flag --save-dev
+* Usamos o NPM para instalar o gulp e diversas dependências no projeto usando a flag -\-save-dev
 * Criamos na raiz do plugin um arquivo chamado gulpfile.js e escrevemos as tarefas que o gulp deve executar
 * Configuramos o gulp para escutar mudanças em quaisquer arquivos dentro da pasta src e então copiá-los para a pasta dist e para a pasta da instalação do WordPress
 * Alteramos os arquivos class-nome-do-plugin-admin.php e class-nome-do-plugin-public.php para informar onde estão os arquivos JavaScript e CSS compilados pelas tarefas do gulp
