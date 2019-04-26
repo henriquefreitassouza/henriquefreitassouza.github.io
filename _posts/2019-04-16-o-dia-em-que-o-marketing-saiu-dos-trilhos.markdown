@@ -59,7 +59,7 @@ Não é difícil entender que o objetivo deste botão é aumentar vendas. E func
 
 Será mesmo? As pessoas estão comprando por vontade própria ou porque estamos usando nossos ~~super incríveis~~ conhecimentos em economia comportamental para antecipar ao máximo a sensação de prazer de adquirir algo, estimulando o lado emocional da compra em prol do racional? Ao vender algo para alguém, não damos atenção ao fato de que o comprador pode estar criando uma dívida ou alguém pode estar comprando em nome dele (como o filho que pega o celular dos pais pra navegar na internet, vai parar na Amazon, pesquisa por um brinquedo e clica no botão de comprar com um clique). Ao facilitar a compra, aumentamos as margens para coisas como essas, seja de forma intencional ou não.
 
-– Por quê eu deveria se importar com isso? Afinal de contas, ninguém está sendo forçado a entrar no meu site ou aplicativo e comprar. Além do mais, a fórmula é simples: + dinheiro$ entrando = + meta batida = + lucro para a empresa =  + PLR, bônus e dividendo$ pra todo mundo que fez mais pessoas comprarem. Yay!
+– Por quê eu deveria me importar com isso? Afinal de contas, ninguém está sendo forçado a entrar no meu site ou aplicativo e comprar. Além do mais, a fórmula é simples: + dinheiro$ entrando = + meta batida = + lucro para a empresa =  + PLR, bônus e dividendo$ pra todo mundo que fez mais pessoas comprarem. Yay!
 
 \#SóQueNão
 
