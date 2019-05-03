@@ -122,7 +122,7 @@ O governo brasileiro já reconheceu a existência desta categoria separada de ne
 
 ## Capitalismo consciente
 
-Muhammad Yunus, em seu livro [Building Social Business](https://www.amazon.com/Building-Social-Business-Capitalism-Humanitys/dp/1586489569){:target="_blank"}, não defende a extinção de modelos de negócios tradicionais. Ele entende que ambos os modelos podem coexistir e que organizações com modelos de negócios tradicionais podem, em conjunto com organizações de impacto socioambiental, construir soluções que alcancem mais pessoas do que uma das partes conseguiria sozinha. Thiago Mattos, no livro Vai Lá e Faz, defende que [toda organização deveria ter claro qual o seu papel no mundo](http://assets.perestroika.com.br.s3.amazonaws.com/vlef/vlef.pdf){:target="_blank"}. Ele escreve que “não faz o menor sentido você ter uma empresa que não ajude o mundo a ser um lugar melhor”. Na visão do autor, negócios de impacto socioambiental estão sendo criados por empreendedores que estão redesenhando a forma como o capitalismo funciona. Yunus segue a mesma linha de raciocínio ao [afirmar que o capitalismo tradicional cria a pobreza](https://www.termpaperwarehouse.com/essay-on/Social-Business-Of-Dr-Yunus/127281){:target="_blank"} mas que é possível ressignificar o capitalismo para incluir aqueles que hoje não fazem parte deste sistema.
+Muhammad Yunus, em seu livro [Building Social Business](https://www.amazon.com/Building-Social-Business-Capitalism-Humanitys/dp/1586489569){:target="_blank"}, não defende a extinção de modelos de negócios tradicionais. Ele entende que ambos os modelos podem coexistir e que organizações com modelos de negócios tradicionais podem, em conjunto com organizações de impacto socioambiental, construir soluções que alcancem mais pessoas do que uma das partes conseguiria sozinha. Tiago Mattos, no livro Vai Lá e Faz, defende que [toda organização deveria ter claro qual o seu papel no mundo](http://assets.perestroika.com.br.s3.amazonaws.com/vlef/vlef.pdf){:target="_blank"}. Ele escreve que “_não faz o menor sentido você ter uma empresa que não ajude o mundo a ser um lugar melhor_”. Na visão do autor, negócios de impacto socioambiental estão sendo criados por empreendedores que estão redesenhando a forma como o capitalismo funciona. Yunus segue a mesma linha de raciocínio ao [afirmar que o capitalismo tradicional cria a pobreza](https://www.termpaperwarehouse.com/essay-on/Social-Business-Of-Dr-Yunus/127281){:target="_blank"} mas que é possível ressignificar o capitalismo para incluir aqueles que hoje não fazem parte deste sistema.
 
 Negócios com propósitos sociais e negócios tradicionais podem andar de mãos dadas, contanto que negócios sociais mantenham sempre vivo seu compromisso com a geração de impacto social positivo e negócios tradicionais tenham um propósito existencial que vá além do dinheiro. São demandas importantes não só para as organizações mas para o [consumidor do século XXI](http://henriquefreitas.com.br/business/2019/04/21/as-pessoas-por-tras-das-personas.html){:target="_blank"}, como já escrevi.
 
@@ -130,14 +130,10 @@ Organizações que já estão na estrada há algum tempo podem ainda apoiar o na
 
 ## Leitura complementar
 
-Recomendo a leitura completo do segundo [Mapa de Negócios de Impacto Social](https://pipe.social/mapa2019){:target="_blank"} para ter um panorama completo do crescimento de organizações de impacto no Brasil.
-
-Recomendo a leitura dos livros [Vai Lá e Faz, do Tiago Mattos](https://www.amazon.com.br/Vai-l%C3%A1-faz-empreender-digital/dp/8581743544){:target="_blank"}, e [Building Social Business, do Muhammad Yunus](https://www.amazon.com/Building-Social-Business-Capitalism-Humanitys/dp/1586489569){:target="_blank"}.
-
-Recomendo a leitura da [carta de princípios para negócios de impacto no Brasil](http://forcatarefafinancassociais.org.br/wp-content/uploads/2015/10/Carta_Principios.pdf){:target="_blank"}.
-
-Recomendo a leitura dos [17 Objetivos de Desenvolvimento Sustentáveis da ONU](https://www.un.org/sustainabledevelopment/sustainable-development-goals/){:target="_blank"}.
-
-Recomendo também a leitura da iniciativa [ENIMPACTO](http://www.mdic.gov.br/index.php/inovacao/enimpacto){:target="_blank"}, do governo federal.
+- Recomendo a leitura completo do segundo [Mapa de Negócios de Impacto Social](https://pipe.social/mapa2019){:target="_blank"} para ter um panorama completo do crescimento de organizações de impacto no Brasil.
+- Recomendo a leitura dos livros [Vai Lá e Faz, do Tiago Mattos](https://www.amazon.com.br/Vai-l%C3%A1-faz-empreender-digital/dp/8581743544){:target="_blank"}, e [Building Social Business, do Muhammad Yunus](https://www.amazon.com/Building-Social-Business-Capitalism-Humanitys/dp/1586489569){:target="_blank"}.
+- Recomendo a leitura da [carta de princípios para negócios de impacto no Brasil](http://forcatarefafinancassociais.org.br/wp-content/uploads/2015/10/Carta_Principios.pdf){:target="_blank"}.
+- Recomendo a leitura dos [17 Objetivos de Desenvolvimento Sustentáveis da ONU](https://www.un.org/sustainabledevelopment/sustainable-development-goals/){:target="_blank"}.
+- Recomendo também a leitura da iniciativa [ENIMPACTO](http://www.mdic.gov.br/index.php/inovacao/enimpacto){:target="_blank"}, do governo federal.
 
 Bora fazer o bem!
