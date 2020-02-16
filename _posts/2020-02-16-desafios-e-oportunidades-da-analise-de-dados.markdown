@@ -1,0 +1,53 @@
+---
+layout: post
+title:  'Desafios e oportunidades da análise de dados'
+date:   2020-02-16 11:37:00
+categories: [Business, BI, Data Science]
+image: '/assets/images/blog/2020-02-16-desafios-e-oportunidades-da-analise-de-dados-featured.jpg'
+image_credit: 'Pixabay'
+---
+
+Eu sou aquele tipo de pessoa que prefere ser generalista a especialista, o que significa que eu conheço um pouco de muitas coisas em favor de muito sobre poucas coisas. Isso é exatamente o que acredito ser um analista de dados: um generalista, capaz de navegar por qualquer fonte de dados dentro e fora das organizações para fazer descobertas e transmitir conhecimento. Esta pode ser uma definição de dicionário, mas o que isso significa na prática e qual a importância da análise de dados no ambiente corporativo? Este é o tema deste post.
+
+<!--more-->
+
+## O conceito é o mesmo, só mudam as roupagens
+
+Análise nada mais é do que um exame, ou estudo, que busca compreender algum dado fenômeno na natureza. Me arrisco a dizer que fazemos análises desde que nos damos por organismos vivos e que fomos apenas ficando mais eficientes ao fazê-las, com ferramentas e técnicas desenhadas para estudo de diferentes tipos de fenômenos. De transformações químicas a dinâmicas sociais, somos capazes de examinar e compreender — ou teorizar — a razão pela qual determinado fenômeno ocorreu.
+
+Análise de dados é uma especialização de análise em que o observador examina algo chamado de dado. A priori pode parecer estranho pois toda análise é feita em cima de observações, cuja unidade básica é o dado, porém o objeto de estudo do analista de dados é um produto de tecnologia que circula no ambiente corporativo. Este dado pode ser, mas não se limita, a uma planilha com cadastros de clientes ou dados da última campanha de marketing, um banco de dados relacional com informações sensíveis de funcionários, um PDF com os dados de um estudo sobre a satisfação de consumidores com determinado produto ou serviço, um vídeo institucional, um arquivo de texto com informações extraídas de uma página de internet ou um arquivo com dados de pesquisa em campo gerado por software estatístico. O resultado do trabalho do analista de dados busca justificar as escolhas que as organizações fazem em relação ao uso de seus recursos, pensando no potencial de retorno ao longo de determinado período de tempo.
+
+## Análise de dados em tempos de big data
+
+O que não falta internet afora é uma definição de big data e qual sua importância no mundo corporativo. Grandes volumes de dados são criados e armazenados a todo momento graças a massificação de tecnologias para coleta, processamento e armazenamento de dados. Um ambiente propício para estudo de dados deu margem ao crescimento da demanda por este tipo de profissional — ou por uma variação do analista. Em outras formas de análise, os profissionais criam o protocolo de captura, processamento, armazenamento e extração de informações para depois ir a campo fazer a coleta. Um analista de dados encontra, dentro de uma organização, diversas fontes com dados já coletados, mas em diversas formas, tamanhos e locais de armazenamento que normalmente são impróprios para uso conjunto da maneira como são encontrados. O protocolo deve considerar, antes da coleta de novos dados, o tratamento do que já existe de informações. Este analista precisa ser capaz de lidar com inconsistências e dados faltantes que muitas vezes não podem ser reconstituídos com uma nova coleta. No universo de ciência de dados, a infraestrutura para que o cientista de dados possa trabalhar precisa ser tão bem pensada em termos de hardware, software e processos que existe um profissional dedicado a fazer isso: o engenheiro de dados. Dependendo da organização, uma figura similar pode existir para auxiliar o analista de dados, mesmo que o escopo de trabalho seja mais aberto, como o da própria equipe de desenvolvimento de software. Em organizações menores cabe ao analista de dados planejar a infraestrutura pela qual os dados irão ser manuseados. Esta infraestrutura é a **arquitetura do fluxo da informação**.
+
+## Arquitetura do fluxo da informação
+
+Se me perguntar qual a diferença entre um analista de dados e um cientista de dados, eu diria que o analista de dados faz tudo o que o cientista de dados faz menos treinar algoritmos. A maior parte do trabalho de um cientista de dados consiste em fazer um preparo prévio dos dados que serão utilizados para o treino de algoritmos. Este preparo pode ser na coleta e / ou na transformação dos dados para que possam ser compreendidos pelos algoritmos que vão processá-los. O que muda entre o trabalho de um analista de dados e o de um cientista de dados é o seu objetivo final. **O analista de dados prepara e estuda dados para identificar padrões com base no passado** enquanto **o cientista de dados prepara e estuda dados para identificar tendências**. Para cada objetivo, uma mesma base de dados pode ter tratamentos completamente diferentes, mas em ambas houve um processo de tratamento e armazenamento de dados para posterior uso.
+
+Esta é a principal diferença entre os dois profissionais mas não é a única. Como mencionei, em alguns lugares existe a figura do engenheiro de dados para configurar a infraestrutura de hardware, software e processos que serão usados pelo cientista de dados em seu processo de estudo, enquanto é incomum que exista tal figura que exerça função similar para suportar o trabalho de um analista de dados. É natural que empresas menores não disponham do mesmo volume de dados que grandes empresas. Grandes empresas, aliás, contam com profissionais para preparar a infraestrutura que será usada para suportar fontes de dados usadas por analistas de dados — como data warehouses — e fontes de dados usadas por cientistas de dados — como data lakes. Empresas menores, com volumes menores de dados, conseguem trabalhar com uma infraestrutura mais enxuta e mantida por analistas de dados. Esta infraestrutura para pequenas e médias empresas, que consiste na configuração ideal de hardware, software e processos para análise de dados ou ciência de dados, é o que estou chamando de arquitetura do fluxo da informação. Independente da configuração, esta infraestrutura vai contar ao menos:
+
+- Uma ou mais fontes de dados para entrada
+- Um ou mais transformadores de dados
+- Um ou mais repositórios para armazenamento
+- Uma ou mais saídas para consumo de dados
+
+Soa como um processo ETL ou um ELT? Pois é a partir do desenho da arquitetura do fluxo da informação que a forma de trabalho ideal será definida. Esta infraestrutura básica será configurada de acordo com o tipo de uso que será feito dela, o que irá variar entre analistas de dados e cientistas de dados, visto que estruturas como data warehouses comportam casos de uso diferentes daqueles de um data lake.
+
+![Os processos de coleta, tratamento, análise e extração de dados vão variar conforme a necessidade. Crédito: Xplenty]({{ "/assets/images/blog/2020-02-16-desafios-e-oportunidades-da-analise-de-dados-image-1.jpeg" | absolute_url }})
+Os processos de coleta, tratamento, análise e extração de dados vão variar conforme a necessidade. Crédito: [Xplenty](https://www.xplenty.com/blog/etl-vs-elt/){:target="_blank"}.
+
+## Geração de conhecimento e o ponto de partida
+
+Independente do escopo de trabalho do analista de dados ser mais focado em análise propriamente dita ou englobar a análise e a construção da infraestrutura, o trabalho não é considerado entregue se não resulta em conhecimento para a organização que seja capaz de responder a dúvidas de negócios e orientar decisões estratégicas para a geração e expansão de negócios. Neste momento o perfil generalista do analista de dados vem a calhar, pois um entendimento prévio das unidades de negócios e suas demandas são fundamentais para estabelecer um ponto de partida para a análise. Gosto de pensar que é possível responder a todas as perguntas de negócios apenas com o que é possível reunir de dados internos e externos em uma organização. O mais difícil é definir as perguntas a serem feitas. O ponto de partida é fundamental pois todo achado deve ter um contexto para ter valor. Penso que um analista de dados não é diferente do Homem Formiga, da Marvel. Ele pode encolher até ficar diante de um universo de informações, mas se ficar encolhendo sem parar ele pode não voltar para seu tamanho normal e compartilhar as descobertas com a equipe. O ponto de partida serve como o conjunto de configurações e coordenadas que vai definir o trabalho do analista de dados — e do traje do Homem Formiga.
+
+![No universo cinemático da Marvel, o Homem Formiga explora o mundo quântico após encolher. Crédito: Express.co.uk]({{ "/assets/images/blog/2020-02-16-desafios-e-oportunidades-da-analise-de-dados-image-2.jpeg" | absolute_url }})
+No universo cinemático da Marvel, o Homem Formiga explora o mundo quântico após encolher. Crédito: [Express.co.uk](https://www.express.co.uk/entertainment/films/912008/Ant-Man-and-the-Wasp-setting-Avengers-Infinity-War-MCU-timeline-Captain-America-Civil-War){:target="_blank"}.
+
+## O cinto de utilidades
+
+Saber coletar e organizar conjuntos de dados para extrair e transmitir conhecimento é a base do que significa ser um analista de dados. Acontece que o ambiente de trabalho de um analista de dados raramente é o ideal e precisa ser trabalhado antes chegar a um ponto em que dados confiáveis sejam extraídos. Em um ambiente digital onde as tecnologias para coleta de dados possuem suas limitações e privacidade é uma questão a ser discutida, o trabalho se torna ainda mais desafiador. Para lidar com problemas como estes, **o arsenal do analista de dados conta com ferramentas que também são usadas por matemáticos, desenvolvedores de software e designers de experiência**. Conhecer o campo da estatística e suas vertentes descritiva e inferencial é importante para explicar massas de dados com diferentes níveis de qualidade e ruído, garantindo a confiabilidade necessária para suportar decisões de negócios. Já as ferramentas de desenvolvimento de software são úteis para criar um pipeline de coleta, transformação e armazenamento de dados escalável e automático. Por fim, as ferramentas utilizadas por designers de experiência ajudam a guiar o desenvolvimento do trabalho de análise de forma que seu resultado esteja em sintonia com as necessidades das áreas de negócio que precisam do conhecimento.
+
+No fim, se trata de ser generalista em conhecimento de negócios e também generalista no domínio de ferramentas para ser especialista na geração e na disseminação de conhecimento para a empresa.
+
+Bora analisar dados!
