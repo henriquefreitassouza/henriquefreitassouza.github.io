@@ -467,6 +467,8 @@ Precisamos criar estas variáveis no ambiente lambda. Navegue até o bloco Envir
 
 O passo final é ativar o disparo de webhooks no RD Station, o que pode ser feito via configurações da conta do RD Station ou via fluxos de automação, [como explicado na parte 1 desta série]({% post_url 2018-09-02-rd-station-e-google-sheets %}). Basta seguir o mesmo procedimento e trocar apenas o endereço para envio do webhook. No lugar do endereço do GAS será utilizado o endereço da API criada no AWS API Gateway, lembrando que o endereço deve conter o nome do endpoint e o recurso.
 
+Tudo pronto! Os leads do RD Station agora estão sendo armazenados em um banco de dados relacional na AWS.
+
 ## Próximos passos
 
 Ao executar este exercício, você teve uma breve introdução a alguns dos serviços oferecidos pela AWS. Esta mesma arquitetura poderia ter sido feita de outras formas, utilizando outros serviços para armazenamento. O RD Station pode ser apenas uma fonte de entrada para um Data Warehouse ou um Data Lake, ou ainda poderia ter passado por um pipeline de dados mais complexo antes de ser armazenado no banco de dados. As possibilidades são diversas e a forma de implementação irá depender da necessidade de cada projeto. A [documentação da AWS](https://docs.aws.amazon.com/index.html){:target="_blank"} é uma ótima fonte de informações, bem como os inúmeros posts no Stack Overflow de pessoas que tiveram dificuldades ao configurar os recursos da AWS.
