@@ -13,6 +13,15 @@ Você usa o RD Station para fazer a gestão dos seus leads? E exporta dados de l
 
 **[SPOILER ALERT] Vamos escrever algumas linhas de código! Se você não tem familiaridade com programação não se preocupe que vou explicar o que cada linha faz :) o ideal, no entanto, é que você tenha alguma familiaridade com qualquer linguagem ou lógica de programação para entender 100% do que será feito. [FIM DO SPOILER ALERT]**
 
+## Atualização - 04/09/2020
+
+- Este post agora possui uma parte 2: [RD Station e Google Sheets Parte 2 - Migrando para a AWS]({% post_url 2020-09-03-rd-station-e-google-sheets-na-aws %}).
+- A [tabela de preços do Zapier](https://zapier.com/pricing){:target="_blank"} mudou. O plano que suporta 3.000 chamadas não existe mais, agora existe um com até 2.000 chamadas e o plano seguinte vai para 5.000 chamadas.
+- [O Google Apps Script agora suporta a engine V8](https://developers.google.com/apps-script/guides/v8-runtime){:target="_blank"}, o que permite a criação de aplicativos que utilizem a sintaxe moderna de JavaScript em ES6. Nem todos os recursos do ES6 são suportados até a data de atualização deste post.
+- O formato do webhook do RD Station [irá mudar](https://developers.rdstation.com/pt-BR/migration/webhooks){:target="_blank"}.
+- Não existe mais distinção entre fluxos de automação paralelos e gerenciais. Todo fluxo de automação é paralelo.
+- O limite atual de células em uma planilha do Google Sheets é de [5.000.000](https://support.google.com/drive/answer/37603?hl=en){:target="_blank"}.
+
 ## Planilhas? WTF
 
 Exportar dados de uma fonte para outra é tarefa comum quando se trata de agrupar conjuntos de dados para análise ou visualização. Agregadores de dados bem conhecido são as planilhas eletrônicas – os Exceis e Sheets da vida. Planilhas são convenientes para armazenar, manipular e visualizar dados das mais diversas naturezas em formato tabular. São fáceis de entender e sua organização gera um padrão de comunicação entre pessoas e também entre ferramentas, por isso ainda não deram lugar a ferramentas mais robustas e inteligentes para o mesmo fim. Se você não vive sem suas planilhas de métricas sabe bem do que estou falando. Agora, é sabido que planilhas não são nada sem dados e que uma parte considerável do nosso tempo é gasto preenchendo células nos locais corretos para gerar as informações que nos levarão aos valiosos insights. Diminuir este tempo, então, significa ter mais tempo para se preocupar com análise. Ferramentas como Zapier e Pluga facilitam a vida nesse sentido, já que possuem conectores com centenas de outras ferramentas e uma interface amigável para a criação de fluxos de dados entre elas. Por que então não usá-las?
@@ -195,5 +204,7 @@ Limites bem confortáveis para pequenas empresas que buscam ganhar escala e redu
 Pronto! Sempre que um lead atender a determinadas condições dentro do RD Station, ele será enviado automaticamente para uma planilha. Dessa forma a coleta de dados deixa de ser um problema e é possível investir mais tempo focando em análise e extração de insights dos dados.
 
 Por fim: você é desenvolvedor e conhece uma forma melhor de fazer a integração? Não deixe de compartilhar e me ajude a tornar este texto cada vez melhor!
+
+Você já viu a parte 2 deste post? [RD Station e Google Sheets Parte 2 - Migrando para a AWS]({% post_url 2020-09-03-rd-station-e-google-sheets-na-aws %}).
 
 Bora automatizar!
