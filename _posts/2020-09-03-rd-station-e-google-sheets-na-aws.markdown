@@ -116,7 +116,7 @@ Mantenha marcada a opção "Standard Create", para exibir todas as configuraçõ
 
 Selecione o banco de dados MySQL e a edição MySQL Community. Mantenha a versão do MySQL sugerida (na data de escrita deste post, a 8.0.17).
 
-Em templates, selecione Free tier.
+Em templates, selecione Free tier. Vamos utilizar o serviço que é oferecido gratuitamente pelo período de 12 meses.
 
 Configure o nome de identificador da instância do banco de dados e a senha. Este nome não é o nome do banco de dados em sí, é o nome que identifica a instalação do banco de dados e as configurações aplicadas.
 
@@ -160,7 +160,7 @@ Seu endereço de IP agora está autorizado a passar pela VPC e se conectar ao ba
 
 ### Configuração do banco de dados
 
-Para este exercício, vou utilizar o MySQL Workbench, que pode ser [baixado gratuitamente](https://dev.mysql.com/downloads/workbench/){:target="_blank"} no site do MySQL. Com o MySQL aberto, clique em nova conexão. Dê um nome para a conexão, mantenha o modo _Standard (TCP/IP) selecionado e preencha os parâmetros Hostname, Port, Username e Password com os dados criados no processo de criação da nova instância MySQL na AWS. Clique em Test connection para verificar se está sendo possível se conectar ao banco a partir da sua máquina local. Se estiver tudo OK, clique em "OK" para abrir uma nova conexão com o banco de dados.
+Para este exercício, vou utilizar o MySQL Workbench, que pode ser [baixado gratuitamente](https://dev.mysql.com/downloads/workbench/){:target="_blank"} no site do MySQL. Com o MySQL aberto, clique em nova conexão. Dê um nome para a conexão, mantenha o modo Standard (TCP/IP) selecionado e preencha os parâmetros Hostname, Port, Username e Password com os dados criados no processo de criação da nova instância MySQL na AWS. Clique em Test connection para verificar se está sendo possível se conectar ao banco a partir da sua máquina local. Se estiver tudo OK, clique em "OK" para abrir uma nova conexão com o banco de dados.
 
 ![Conexão aberta entre o banco de dados e o MySQL Workbench]({{ "/assets/images/blog/2020-09-03-rd-station-e-google-sheets-na-aws-image-7.jpg" | absolute_url }})
 Conexão aberta entre o banco de dados e o MySQL Workbench.
@@ -215,7 +215,7 @@ Agora que a função está criada, precisamos configurar o momento em que ela se
 
 No bloco Designer, clique em Add trigger. Expanda as opções no campo de busca que aparece e selecione API Gateway. Ao selecionar esta opção, um assistente de configuração de nova API vai abrir. Selecione Create an API e marque a opção REST API. Em segurança, mantenha a opção Open. Expanda as opções em Additional settings. Dê um nome para a API e, opcionalmente, um nome para o estágio de desenvolvimento padrão da API. Você pode criar diversos estágios de desenvolvimento, útil para separar o ambiente de desenvolvimento do de testes e do de produção por exemplo. Com as configurações feitas, clique em Add.
 
-Nas opções da função, encontre o bloco de opções VPC. Precisamos adicionar esta função lambda dentro da VPC onde está o banco de dados. Esta não é a única forma de fazer esta conexão, é possível deixar a função lambda fora da VPC e estabelecer uma conexão com a VPC e com o banco. Mantendo a função lambda dentro da VPC, no entanto, eliminamos a etapa de configuração da conexão entre a função lambda e a VPC. Lembre-se de que os objetos dentro da VPC não possuem acesso à internet por definição, neste exercício será possível fazer isso pois a função só se conecta com o banco de dados que está dentro da VPC e não precisa chamar outros serviços na internet.
+Volte para a página de configurações da função. Encontre o bloco de opções VPC. Precisamos adicionar esta função lambda dentro da VPC onde está o banco de dados. Esta não é a única forma de fazer esta conexão, é possível deixar a função lambda fora da VPC e estabelecer uma conexão com a VPC e com o banco. Mantendo a função lambda dentro da VPC, no entanto, eliminamos a etapa de configuração da conexão entre a função lambda e a VPC. Lembre-se de que os objetos dentro da VPC não possuem acesso à internet por definição, neste exercício será possível fazer isso pois a função só se conecta com o banco de dados que está dentro da VPC e não precisa chamar outros serviços na internet.
 
 Em VPC, clique em Edit. Selecione a VPC padrão, as três subnets padrão e o grupo de segurança padrão. Note que ao selecionar o grupo de segurança padrão, a página irá listar todas as regras Inbound e Outbound definidas nas configurações do grupo de segurança, incluíndo a que criamos para autorizar o seu IP a acessar a VPC. Clique em Save.
 
@@ -390,7 +390,71 @@ Esta função:
 - Caso não possua leads, invoca a função callback
 - Caso possua leads, dá um intervalo de 1 segundo para que uma query de inserção no banco de dados seja executada.
 
-\* [O formato do webhook irá mudar](https://developers.rdstation.com/pt-BR/migration/webhooks){:target="_blank"}.
+\* [O formato do webhook irá mudar](https://developers.rdstation.com/pt-BR/migration/webhooks){:target="_blank"}. Para referência, este é o conteúdo que esperamos receber na data de escrita deste post:
+
+{% highlight javascript %}
+
+{
+  "leads": [
+    {
+      "id": "1",
+      "uuid": "c2f3d2b3-......-eef38be32f7f",
+      "email": "email@email.com",
+      "name": "Lead Name",
+      "company": "Company Name",
+      "job_title": "Job",
+      "bio": "This is my bio",
+      "created_at": "2012-06-04T15:31:35-03:00",
+      "opportunity": "false",
+      "number_conversions": "3",
+      "user": "email@example.com",
+      "first_conversion": {
+        "content": {
+          "identificador": "ebook-abc",
+          "nome": "Lead Name",
+          "email_lead": "email@email.com",
+          "telefone": "99999999",
+          "empresa": "Company Name",
+          "cargo": "IT"
+        },
+        "created_at": "2012-06-04T15:31:35-03:00",
+        "cumulative_sum": "1",
+        "source": "source 1",
+        "conversion_origin": {
+          "source": "source 1",
+          "medium": "medium 1",
+          "value": "value 1",
+          "campaign": "campaign 1",
+          "channel": "channel 1"
+        }
+      },
+      "last_conversion": {
+        "content": {
+          "identificador": "webinar-abc",
+          "email_lead": "support@example.org"
+        },
+        "created_at": "2012-06-04T15:31:35-03:00",
+        "cumulative_sum": "2",
+        "source": "source 2"
+      },
+      "custom_fields": {},
+      "website": "http://www.mywebsite.com",
+      "personal_phone": "48 999999999",
+      "mobile_phone": "48 999999999",
+      "city": "Florianópolis",
+      "state": "SC",
+      "lead_stage": "Lead",
+      "tags": [
+        "tag 1",
+        "tag 2"
+      ],
+      "fit_score": "d",
+      "interest": 0
+    }
+  ]
+}
+
+{% endhighlight %}
 
 Este é o arquivo index.js completo:
 
@@ -447,7 +511,7 @@ exports.handler = function(event, context, callback) {
 
 Salve o arquivo. Selecione todos os arquivos criados na pasta (index.js, a pasta node_modules e o arquivo package.json) e os adicione em um arquivo compactado. O formato do arquivo compactado deve ser zip.
 
-![Pasta compactada com os arquivos index.js, node_modules e package.json]({{ "/assets/images/blog/2020-09-03-rd-station-e-google-sheets-na-aws-image-10.jpg" | absolute_url }})
+![Pasta compactada com os arquivos index.js, node_modules e package.json]({{ "/assets/images/blog/2020-09-03-rd-station-e-google-sheets-na-aws-image-11.png" | absolute_url }})
 Pasta compactada com os arquivos index.js, node_modules e package.json.
 
 Com a pasta compactada contendo os arquivos do projeto, acesse o painel do AWS Lambda e, dentro do bloco Function code, clique no botão Actions > Upload a .zip file. Uma janela de seleção de arquivos vai se abrir. Selecione o arquivo compactado com os arquivos do projeto e clique em Save. Estes arquivos estarão disponíveis no editor da função lambda, assim como o pacote mysql e suas dependências.
@@ -469,12 +533,22 @@ O passo final é ativar o disparo de webhooks no RD Station, o que pode ser feit
 
 Tudo pronto! Os leads do RD Station agora estão sendo armazenados em um banco de dados relacional na AWS.
 
+## Opcional: desabilite o acesso público ao endpoint do banco de dados
+
+Caso deseje, você pode desabilitar o acesso de dispositivos fora da VPC ao endpoint do banco de dados e assim garantir que apenas a função lambda tenha permissão de acesso am banco de dados. Para isso, acesse o menu Services e busque por RDS (ou utilize a barra de histórico ao lado do menu de opções para selecionar o serviço).
+
+Clique em databases e selecione a instância criada para o banco de dados.
+
+Clique no botão Modify.
+
+No bloco de opções Connectivity, clique em Additional connectivity configuration e em Public access marque a opção Not publicly accessible. Clique no botão Continue no final da página para que a instância do banco de dados seja atualizada com a nova configuração.
+
 ## Próximos passos
 
 Ao executar este exercício, você teve uma breve introdução a alguns dos serviços oferecidos pela AWS. Esta mesma arquitetura poderia ter sido feita de outras formas, utilizando outros serviços para armazenamento. O RD Station pode ser apenas uma fonte de entrada para um Data Warehouse ou um Data Lake, ou ainda poderia ter passado por um pipeline de dados mais complexo antes de ser armazenado no banco de dados. As possibilidades são diversas e a forma de implementação irá depender da necessidade de cada projeto. A [documentação da AWS](https://docs.aws.amazon.com/index.html){:target="_blank"} é uma ótima fonte de informações, bem como os inúmeros posts no Stack Overflow de pessoas que tiveram dificuldades ao configurar os recursos da AWS.
 
 Lembre-se do problema ilustrado no início do post com a integração entre o RD Station e o Google Sheets: o alto volume de leads simultâneos. Muitos leads sendo enviados simultaneamente para a API podem resultar em diversas instâncias da função lambda sendo executadas e diversas conexões com o banco de dados abertas. Uma solução para migrar grandes volumes de dados do RD Station pode ser dividir a base de leads em duas tendo como marca de corte uma data. Todos os leads criados até a data de corte podem ser importados manualmente para o banco de dados e os criados após a data de corte já entram pelo webhook. Esta solução evita o desperdício de recursos computacionais e o aumento dos custos decorrentes desta operação na AWS.
 
-Por fim: você encontrou algum erro neste post ou conhece uma forma de melhorar este trabalho? Fique a vontade para me adicionar no LinkedIn, cujo link está na minha assinatura neste post.
+Por fim: você encontrou algum erro neste post ou conhece uma forma de melhorar este trabalho? Fique a vontade para me adicionar no LinkedIn, cujo link está na minha assinatura neste post, e me contar como tornar este post ainda melhor. :)
 
 Bora continuar automatizando!
