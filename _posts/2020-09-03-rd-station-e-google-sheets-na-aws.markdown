@@ -13,7 +13,7 @@ Há exatos 2 anos eu escrevi um post neste blog explicando [como criar uma integ
 
 Antes de prosseguir: a leitura do post anterior não é obrigatória para assimilar os conceitos apresentados neste post, porém recomendo a leitura caso você queira saber como automatizar o envio de leads do RD Station para uma planilha sem depender de plugins. Para ver o post anterior, basta clicar neste link: [RD Station e Google Sheets]({% post_url 2018-09-02-rd-station-e-google-sheets %}).
 
-Ao longo do post são mostrados comandos em SQL e Javascript, além da configuração de um projeto em Node.js. Assumo que você tenha alguma familiaridade com estas tecnologias.
+Ao longo deste post são mostrados comandos em SQL e Javascript, além da configuração de um projeto em Node.js. Assumo que você tenha alguma familiaridade com estas tecnologias.
 
 ## Os limites de uma planilha
 
@@ -154,18 +154,18 @@ Cada grupo de segurança representa um conjunto de regras para a entrada e a sa�
 
 Clique no ID do grupo de segurança padrão. Nas abas Inbound rules e Outbound rules estão as regras de entrada e saída de tráfego, respectivamente. A regra de saída padrão é autorizar toda a saída de tráfego pela VPC. Clique em Edit inbound rules.
 
-Clique no botão Add rule. Para cada regra no grupo de segurança devem ser especificados o tipo de tráfego, o protocolo, a porta e o endereço de origem. Para autorizar o seu endereço de IP a estabelecer uma conexão com o banco de dados selecione o tipo All TCP. O protocolo e a porta vão ser preenchidos automaticamente. Clique em Source e selecione My IP. Seu endereço de IP será adicionado a tabela. Clique em Save rules para aplicar a configuração.
+Clique no botão Add rule. Para cada regra no grupo de segurança devem ser especificados o tipo de tráfego, o protocolo, a porta e o endereço de origem. Para autorizar o endereço IP da sua máquina local a estabelecer uma conexão com o banco de dados selecione o tipo All TCP. O protocolo e a porta vão ser preenchidos automaticamente. Clique em Source e selecione My IP. Seu endereço de IP será adicionado a tabela. Clique em Save rules para aplicar a configuração.
 
 Seu endereço de IP agora está autorizado a passar pela VPC e se conectar ao banco de dados pelo endpoint determinado na criação do banco. Vamos agora testar esta conexão.
 
 ### Configuração do banco de dados
 
-Para este exercício, vou utilizar o MySQL Workbench, que pode ser [baixado gratuitamente](https://dev.mysql.com/downloads/workbench/){:target="_blank"} no site do MySQL. Com o MySQL aberto, clique em nova conexão. Dê um nome para a conexão, mantenha o modo Standard (TCP/IP) selecionado e preencha os parâmetros Hostname, Port, Username e Password com os dados criados no processo de criação da nova instância MySQL na AWS. Clique em Test connection para verificar se está sendo possível se conectar ao banco a partir da sua máquina local. Se estiver tudo OK, clique em "OK" para abrir uma nova conexão com o banco de dados.
+Para este exercício, vou utilizar o MySQL Workbench, que pode ser [baixado gratuitamente](https://dev.mysql.com/downloads/workbench/){:target="_blank"} no site do MySQL. Com o MySQL Workbench aberto, clique em nova conexão. Dê um nome para a conexão, mantenha o modo Standard (TCP/IP) selecionado e preencha os parâmetros Hostname, Port, Username e Password com os dados criados no processo de criação da nova instância MySQL na AWS. Clique em Test connection para verificar se está sendo possível se conectar ao banco a partir da sua máquina local. Se estiver tudo OK, clique em "OK" para abrir uma nova conexão com o banco de dados.
 
 ![Conexão aberta entre o banco de dados e o MySQL Workbench]({{ "/assets/images/blog/2020-09-03-rd-station-e-google-sheets-na-aws-image-7.jpg" | absolute_url }})
 Conexão aberta entre o banco de dados e o MySQL Workbench.
 
-Vamos criar uma tabela neste banco chamada rdstation. Para isso, monte a seguinte query no editor de queries:
+Vamos criar um banco de dados chamado rdstation. Para isso, monte a seguinte query no editor de queries:
 
 {% highlight sql %}
 CREATE DATABASE rdstation;
@@ -191,7 +191,7 @@ O banco de dados agora está configurado para receber os dados dos leads vindos 
 
 ### Criação da função lambda
 
-O passo seguinte é configurar o serviço Lambda, que executa os trechos de código que vão acionar os demais serviços utilizados na arquitetura a ser criada. Os códigos são executados a partir de funções, invocadas após algum evento. Estas funções são chamadas de funções lambda. Não é necessário configurar ambiente para executar uma função lambda, isso já é feito na AWS. A única preocupação é escrever o código e carregá-lo para dentro do serviço.
+O passo seguinte é configurar o serviço Lambda, que executa os trechos de código que vão acionar os demais serviços utilizados na arquitetura a ser criada. Os códigos são executados a partir de funções, invocadas após algum evento. Estas funções são chamadas de funções lambda. Não é necessário criar e configurar um ambiente para executar uma função lambda, isso já é feito na AWS. A única preocupação é escrever o código e carregá-lo para dentro do serviço.
 
 Utilizando a barra de buscas, pesquise por "Lambda" e clique no primeiro resultado. Ao entrar na página do serviço Lambda, clique em "Criar função".
 
@@ -213,11 +213,11 @@ Tela de edição da função recém criada.
 
 Agora que a função está criada, precisamos configurar o momento em que ela será acionada. Conforme o desenho da arquitetura estabelecido no começo deste post, precisamos que a função seja chamada assim que a API receber os dados de um webhook. Vamos criar esta API a partir da função lambda criada.
 
-No bloco Designer, clique em Add trigger. Expanda as opções no campo de busca que aparece e selecione API Gateway. Ao selecionar esta opção, um assistente de configuração de nova API vai abrir. Selecione Create an API e marque a opção REST API. Em segurança, mantenha a opção Open. Expanda as opções em Additional settings. Dê um nome para a API e, opcionalmente, um nome para o estágio de desenvolvimento padrão da API. Você pode criar diversos estágios de desenvolvimento, útil para separar o ambiente de desenvolvimento do de testes e do de produção por exemplo. Com as configurações feitas, clique em Add.
+No bloco Designer, clique em Add trigger. Expanda as opções no campo de busca que aparece e selecione API Gateway. Ao selecionar esta opção, um assistente de configuração de nova API vai abrir. Selecione Create an API e marque a opção REST API. Em segurança, mantenha a opção Open. Expanda as opções em Additional settings. Dê um nome para a API e, opcionalmente, um nome para o estágio de desenvolvimento padrão da API. Você pode criar diversos estágios de desenvolvimento, útil para separar os ambientes de desenvolvimento, de testes e de produção, por exemplo. Com as configurações feitas, clique em Add.
 
-Volte para a página de configurações da função. Encontre o bloco de opções VPC. Precisamos adicionar esta função lambda dentro da VPC onde está o banco de dados. Esta não é a única forma de fazer esta conexão, é possível deixar a função lambda fora da VPC e estabelecer uma conexão com a VPC e com o banco. Mantendo a função lambda dentro da VPC, no entanto, eliminamos a etapa de configuração da conexão entre a função lambda e a VPC. Lembre-se de que os objetos dentro da VPC não possuem acesso à internet por definição, neste exercício será possível fazer isso pois a função só se conecta com o banco de dados que está dentro da VPC e não precisa chamar outros serviços na internet.
+Volte para a página de configurações da função. Encontre o bloco de opções VPC. Precisamos adicionar esta função lambda dentro da VPC onde está o banco de dados. Esta não é a única forma de fazer esta conexão, é possível deixar a função lambda fora da VPC e estabelecer uma conexão com a VPC e com o banco. Mantendo a função lambda dentro da VPC, no entanto, eliminamos a etapa de configuração da conexão entre a função lambda e a VPC. **Lembre-se: os objetos dentro da VPC não possuem acesso à internet por definição. Neste exercício será possível colocar a função lambda dentro da VPC pois a função só se conecta com o banco de dados que está dentro da VPC e não precisa chamar outros serviços na internet**.
 
-Em VPC, clique em Edit. Selecione a VPC padrão, as três subnets padrão e o grupo de segurança padrão. Note que ao selecionar o grupo de segurança padrão, a página irá listar todas as regras Inbound e Outbound definidas nas configurações do grupo de segurança, incluíndo a que criamos para autorizar o seu IP a acessar a VPC. Clique em Save.
+Em VPC, clique em Edit. Selecione a VPC padrão, as três subnets padrão e o grupo de segurança padrão. Note que ao selecionar o grupo de segurança padrão, a página irá listar todas as regras Inbound e Outbound definidas nas configurações do grupo de segurança, incluíndo a que criamos para autorizar o endereço de IP da sua máquina local a acessar a VPC. Clique em Save.
 
 A função está configurada, mas ainda faltam duas tarefas: dar permissão de leitura da API para a função criada e pegar o endereço do endpoint para o qual o webhook do RD Station deve mandar os dados.
 
@@ -244,7 +244,7 @@ Para encontrar o endereço da API criada, acesse o menu Stages e clique no está
 
 ## O orquestrador
 
-Lembre-se: a função lambda criada irá orquestrar os demais recursos da infraestrutura. Precisamos ensiná-la a fazer isso. Vá até a página do serviço lambda e acesse a função criada. Note que há um editor de códigos. Podemos criar os comandos direto no editor. Há uma limitação com o editor padrão, no entanto: não podemos instalar pacotes. No caso do Node.js, não podemos utilizar o NPM (Node Package Manager). Precisamos do pacote mysql para criar a conexão com o banco de dados dentro da função lambda e este pacote não está instalado neste ambiente. Todas as dependências necessárias para o projeto precisam ser carregadas neste ambiente.
+Lembre-se: a função lambda criada irá orquestrar os demais recursos da infraestrutura. Precisamos ensiná-la a fazer isso. Vá até a página do serviço lambda e acesse a função criada. Note que há um editor de códigos. Podemos criar os comandos direto no editor. Há uma limitação com o editor padrão, no entanto: não podemos instalar pacotes. No caso do Node.js, não podemos utilizar o NPM (Node Package Manager). Precisamos do pacote mysql para criar a conexão com o banco de dados dentro da função lambda e este pacote não está instalado neste ambiente. Todas as dependências necessárias para o projeto precisam ser carregadas no ambiente.
 
 Para carregar os arquivos necessários, crie uma pasta e comece um novo projeto em Node.js na raiz desta pasta. Caso não possua o Node.js instalado em sua máquina, [faça a instalação](https://nodejs.org/en/){:target="_blank"} antes de seguir.
 
@@ -270,12 +270,12 @@ Abra seu editor de códigos preferido e crie, na raiz da pasta do projeto, um ar
 
 ### A estrutura básica de uma função lambda
 
-Toda função lambda é iniciada com uma estrutura básica:
+Toda função lambda é iniciada com uma estrutura básica. No ambiente Node.js, esta estrutura é:
 
 {% highlight javascript %}
 
 exports.handler = async (event) => {
-
+	// TODO
   const response = {
     statusCode: 200,
     body: JSON.stringify('Hello from lambda!')
@@ -285,7 +285,7 @@ exports.handler = async (event) => {
 
 {% endhighlight %}
 
-Este objeto handler contém o "coração" da função. As ações de importância são executadas dentro de uma função no objeto o status da execução é retornado ao final. Antes de escrever o código da função, faremos um ajuste para executá-la de forma síncrona:
+Este objeto handler contém o "coração" da função lambda. As ações de importância são executadas dentro de uma função armazenada no objeto e o status da execução é retornado ao final. Antes de escrever o código da função, faremos um ajuste para executá-la de forma síncrona:
 
 {% highlight javascript %}
 
@@ -307,8 +307,8 @@ exports.handler = function(event, context, callback) {
 Há alguns pontos de atenção na reescrita desta função:
 - A função sendo inicializada agora recebe três parâmetros
 - O retorno é dado por uma função chamada callback
-- Dizemos para o objeto context que as chamadas a função callback não devem esperar o processamento da fila de eventos antes de sua execução
-- O objeto de retorno agora tem uma propriedade de cabeçalhos que passa cabeçalhos web. O cabeçalho Access-Control-Allow-Origin permite que a API seja chamada por serviços web de fora do domínio onde a API está hospedada, e é obrigatório para que a API possa ser acessada nestes casos.
+- Dizemos para o objeto context que as chamadas a função callback não devem esperar o processamento da [fila de eventos](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/){:target="_blank"} antes de sua execução
+- O objeto de retorno agora tem uma propriedade de cabeçalhos que passa cabeçalhos web. O cabeçalho Access-Control-Allow-Origin permite que a API seja chamada por serviços web de fora do domínio onde a API está hospedada, [e é obrigatório para que a API possa ser acessada nestes casos](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html){:target="_blank"}.
 
 A função será executada de forma síncrona até que seu término seja determinado por meio da chamada a callback.
 
@@ -337,7 +337,7 @@ function handleCallback(callback, error, status_code, message) {
 
 {% endhighlight %}
 
-Começamos importando o pacote mysql. Em seguida, criamos duas funções: handleEvent e handleCallback. A função handleEvent trata o objeto event. Este objeto possui informações sobre a requisição feita e possui uma propriedade chamada body. Quando uma requisição do tipo POST é feita e o corpo da requisição é preenchido (caso do webhook do RD Station), esta propriedade do objeto estará preenchida. Para tornar o exercício simples, apenas é verificado se a propriedade body do objeto evento está preenchida e, caso esteja, tenta fazer a conversão (parse) do objeto assumindo que ele veio em formato JSON.
+Começamos importando o pacote mysql. Em seguida, criamos duas funções: handleEvent e handleCallback. A função handleEvent trata o objeto event. Este objeto possui informações sobre a requisição feita e possui uma propriedade chamada body. Quando uma requisição do tipo POST é feita e o corpo da requisição é preenchido (caso do webhook do RD Station), esta propriedade do objeto estará preenchida. Para tornar o exercício simples, apenas é verificado se a propriedade body do objeto evento está preenchida e, caso esteja, tenta fazer a conversão (parse) do objeto assumindo que ele está no formato JSON.
 
 A função seguinte, handleCallback, abstrai a chamada a callback, recebida ao invocar a função associada ao objeto handler. Esta função retorna para o solicitante o resultado da execução da função.
 
@@ -545,9 +545,9 @@ No bloco de opções Connectivity, clique em Additional connectivity configurati
 
 ## Próximos passos
 
-Ao executar este exercício, você teve uma breve introdução a alguns dos serviços oferecidos pela AWS. Esta mesma arquitetura poderia ter sido feita de outras formas, utilizando outros serviços para armazenamento. O RD Station pode ser apenas uma fonte de entrada para um Data Warehouse ou um Data Lake, ou ainda poderia ter passado por um pipeline de dados mais complexo antes de ser armazenado no banco de dados. As possibilidades são diversas e a forma de implementação irá depender da necessidade de cada projeto. A [documentação da AWS](https://docs.aws.amazon.com/index.html){:target="_blank"} é uma ótima fonte de informações, bem como os inúmeros posts no Stack Overflow de pessoas que tiveram dificuldades ao configurar os recursos da AWS.
+Ao executar este exercício, você teve uma breve introdução a alguns dos serviços oferecidos pela AWS. Esta mesma arquitetura poderia ter sido feita de outras formas, utilizando outros serviços. O RD Station pode ser apenas uma fonte de entrada para um Data Warehouse ou um Data Lake, ou ainda poderia ter passado por um pipeline de dados mais complexo antes de ser armazenado no banco de dados. As possibilidades são diversas e a forma de implementação irá depender da necessidade de cada projeto. A [documentação da AWS](https://docs.aws.amazon.com/index.html){:target="_blank"} é uma ótima fonte de informações, bem como os inúmeros posts no Stack Overflow de pessoas que tiveram dificuldades ao configurar os recursos da AWS.
 
-Lembre-se do problema ilustrado no início do post com a integração entre o RD Station e o Google Sheets: o alto volume de leads simultâneos. Muitos leads sendo enviados simultaneamente para a API podem resultar em diversas instâncias da função lambda sendo executadas e diversas conexões com o banco de dados abertas. Uma solução para migrar grandes volumes de dados do RD Station pode ser dividir a base de leads em duas tendo como marca de corte uma data. Todos os leads criados até a data de corte podem ser importados manualmente para o banco de dados e os criados após a data de corte já entram pelo webhook. Esta solução evita o desperdício de recursos computacionais e o aumento dos custos decorrentes desta operação na AWS.
+Lembre-se do problema ilustrado no início do post com a integração entre o RD Station e o Google Sheets: o alto volume de leads simultâneos. Muitos leads sendo enviados simultaneamente para a API podem resultar em diversas instâncias da função lambda sendo executadas e diversas conexões com o banco de dados abertas. A solução dada no início do post para separar a base de leads por uma data de corte funciona funciona aqui também. Esta solução evita o desperdício de recursos computacionais e o aumento dos custos decorrentes desta operação na AWS.
 
 Por fim: você encontrou algum erro neste post ou conhece uma forma de melhorar este trabalho? Fique a vontade para me adicionar no LinkedIn, cujo link está na minha assinatura neste post, e me contar como tornar este post ainda melhor. :)
 
