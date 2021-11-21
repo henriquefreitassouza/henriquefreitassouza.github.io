@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Design on Data Automation</title>
-    <link>http://localhost:8080/en/categories/design/</link>
+    <link>https://automacaodedados.com.br/en/categories/design/</link>
     <description>Recent content in Design on Data Automation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Dec 2017 09:16:00 +0000</lastBuildDate><atom:link href="http://localhost:8080/en/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Dec 2017 09:16:00 +0000</lastBuildDate><atom:link href="https://automacaodedados.com.br/en/categories/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UX Design: behind the curtains of experience design</title>
-      <link>http://localhost:8080/en/stories/fundamentos-de-ux-design/</link>
+      <link>https://automacaodedados.com.br/en/stories/fundamentos-de-ux-design/</link>
       <pubDate>Fri, 01 Dec 2017 09:16:00 +0000</pubDate>
       
-      <guid>http://localhost:8080/en/stories/fundamentos-de-ux-design/</guid>
+      <guid>https://automacaodedados.com.br/en/stories/fundamentos-de-ux-design/</guid>
       <description>The phrase &amp;ldquo;a good design is invisible&amp;rdquo; surfaces with some frequency when searched online. Good designs are invisible when experiences are fluid. There are people that dedicate their careers to make memorable experiences, but we all are experience designers. We just don&amp;rsquo;t know it yet</description>
     </item>
     
