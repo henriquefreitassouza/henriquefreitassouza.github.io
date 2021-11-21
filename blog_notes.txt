@@ -1,8 +1,0 @@
--- DIA 3 --
-
-- A importância de entender estatística para testes
-- Hipóteses
-- Probabilidades
-- Histogramas e curvas de densidade
-- P-valor e alfa
-- Setup de testes e configuração de calculadoras
