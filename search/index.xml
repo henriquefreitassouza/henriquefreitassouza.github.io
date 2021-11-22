@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Buscar histórias on Automação de Dados</title>
-    <link>https://henriquefreitassouza.github.io/search/</link>
+    <link>https://www.automacaodedados.com.br/search/</link>
     <description>Recent content in Buscar histórias on Automação de Dados</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://henriquefreitassouza.github.io/search/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.automacaodedados.com.br/search/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
