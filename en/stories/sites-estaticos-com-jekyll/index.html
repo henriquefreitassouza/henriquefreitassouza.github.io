@@ -229,63 +229,63 @@
 <li><strong>_site</strong>: contains compile HTML files to be hosed on web servers.</li>
 </ul>
 <p>The default template language used with Jekyll is <a href="http://shopify.github.io/liquid/" target="_blank" rel="noopener">Liquid</a>, created by <a href="https://pt.shopify.com/" target="_blank" rel="noopener">Shopify</a>. Generally speaking, there are two types of tags used in Liquid. They are <strong>output tags</strong> and <strong>function tags</strong>. An exit in Liquid is anything that is written between two pairs of curly braces:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#111">{{</span> <span style="color:#75af00">value</span> <span style="color:#111">}}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{{</span> <span class="nx">value</span> <span class="p">}}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>output tags can even receive filters. Outputs are separated from filters with a vertical pipe, and some examples of filters are to uppercase letters and to slice them:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#111">{{</span> <span style="color:#75af00">value</span> <span style="color:#f92672">|</span> <span style="color:#75af00">upcase</span> <span style="color:#111">}}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{{</span> <span class="nx">value</span> <span class="o">|</span> <span class="nx">upcase</span> <span class="p">}}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Function tags, on the other hand, execute logical operations, and are written with a pair of curly braces with percentage symbols inside. Most of these tags can be opened and closed:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#111">{</span><span style="color:#f92672">%</span> <span style="color:#00a8c8">if</span> <span style="color:#75af00">value</span> <span style="color:#f92672">%</span><span style="color:#111">}</span>
-  <span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span><span style="color:#111">{</span><span style="color:#f92672">%</span> <span style="color:#75af00">endif</span> <span style="color:#f92672">%</span><span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">value</span> <span class="o">%</span><span class="p">}</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span><span class="p">{</span><span class="o">%</span> <span class="nx">endif</span> <span class="o">%</span><span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Besides if else and for, include also uses this syntax:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#111">{</span><span style="color:#f92672">%</span> <span style="color:#75af00">include</span> <span style="color:#75af00">arquivo</span><span style="color:#111">.</span><span style="color:#75af00">html</span> <span style="color:#75af00">param</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;valor&#34;</span> <span style="color:#f92672">%</span><span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{</span><span class="o">%</span> <span class="nx">include</span> <span class="nx">arquivo</span><span class="p">.</span><span class="nx">html</span> <span class="nx">param</span><span class="o">=</span><span class="s2">&#34;valor&#34;</span> <span class="o">%</span><span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>It doesn&rsquo;t have a close tag though, and parameters are optional.</p>
 <p>Jekyll posts are written using <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> by default. Post files in Jekyll must be named using the convention <strong>year-month-day.md</strong> or <strong>year-month-day.markdown</strong> with 4 digit year and month and day both with 2 digits. File extensions can be md or markdown. All posts must initiate with a Front Matter declaration at their beginning:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#111">---</span>
-<span style="color:#f92672">layout</span><span style="color:#111">:</span> <span style="color:#ae81ff">post</span>
-<span style="color:#f92672">title</span><span style="color:#111">:</span>  <span style="color:#d88200">&#34;Hello world!&#34;</span>
-<span style="color:#f92672">date</span><span style="color:#111">:</span>   <span style="color:#d88200">2018-01-01 19:47:00</span>
-<span style="color:#f92672">category</span><span style="color:#111">:</span> <span style="color:#ae81ff">geral</span>
-<span style="color:#111">---</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l">post</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w">  </span><span class="s2">&#34;Hello world!&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w">   </span><span class="ld">2018-01-01 19:47:00</span><span class="w">
+</span><span class="w"></span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l">geral</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Front Matter is written in a language called <strong>Yaml</strong>, a serialization language used to create configuration files. Everything inside the sets of three dashes will be compiled, and Front Matter directives won&rsquo;t be visible on compiled files.</p>

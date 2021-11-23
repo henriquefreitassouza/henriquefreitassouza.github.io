@@ -201,84 +201,84 @@
 <p>Nem sempre a solução é construir um <em>middleware</em>. Ela pode ser mais simples e barata. Ela pode até mesmo utilizar estas mesmas planilhas e documentos que fazem o meio de campo. Planilhas são extremamente dinâmicas quanto as possibilidades para ingestão e tratamento de dados. Há muitos casos em que faz sentido manter uma planilha atualizada com certa frequência em prol de construir uma ferramenta, especialmente se o orçamento for baixo. O trabalho que desenvolvi resultou em uma destas planilhas, cujas informações traziam o estado de saúde financeira da organização.</p>
 <h2 id="automação-com-apis">Automação com APIs</h2>
 <p>As fontes das quais precisei extrair dados permitem não só a exportação dos dados para planilha, mas também em um formato chamado JSON. O nome é um acrônimo para <em>Javascript Object Notation</em>, e esse tipo de arquivo é muito usado para criar comunicações entre sistemas que, a priori, não se entendem. Um exemplo desse formato:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span>
-  <span style="color:#f92672">&#34;nome&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Adwords&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;conta&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;xpto&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;gasto_total&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;48032.44&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;impressoes&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;188492&#34;</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;nome&#34;</span><span class="p">:</span> <span class="s2">&#34;Adwords&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;conta&#34;</span><span class="p">:</span> <span class="s2">&#34;xpto&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;gasto_total&#34;</span><span class="p">:</span> <span class="s2">&#34;48032.44&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;impressoes&#34;</span><span class="p">:</span> <span class="s2">&#34;188492&#34;</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Cada linha entre as chaves representa um par, em forma de chave e valor. A chave representa um identificador enquanto o valor é o conteúdo da chave. O conjunto de pares entre os símbolos de chave recebe o nome de objeto. Um objeto pode conter vários pares de chaves e valores dentro dele e armazenar até mesmo outros objetos.</p>
 <p>O JSON é um formato útil por ser padrão entre diferentes tecnologias. Todas as linguagens de programação mais conhecidas possuem uma forma para enviar e receber objetos JSON pela internet, e por isso é comum que este seja um dos formatos mais adotados para integrar ferramentas. Diversas ferramentas fornecem um serviço capaz de entregar objetos JSON para quem os solicita - geralmente outros sistemas. Este serviço é chamado de API, ou <em>Application Programming Interface</em>, uma espécie de ponte que entrega determinados dados conforme solicitado.</p>
 <h2 id="um-exemplo-prático-de-funcionamento-de-apis">Um exemplo prático de funcionamento de APIs</h2>
 <p>Imagine que você queira saber as avaliações dadas pela crítica ao filme Batman: O Cavaleiro Das Trevas Retorna. Uma base de dados como a fornecida pela <a href="http://www.omdbapi.com/" target="_blank" rel="noopener">OMDB</a> possui as informações que você busca e disponibiliza uma API para fazer a consulta. Basta acessar o endereço <a href="http://www.omdbapi.com/?apikey=">http://www.omdbapi.com/?apikey=</a><strong>sua_api_key</strong>&amp;t=Batman+The+Dark+Knight e você terá uma informação como esta:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span>
-  <span style="color:#f92672">&#34;Title&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Batman: The Dark Knight Returns, Part 1&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Year&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;2012&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Rated&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;PG-13&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Released&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;25 Sep 2012&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Genre&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Animation, Action, Adventure&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Language&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;English&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Country&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;USA&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Awards&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;5 nominations.&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;Metascore&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;N/A&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;imdbRating&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;8.0&#34;</span><span style="color:#111">,</span>
-  <span style="color:#f92672">&#34;imdbVotes&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;42,023&#34;</span><span style="color:#111">,</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Batman: The Dark Knight Returns, Part 1&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Year&#34;</span><span class="p">:</span> <span class="s2">&#34;2012&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Rated&#34;</span><span class="p">:</span> <span class="s2">&#34;PG-13&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Released&#34;</span><span class="p">:</span> <span class="s2">&#34;25 Sep 2012&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Genre&#34;</span><span class="p">:</span> <span class="s2">&#34;Animation, Action, Adventure&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;English&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Country&#34;</span><span class="p">:</span> <span class="s2">&#34;USA&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Awards&#34;</span><span class="p">:</span> <span class="s2">&#34;5 nominations.&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Metascore&#34;</span><span class="p">:</span> <span class="s2">&#34;N/A&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;imdbRating&#34;</span><span class="p">:</span> <span class="s2">&#34;8.0&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;imdbVotes&#34;</span><span class="p">:</span> <span class="s2">&#34;42,023&#34;</span><span class="p">,</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>A porção do endereço com o termo &ldquo;sua_api_key&rdquo; se refere a autenticação. Toda chamada a API da OMDB deve ser feita com uma chave que identifica a pessoa (ou sistema) que fez a requisição, e apenas usuários verificados podem ver as informações sobre os filmes. Você pode se cadastrar gratuitamente no site da OMDB para receber uma chave de acesso a API. O JSON retornado foi simplificado, mas a avaliação buscada retornou a chave &ldquo;imdbRating&rdquo;, com o valor 8.0. Talvez você ainda esteja se perguntando qual a utilidade de encontrar essas informações desta forma quando podemos simplesmente acessar o site da IMDB e encontrar a listagem do filme. É aqui que começamos a falar de automação: este trabalho pode ser feito uma única vez e configurado para ser re-executado sempre que você quiser, desta forma o objeto JSON que retorna terá sempre os valores mais recentes a sua disposição. Este pode não ser o melhor exemplo para fazer buscas com certa frequência, mas imagine que estes dados sejam o valor de ações de empresas e que você está montando um quadro de métricas que precisa do valor das ações atualizadas de hora em hora. Basta configurar uma rotina que vai chamar a API do serviço financeiro de hora em hora e buscar o valor mais recente das ações, e assim você não tem que buscar essa informação manualmente sempre que precisar.</p>
 <h2 id="de-volta-ao-projeto-de-automação">De volta ao projeto de automação</h2>
 <p>As ferramentas com as quais trabalhei para extrair as informações que precisava possuem APIs com vasta documentação e diversos endereços para puxar dados diferentes. Uma vez que capturei os objetos JSON, o trabalho foi alimentar a fonte, isto é, o local que recebeu e tratou os dados vindos dos sistemas. Esse local, que serviria de fonte para o painel de relatórios, foi uma planilha criada no Google Sheets. O Google Sheets foi escolhido por possuir uma ferramenta de criação de scripts chamada <a href="https://www.google.com/script/" target="_blank" rel="noopener">Google Apps Script</a>, usada para, entre outras coisas, estender as capacidades padrão das ferramentas do Google. Um dos recursos da ferramenta é se comunicar com outros sistemas pela internet, o que atendeu a expectativa.</p>
 <p>Com o editor de scripts aberto, algumas poucas linhas de código já me trouxeram os objetos JSON que precisava:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">var</span> <span style="color:#75af00">spreadsheet</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;https://sheets.google.com/id=spreadsheet1&#34;</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">sheet</span> <span style="color:#f92672">=</span> <span style="color:#75af00">SpreadsheetApp</span><span style="color:#111">.</span><span style="color:#75af00">openByUrl</span><span style="color:#111">(</span><span style="color:#75af00">spreadsheet</span><span style="color:#111">).</span><span style="color:#75af00">getSheetByName</span><span style="color:#111">(</span><span style="color:#d88200">&#34;name&#34;</span><span style="color:#111">);</span>
-<span style="color:#75715e">// Essa chamada irá retornar um JSON como o do exemplo anterior
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">url</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;http://www.omdbapi.com/?apikey=sua_api_key&amp;t=Batman+The+Dark+Knight&#34;</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#75af00">UrlFetchApp</span><span style="color:#111">.</span><span style="color:#75af00">fetch</span><span style="color:#111">(</span><span style="color:#75af00">url</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">json</span> <span style="color:#f92672">=</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">parse</span><span style="color:#111">(</span><span style="color:#75af00">response</span><span style="color:#111">);</span>
-<span style="color:#75715e">// Como eu só quero a informação de avaliação, seleciono apenas ela dentro do JSON retornado
-</span><span style="color:#75715e"></span><span style="color:#75af00">sheet</span><span style="color:#111">.</span><span style="color:#75af00">getRange</span><span style="color:#111">(</span><span style="color:#d88200">&#34;A1&#34;</span><span style="color:#111">).</span><span style="color:#75af00">setValue</span><span style="color:#111">(</span><span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">imdbRating</span><span style="color:#111">);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">spreadsheet</span> <span class="o">=</span> <span class="s2">&#34;https://sheets.google.com/id=spreadsheet1&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">openByUrl</span><span class="p">(</span><span class="nx">spreadsheet</span><span class="p">).</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">);</span>
+<span class="c1">// Essa chamada irá retornar um JSON como o do exemplo anterior
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&#34;http://www.omdbapi.com/?apikey=sua_api_key&amp;t=Batman+The+Dark+Knight&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="c1">// Como eu só quero a informação de avaliação, seleciono apenas ela dentro do JSON retornado
+</span><span class="c1"></span><span class="nx">sheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&#34;A1&#34;</span><span class="p">).</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">json</span><span class="p">.</span><span class="nx">imdbRating</span><span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Isso poderia ter sido feito de várias formas, mas o processo é idêntico:</p>

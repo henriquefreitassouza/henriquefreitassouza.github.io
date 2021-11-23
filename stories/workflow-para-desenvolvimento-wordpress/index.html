@@ -298,20 +298,20 @@
 </ul>
 <p>As duas abordagens tem prós e contras, e não há um consenso sobre qual é a forma correta de fazer. Esta é outra decisão que cabe as pessoas desenvolvedoras. Eu costumo seguir o caminho de criar um <em>plugin</em> para desenvolver as funcionalidades do tema. Gosto desta abordagem, pois consigo trabalhar no tema de forma independente, sem perder conteúdo em uma eventual troca de tema. Seguindo por este caminho, é necessário garantir que o <em>plugin</em> seja compatível com novos temas.</p>
 <p>Para organizar o espaço de trabalho, eu crio uma pasta que vai armazenar todos os <em>plugins</em> e temas que estiver desenvolvendo para determinada empresa. Dentro desta pasta eu crio outras duas, uma chamada <em><strong>plugins</strong></em> e outra chamada <strong>temas</strong>. Dentro da pasta <em>plugins</em>, crio uma pasta com o nome do plugin e dentro dela outras duas: uma com o nome <strong>src</strong> e outra com o nome <strong>dist</strong>. A pasta src vai ter os arquivos usados em desenvolvimento e a pasta dist vai ter os arquivos que serão usados na versão em produção do <em>plugin</em>. Dentro de src eu coloco os arquivos do <em>boilerplate</em> que gerei online. Sigo a mesma estrutura para a pasta temas. Crio as pastas src e dist e copio os arquivos de dentro do <em>boilerplate</em> do tema para a pasta src. A estrutura de pastas segue este padrão:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nome-da-empresa/
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nome-da-empresa/
 nome-da-empresa/plugins/
 nome-da-empresa/plugins/nome-do-plugin/
 nome-da-empresa/plugins/nome-do-plugin/src/
@@ -334,12 +334,12 @@ nome-da-empresa/temas/nome-do-tema/dist/</code></pre></td></tr></table>
 </ul>
 <p>Fazer estas coisas sempre que os arquivos são editados pode levar um tempo considerável. Para que eu não tenha que fazer isso manualmente, uso o <a href="https://gulpjs.com/" target="_blank" rel="noopener">Gulp</a>. O Gulp é um gerenciador de tarefas e sua função é automatizar tarefas comuns no desenvolvimento de software para que a pessoa desenvolvedora foque na escrita de código. O Gulp está disponível no <a href="https://www.npmjs.com/" target="_blank" rel="noopener">Node Package Manager, ou NPM</a>. O NPM é um gerenciador de pacotes que possui diversas bibliotecas de código aberto. O NPM, por sua vez, é o gerenciador de pacotes do <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>, um ambiente de servidor que executa Javascript. Para instalar o Gulp é necessário ter o NPM e para instalar o NPM é necessário ter o Node.js. Ao baixar e instalar o Node.js para o seu sistema operacional, o NPM será instalado junto.</p>
 <p>Uma vez que a estrutura de pastas esteja pronta, crio um novo pacote dentro das pastas nome-do-tema e nome-do-plugin. Para isso, usando o console, eu navego até estes diretórios, um de cada vez, e crio o pacote usando o seguinte comando:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm init</code></pre></td></tr></table>
 </div>
 </div>
 <figure >
@@ -355,13 +355,13 @@ nome-da-empresa/temas/nome-do-tema/dist/</code></pre></td></tr></table>
 
 <p>O comando irá pedir algumas informações para configurar o pacote. Um arquivo chamado package.json é criado ao final da configuração do novo pacote. Este arquivo especifica as dependências do pacote criado. Por hora ele só vai conter os dados que foram passados pelo console no momento da criação, mas conforme novos pacotes forem sendo instalados, elas serão listadas no package.json como dependências para o projeto. Comecei criando o pacote pela pasta do <em>plugin</em>, mas a ordem é irrelevante. Após repetir o processo de criação de novo pacote na pasta do tema, um package.json será criado para este tema. Crio um pacote para cada tema e <em>plugin</em> presente na pasta de projetos da empresa, assim cada pacote é desenvolvido de maneira independente.</p>
 <p>O próximo passo é instalar o Gulp, o que pode ser feito com o comando a seguir:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --g gulp-cli
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install --g gulp-cli
 npm install --save-dev gulp</code></pre></td></tr></table>
 </div>
 </div>
@@ -376,12 +376,12 @@ npm install --save-dev gulp</code></pre></td></tr></table>
 <h2 id="configuração-do-gulpfilejs">Configuração do gulpfile.js</h2>
 <p>Para que possa ser usado, o Gulp precisa ler as instruções de um arquivo chamado gulpfile.js. Esse arquivo irá conter a definição das tarefas que o Gulp deve executar sempre que os arquivos do projeto forem modificados. O gulpfile.js deve ser criado na raiz dos projetos, ou as pastas dos projetos que abrigam as pastas src, dist e node_modules. O gulpfile.js irá também carregar as dependências do gulp para realizar as ações que queremos, como concatenar arquivos, minificar e compilar arquivos Sass.</p>
 <p>Como faremos uso de pacotes de terceiros para configurar o gulpfile.js, teremos que carregá-las no pacote via NPM. Cada projeto terá as suas dependências. Para este projeto de exemplo, vou usar algumas com as quais tenho trabalhado em projetos recentes. Para isso, usando o console e o comando npm install vamos baixar os seguintes pacotes:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --save-dev gulp-sass gulp-autoprefixer gulp-uglify gulp-cssnano gulp-rename merge2</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install --save-dev gulp-sass gulp-autoprefixer gulp-uglify gulp-cssnano gulp-rename merge2</code></pre></td></tr></table>
 </div>
 </div>
 <p>Diversas dependências de desenvolvimento foram separadas por espaços após a <em>flag</em> --save-dev. Elas são:</p>
@@ -395,137 +395,137 @@ npm install --save-dev gulp</code></pre></td></tr></table>
 </ul>
 <p>Atualização 12/11/2021: O Gulp possui dois métodos chamados <em>serial</em> e <em>parallel</em> que podem ser utilizados para gerenciar a execução de múltiplas tarefas, dispensando o uso do pacote Merge.</p>
 <p>Com as dependências instaladas, podemos carregá-las no gulpfile.js e configurar as tarefas que devem ser executadas automaticamente. Começando pelo <em>plugin</em>, crie um arquivo na raiz do pacote (onde estão as pastas src, dist, node_modules e o arquivo package.json) chamado gulpfile.js. Escreva o seguinte dentro dele:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">var</span> <span style="color:#75af00">gulp</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;gulp&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">sass</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;gulp-sass&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">autoprefixer</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;gulp-autoprefixer&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">uglify</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;gulp-uglify&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">cssnano</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;gulp-cssnano&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">rename</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;gulp-rename&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">merge</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;merge2&#39;</span><span style="color:#111">);</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-sass&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">autoprefixer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-autoprefixer&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">uglify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-uglify&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cssnano</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-cssnano&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">rename</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-rename&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">merge</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;merge2&#39;</span><span class="p">);</span>
 
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">diretorios</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">src</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;./src/&#39;</span><span style="color:#111">,</span>
-  <span style="color:#75af00">dist</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;./dist/&#39;</span><span style="color:#111">,</span>
-  <span style="color:#75af00">node_modules</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;./node_modules/&#39;</span>
-<span style="color:#111">};</span></code></pre></td></tr></table>
+<span class="kd">var</span> <span class="nx">diretorios</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;./src/&#39;</span><span class="p">,</span>
+  <span class="nx">dist</span><span class="o">:</span> <span class="s1">&#39;./dist/&#39;</span><span class="p">,</span>
+  <span class="nx">node_modules</span><span class="o">:</span> <span class="s1">&#39;./node_modules/&#39;</span>
+<span class="p">};</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>As dependências são carregadas com a função require em variáveis a serem referenciadas no restante do arquivo. Uma variável chamada &ldquo;diretorios&rdquo; foi criada e armazena um objeto contendo os caminhos para as pastas src, dist e node_modules a partir da raiz. Ela é opcional, gosto de usá-la apenas para organizar os diretórios que são constantemente usados pelas tarefas.</p>
 <p>O passo seguinte é criar as tarefas. A primeira coisa que faço é criar uma tarefa que chamo de esqueleto: essa tarefa coloca na pasta dist os arquivos que já estão prontos para serem usados em produção e cria a estrutura de pastas do projeto.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">task</span><span style="color:#111">(</span><span style="color:#d88200">&#39;construir-esqueleto&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*.php&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*.txt&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*.pot&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span><span style="color:#111">));</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;construir-esqueleto&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*.php&#39;</span><span class="p">,</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*.txt&#39;</span><span class="p">,</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*.pot&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span><span class="p">));</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Atualização 12/11/2021: <a href="https://gulpjs.com/docs/en/api/task/" target="_blank" rel="noopener">O uso do método task não é mais recomendado</a>. Tarefas devem ser criadas como funções e exportadas. Estas funções não devem retornar o stream Gulp, mas invocar um método de <em>callback</em> que é passado como parâmetro para a função. A mesma função reescrita seguindo a convenção adotada na data de atualização deste post fica:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">construir_esqueleto</span><span style="color:#111">(</span><span style="color:#75af00">cb</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*.php&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*.txt&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*.pot&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span><span style="color:#111">));</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">construir_esqueleto</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*.php&#39;</span><span class="p">,</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*.txt&#39;</span><span class="p">,</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*.pot&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span><span class="p">));</span>
 
-  <span style="color:#75af00">cb</span><span style="color:#111">();</span>
-<span style="color:#111">};</span></code></pre></td></tr></table>
+  <span class="nx">cb</span><span class="p">();</span>
+<span class="p">};</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>O Gulp usa sintaxe <a href="https://en.wikipedia.org/wiki/Glob_%28programming%29" target="_blank" rel="noopener">Glob</a> para encontrar arquivos e pastas. O método src do objeto gulp é usado para buscar arquivos com extensões .php, .txt e .pot dentro do diretório raiz, e qualquer um abaixo dele, e colocá-los no diretório especificado dentro de diretorios.dist. Usamos <em>return</em> aqui para retornar o &ldquo;<em>stream</em> de execução&rdquo; da tarefa e assim deixar que outras tarefas saibam sobre sua execução. Isso é importante para montar uma fila de tarefas de forma a especificar as dependências entre tarefas. Por exemplo, preciso que os arquivos Javascript e CSS de terceiros que venha a usar estejam carregados antes de gerar os scripts e folhas de estilo finais.</p>
 <p>Seguindo, vamos criar uma tarefa para compilar os scripts Javascript e colocá-los na pasta dist.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">task</span><span style="color:#111">(</span><span style="color:#d88200">&#39;construir-script&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">scripts_admin</span> <span style="color:#f92672">=</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;admin/js/nome-do-plugin-admin.js&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">uglify</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">rename</span><span style="color:#111">({</span>
-    <span style="color:#75af00">suffix</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;.min&#39;</span>
-  <span style="color:#111">}))</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;admin/js&#39;</span><span style="color:#111">));</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;construir-script&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">scripts_admin</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;admin/js/nome-do-plugin-admin.js&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">({</span>
+    <span class="nx">suffix</span><span class="o">:</span> <span class="s1">&#39;.min&#39;</span>
+  <span class="p">}))</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span> <span class="o">+</span> <span class="s1">&#39;admin/js&#39;</span><span class="p">));</span>
 
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">scripts_publico</span> <span style="color:#f92672">=</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;public/js/nome-do-plugin-public.js&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">uglify</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">rename</span><span style="color:#111">({</span>
-    <span style="color:#75af00">suffix</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;.min&#39;</span>
-  <span style="color:#111">}))</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;public/js&#39;</span><span style="color:#111">));</span>
+  <span class="kd">var</span> <span class="nx">scripts_publico</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;public/js/nome-do-plugin-public.js&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">({</span>
+    <span class="nx">suffix</span><span class="o">:</span> <span class="s1">&#39;.min&#39;</span>
+  <span class="p">}))</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span> <span class="o">+</span> <span class="s1">&#39;public/js&#39;</span><span class="p">));</span>
 
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">merge</span><span style="color:#111">(</span><span style="color:#75af00">scripts_admin</span><span style="color:#111">,</span> <span style="color:#75af00">scripts_publico</span><span style="color:#111">);</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">scripts_admin</span><span class="p">,</span> <span class="nx">scripts_publico</span><span class="p">);</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Como não vamos usar bibliotecas Javascript externas, não há uma tarefa para carregá-las na pasta do projeto. Caso tivesse, essa tarefa precisaria ser criada e executada antes da tarefa de compilação dos scripts. Quando o <em>boilerplate</em> do <em>plugin</em> foi gerado, foram criados arquivos Javascript e CSS com os nomes &ldquo;nome-do-plugin-admin.js&rdquo;, &ldquo;nome-do-plugin-admin.css&rdquo;, &ldquo;nome-do-plugin-public.js&rdquo; e &ldquo;nome-do-plugin-public.css&rdquo;, sendo nome-do-plugin o nome do <em>plugin</em> definido no campo <em>slug</em> da página de geração de <em>boilerplates</em> do wppb.</p>
@@ -538,72 +538,72 @@ npm install --save-dev gulp</code></pre></td></tr></table>
 <li>Retornar a combinação dos <em>streams</em> de execução armazenadas nas variáveis scripts_admin e scripts_publico.</li>
 </ul>
 <p>Repare que não estamos usando o <em>return</em> direto no objeto gulp, estamos armazenando os streams nas variáveis scripts_admin e scipts_publico. Os dois streams são retornados dentro do objeto merge, que fará a gestão da execução das tarefas e irá garantir sua execução na ordem em que devem ser executadas. Outro ponto: no método src do objeto gulp estamos passando um <em>array</em> com apenas um item. O método também aceita strings, então este trecho de código poderia ter sido escrito da seguinte maneira:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;admin/js/nome-do-plugin.js&#39;</span><span style="color:#111">)</span>
-    <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(...));</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;admin/js/nome-do-plugin.js&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(...));</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Costumo passar uma lista apenas para manter consistência de escrita entre as tarefas.</p>
 <p>Faremos um processo similar para preparar os arquivos CSS. O <em>boilerplate</em> do <em>plugin</em> não veio preparado para o desenvolvimento de Sass, então não há um diretório específico para trabalhar com arquivos Sass. O que costumo fazer é apagar a pasta e o conteúdo css, e no lugar crio uma chamada scss, tanto no diretório admin quanto no public. Dentro destas pastas serão colocados todos os arquivos com extensão .scss e as pastas com as <em>partials</em>, <em>mixins</em>, variáveis e etc. Na pasta também terá um arquivo com o nome nome-do-plugin-admin.css dentro do diretório admin e nome-do-plugin-public.css dentro do diretório public. Eu apago estes arquivos e gero outros usando Sass, mantendo o nome, o sufixo .min e mantenho o diretório css dentro de dist.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">task</span><span style="color:#111">(</span><span style="color:#d88200">&#39;construir-estilo&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">estilo_admin</span> <span style="color:#f92672">=</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;admin/scss/nome-do-plugin.admin.scss&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">sass</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">autoprefixer</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">cssnano</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">rename</span><span style="color:#111">({</span>
-    <span style="color:#75af00">suffix</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;.min&#39;</span>
-  <span style="color:#111">}))</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;admin/css&#39;</span><span style="color:#111">));</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;construir-estilo&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">estilo_admin</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;admin/scss/nome-do-plugin.admin.scss&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">autoprefixer</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cssnano</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">({</span>
+    <span class="nx">suffix</span><span class="o">:</span> <span class="s1">&#39;.min&#39;</span>
+  <span class="p">}))</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span> <span class="o">+</span> <span class="s1">&#39;admin/css&#39;</span><span class="p">));</span>
 
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">estilo_publico</span> <span style="color:#f92672">=</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;public/scss/nome-do-plugin.public.scss&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">sass</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">autoprefixer</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">cssnano</span><span style="color:#111">())</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">rename</span><span style="color:#111">({</span>
-    <span style="color:#75af00">suffix</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;.min&#39;</span>
-  <span style="color:#111">}))</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;public/css&#39;</span><span style="color:#111">));</span>
+  <span class="kd">var</span> <span class="nx">estilo_publico</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;public/scss/nome-do-plugin.public.scss&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">autoprefixer</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cssnano</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">({</span>
+    <span class="nx">suffix</span><span class="o">:</span> <span class="s1">&#39;.min&#39;</span>
+  <span class="p">}))</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span> <span class="o">+</span> <span class="s1">&#39;public/css&#39;</span><span class="p">));</span>
 
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">merge</span><span style="color:#111">(</span><span style="color:#75af00">estilo_admin</span><span style="color:#111">,</span> <span style="color:#75af00">estilo_publico</span><span style="color:#111">);</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">estilo_admin</span><span class="p">,</span> <span class="nx">estilo_publico</span><span class="p">);</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Esta tarefa irá:</p>
@@ -622,40 +622,40 @@ npm install --save-dev gulp</code></pre></td></tr></table>
 <li>Criando uma tarefa que pega tudo o que está no diretório dist e copia para o diretório de instalação do WordPress;</li>
 <li>Configurando a tarefa padrão do gulp para executar as duas tarefas anteriores e monitorar por mudanças nos arquivos de desenvolvimento;</li>
 </ul>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">task</span><span style="color:#111">(</span><span style="color:#d88200">&#39;configurar-projeto&#39;</span><span style="color:#111">,</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;construir-esqueleto&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;construir-script&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;construir-estilo&#39;</span><span style="color:#111">]);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;configurar-projeto&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;construir-esqueleto&#39;</span><span class="p">,</span> <span class="s1">&#39;construir-script&#39;</span><span class="p">,</span> <span class="s1">&#39;construir-estilo&#39;</span><span class="p">]);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Atualização 12/11/2021: a declaração de tarefas no Gulp possui outra sintaxe:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">configurar_projeto</span> <span style="color:#f92672">=</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">serial</span><span style="color:#111">([</span>
-  <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">parallel</span><span style="color:#111">([</span><span style="color:#d88200">&#39;construir_esqueleto&#39;</span><span style="color:#111">]),</span>
-  <span style="color:#d88200">&#39;construir_script&#39;</span><span style="color:#111">,</span>
-  <span style="color:#d88200">&#39;construir_estilo&#39;</span>
-<span style="color:#111">]);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">exports</span><span class="p">.</span><span class="nx">configurar_projeto</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">serial</span><span class="p">([</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">parallel</span><span class="p">([</span><span class="s1">&#39;construir_esqueleto&#39;</span><span class="p">]),</span>
+  <span class="s1">&#39;construir_script&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;construir_estilo&#39;</span>
+<span class="p">]);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>A forma como a tarefa é chamada no console se mantém igual.</p>
 <p>A tarefa configurar-projeto está recebendo um <em>array</em> com os nomes das tarefas criadas anteriormente e não uma função de <em>callback</em>. Este <em>array</em> indica que a tarefa configurar projeto só pode ser executada após as tarefas construir-esqueleto, construir-script e construir-estilo. Como não há uma função de callback, nada será feito após a execução das tarefas. A tarefa configurar-projeto é usada neste caso apenas como um atalho para executar as tarefas que criamos anteriormente. Após a tarefa configurar-projeto finalizar a execução, o diretório dist deverá estar com todos os arquivos que serão usados em produção.</p>
 <p>Para testar, abra um console e navegue até o diretório onde está o arquivo gulpfile.js (na raiz do <em>plugin</em>). Escreva:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gulp configurar-projeto</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">gulp configurar-projeto</code></pre></td></tr></table>
 </div>
 </div>
 <p>Após o console acusar a finalização do script, a pasta dist deverá estar com os arquivos que pedimos para serem copiados.</p>
@@ -672,58 +672,58 @@ npm install --save-dev gulp</code></pre></td></tr></table>
 
 <p>Entre no diretório dist e abra as pastas admin e public. Repare que a pasta que está nestes diretórios se chama css e o arquivo dentro dela é o .css compilado, não o .scss que estamos trabalhando em desenvolvimento. A pasta scss não foi criada dentro do diretório dist. Note também que os nomes dos arquivos css e js nas duas pastas estão com o sufixo .min aplicados.</p>
 <p>O passo seguinte é pegar tudo o que está no diretório dist e copiar para o diretório de instalação do WordPress.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">task</span><span style="color:#111">(</span><span style="color:#d88200">&#39;configurar-projeto-em-stage&#39;</span><span style="color:#111">,</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;configurar-projeto&#39;</span><span style="color:#111">],</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">src</span><span style="color:#111">([</span>
-    <span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">dist</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*&#39;</span>
-  <span style="color:#111">])</span>
-  <span style="color:#111">.</span><span style="color:#75af00">pipe</span><span style="color:#111">(</span><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">dest</span><span style="color:#111">(</span><span style="color:#d88200">&#39;/diretorio/de/instalacao/do/wordpress/wp-content/plugins/nome-do-plugin&#39;</span><span style="color:#111">));</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;configurar-projeto-em-stage&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;configurar-projeto&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span>
+    <span class="nx">diretorios</span><span class="p">.</span><span class="nx">dist</span> <span class="o">+</span> <span class="s1">&#39;**/*&#39;</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;/diretorio/de/instalacao/do/wordpress/wp-content/plugins/nome-do-plugin&#39;</span><span class="p">));</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Assumo que os <em>plugins</em> da sua instalação do WordPress estejam dentro de uma pasta chamada wp-content/plugins. Se não for caso, o diretório deve ser o de instalação dos <em>plugins</em>. A pasta nome-do-plugin será criada se não existir e todos os arquivos de dist serão colocados lá dentro. A tarefa configurar-projeto-em-stage precisa que a configurar-projeto seja executada para só então executar o que está na função de callback.</p>
 <p>Por fim, vamos configurar a tarefa padrão do Gulp, a default, para executar as tarefas anteriores e monitorar os arquivos de desenvolvimento por mudanças. Sempre que algum arquivo for modificado, as tarefas são executadas novamente.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">task</span><span style="color:#111">(</span><span style="color:#d88200">&#39;default&#39;</span><span style="color:#111">,</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;configurar-projeto-em-stage&#39;</span><span style="color:#111">],</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">gulp</span><span style="color:#111">.</span><span style="color:#75af00">watch</span><span style="color:#111">(</span><span style="color:#75af00">diretorios</span><span style="color:#111">.</span><span style="color:#75af00">src</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;**/*&#39;</span><span style="color:#111">,</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;configurar-projeto-em-stage&#39;</span><span style="color:#111">]);</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;configurar-projeto-em-stage&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="nx">diretorios</span><span class="p">.</span><span class="nx">src</span> <span class="o">+</span> <span class="s1">&#39;**/*&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;configurar-projeto-em-stage&#39;</span><span class="p">]);</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>A tarefa default é a que o Gulp chama se o comando gulp for digitado no console sem que o nome de uma ou mais tarefas tenha sido especificado. Esta tarefa está configurada para monitorar o diretório diretorios.src e tudo o que tiver dentro dele por mudanças nos arquivos. Caso uma mudança seja detectada, a tarefa irá executar configurar-projeto-em-stage, disparando toda a cadência de tarefas que criamos, e voltará a escutar por mudanças nos arquivos.</p>
 <p>Está quase tudo pronto! Há um problema que criamos ao adicionar o sufixo .min nos arquivos do <em>boilerplate</em> do plugin.</p>
 <p>Se lembra que mudamos os nomes dos arquivos &ldquo;nome-do-plugin-admin.js&rdquo;, &ldquo;nome-do-plugin-public.js&rdquo;, &ldquo;nome-do-plugin-admin.css&rdquo; e &ldquo;nome-do-plugin-public.css&rdquo; adicionando a extensão .min neles? Isso faz com que a referência a estes arquivos que o <em>plugin</em> está fazendo deixe de funcionar. Precisamos informar nas configurações do <em>plugin</em> que os novos arquivos possuem a extensão .min neles.</p>
 <p>Para fazer isso, abra o arquivo nome-do-plugin-admin.php, sendo nome-do-plugin o nome do <em>plugin</em> criado. Há dois métodos neste arquivo: enqueue-styles e enqueue-scripts. Esses métodos são associados ao <em>hook</em> admin_enqueue_scripts dentro de includes/class-nome-do-plugin.php. Repare que neste arquivo que está aberto, o método enqueue_styles chama a função wp_enqueue_style, do <em>Core</em>, para carregar uma folha de estilos CSS.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75af00">wp_enqueue_style</span><span style="color:#111">(</span> <span style="color:#111">$this</span><span style="color:#f92672">-&gt;</span><span style="color:#75af00">plugin_name</span><span style="color:#111">,</span> <span style="color:#75af00">plugin_dir_url</span><span style="color:#111">(</span> <span style="color:#00a8c8">__FILE__</span> <span style="color:#111">)</span> <span style="color:#f92672">.</span> <span style="color:#d88200">&#39;css/nome-do-plugin-admin.css&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">array</span><span style="color:#111">(),</span> <span style="color:#111">$this</span><span style="color:#f92672">-&gt;</span><span style="color:#75af00">version</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;all&#39;</span> <span style="color:#111">);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">wp_enqueue_style</span><span class="p">(</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">plugin_name</span><span class="p">,</span> <span class="nx">plugin_dir_url</span><span class="p">(</span> <span class="no">__FILE__</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;css/nome-do-plugin-admin.css&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span> <span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>O que precisa ser feito é adicionar o sufixo .min ao nome do arquivo css sendo carregado. Neste exemplo o nome do arquivo será nome-do-plugin-admin.min.css.</p>
 <p>De forma similar, o método enqueue_scripts faz a busca por um arquivo Javascript sem a extensão .min usando a função wp_enqueue_script.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75af00">wp_enqueue_script</span><span style="color:#111">(</span> <span style="color:#111">$this</span><span style="color:#f92672">-&gt;</span><span style="color:#75af00">plugin_name</span><span style="color:#111">,</span> <span style="color:#75af00">plugin_dir_url</span><span style="color:#111">(</span> <span style="color:#00a8c8">__FILE__</span> <span style="color:#111">)</span> <span style="color:#f92672">.</span> <span style="color:#d88200">&#39;js/nome-do-plugin-admin.js&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">array</span><span style="color:#111">(</span> <span style="color:#d88200">&#39;jquery&#39;</span> <span style="color:#111">),</span> <span style="color:#111">$this</span><span style="color:#f92672">-&gt;</span><span style="color:#75af00">version</span><span style="color:#111">,</span> <span style="color:#00a8c8">false</span> <span style="color:#111">);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">plugin_name</span><span class="p">,</span> <span class="nx">plugin_dir_url</span><span class="p">(</span> <span class="no">__FILE__</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;js/nome-do-plugin-admin.js&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;jquery&#39;</span> <span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>O arquivo precisa ter o sufixo .min, de forma que seu nome passe a ser nome-do-plugin-admin.min.js.</p>
@@ -747,12 +747,12 @@ npm install --save-dev gulp</code></pre></td></tr></table>
 <h2 id="configuração-do-git">Configuração do Git</h2>
 <p>Um repositório Git pode ser criado tanto dentro da pasta nome-da-empresa, o que vai agrupar todos os <em>plugins</em> e temas dentro de um único repositório, quanto dentro de cada <em>plugin</em> ou tema a ser desenvolvido. Penso que para um projeto pequeno, que será mantido por apenas uma pessoa desenvolvedora, faz sentido agrupar todos os projetos dentro de um único repositório. Como este raramente será o caso, recomendo criar um repositório para cada projeto. Dessa forma cada pessoa desenvolvedora clona apenas os arquivos com os quais for trabalhar, e o risco de criar conflitos de versões se há mais de uma pessoa desenvolvedora atualizando arquivos no repositório é menor. Há uma vantagem, no entanto, em trabalhar com um repositório único: manter a estrutura de pastas de temas e <em>plugins</em> que foi criada ao longo deste post intacta, assumindo que tudo foi criado em uma mesma máquina. Para o dia a dia, no entanto, é provável que cada projeto terá seu repositório e a estrutura apresentada aqui pode servir de guia para trabalhar com múltiplos temas e plugins em uma mesma máquina.</p>
 <p>Para finalizar, costumo criar um arquivo chamado .gitignore na raiz do repositório para instruir ao Git tudo o que eu não quero que seja monitorado por mudanças de versão. Adiciono pelo menos uma linha neste arquivo:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">**/node_modules</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">**/node_modules</code></pre></td></tr></table>
 </div>
 </div>
 <p>Assim como o Gulp, o Git usa Glob para encontrar arquivos e pastas. Esta linha informa ao Git para não considerar mudanças nas pastas node_modules presentes em quaisquer projetos, já que isso faria com que fossem mandados para os repositórios arquivos que não precisam ser armazenados. A referência a eles feito no package.json é o suficiente para baixá-los novamente quando necessário. Sempre que outra pessoa acessar o projeto, ela deve rodar o comando npm init para baixar o conteúdo da node_modules. O usuário final vai baixar apenas o conteúdo da pasta dist.</p>

@@ -273,24 +273,24 @@
 
 <p>There are three main sections on Google Apps Script&rsquo;s editor: the toolbar, on top, project files panel, on the left, and the code editor, on the right. The <a href="https://developers.google.com/apps-script/reference/" target="_blank" rel="noopener">documentation</a> is a good place to start if you need to familiarize yourself with both the editor and the language.</p>
 <p>The first step will be to inform Google Apps Script (which I&rsquo;ll be calling GAS from now on) that the script will be receiving and managing external data, or that the script will be communicating with the external world. On GAS terms, this script will be a web application (or web app). To do that, clear the default code on the editor that was created inside the file Code.gs, and create two new functions, called doGet and doPost. Both receive an argument called &ldquo;e&rdquo; that represent data that was passed when calling the script.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">doGet</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// Todo
-</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">doGet</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Todo
+</span><span class="c1"></span><span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">doPost</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// Todo
-</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></td></tr></table>
+<span class="kd">function</span> <span class="nx">doPost</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Todo
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>The function doGet manage any data that is passed as URL parameters. If, for instance, script URL is <a href="https://script.google.com/d/id_do_script/exec?nome=Henrique&amp;cargo=cientista_de_dados">https://script.google.com/d/id_do_script/exec?nome=Henrique&amp;cargo=cientista_de_dados</a>, what is on the right side of the question mark are all parameters passed as key=value pairs, separated by an equal sign. The first key, in this example, is &ldquo;name&rdquo; and its value is &ldquo;Henrique&rdquo;. Key value pairs are separated with ampersands (&amp;).</p>
@@ -308,26 +308,26 @@
 <p>To be characterized as a web app, this script needs only one of these functions. We&rsquo;ve declared doGet in case the web app is accessed directly with a GET method (unlikely, but possible). If this function is not declared, a directly access to the URL would result in a message like &ldquo;The script finished execution but there is nothing to be returned&rdquo;. By just declaring the function the output will be a blank screen. We&rsquo;ll leave as is.</p>
 <p>The function that will receive and manage data from RD Station is doPost. It accepts data passed alongside the body of a message using the POST method.</p>
 <p>To begin with, we&rsquo;ll write the code that will manage the data and write it in the spreadsheet. Inside doPost write the following code:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Check if POST call contains data in its body and that the data is formatted as JSON
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">.</span><span style="color:#75af00">postData</span><span style="color:#111">.</span><span style="color:#75af00">contents</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#75af00">e</span><span style="color:#111">.</span><span style="color:#75af00">postData</span><span style="color:#111">.</span><span style="color:#75af00">type</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#39;application/json&#39;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-   <span style="color:#75715e">// In case there&#39;s JSON data, it must be transformed into an object to be further processed
-</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">lead</span> <span style="color:#f92672">=</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">parse</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">.</span><span style="color:#75af00">postData</span><span style="color:#111">.</span><span style="color:#75af00">contents</span><span style="color:#111">);</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// Check if POST call contains data in its body and that the data is formatted as JSON
+</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">postData</span><span class="p">.</span><span class="nx">contents</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">postData</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">&#39;application/json&#39;</span><span class="p">)</span> <span class="p">{</span>
+   <span class="c1">// In case there&#39;s JSON data, it must be transformed into an object to be further processed
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">lead</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">postData</span><span class="p">.</span><span class="nx">contents</span><span class="p">);</span>
 
-  <span style="color:#75715e">// Call a function to write the data into the spreadsheet. This function will be created
-</span><span style="color:#75715e"></span>  <span style="color:#75af00">writeMessage</span><span style="color:#111">(</span><span style="color:#75af00">lead</span><span style="color:#111">);</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+  <span class="c1">// Call a function to write the data into the spreadsheet. This function will be created
+</span><span class="c1"></span>  <span class="nx">writeMessage</span><span class="p">(</span><span class="nx">lead</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>This code is doing the following:</p>
@@ -337,82 +337,82 @@
 <li>The next line call a function writeMessage, which receives an argument. We&rsquo;ll send the lead that was just parsed.</li>
 </ul>
 <p>The next step is to create writeMessage. Write the following code on the same file:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">writeMessage</span><span style="color:#111">(</span><span style="color:#75af00">message</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// Open the spreadsheet and select the sheet Sheet1
-</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">sheet</span> <span style="color:#f92672">=</span> <span style="color:#75af00">SpreadsheetApp</span><span style="color:#111">.</span><span style="color:#75af00">getActiveSpreadsheet</span><span style="color:#111">().</span><span style="color:#75af00">getSheetByName</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Sheet1&#39;</span><span style="color:#111">);</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">writeMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Open the spreadsheet and select the sheet Sheet1
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActiveSpreadsheet</span><span class="p">().</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">);</span>
 
-  <span style="color:#75715e">// Select a range of cells that will store headers. Arguments are, in order: first line, first row, last line, last row. The combination will create a range with all cells between first and last selected rows and columns
-</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">headers</span> <span style="color:#f92672">=</span> <span style="color:#75af00">sheet</span><span style="color:#111">.</span><span style="color:#75af00">getRange</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">8</span><span style="color:#111">);</span>
+  <span class="c1">// Select a range of cells that will store headers. Arguments are, in order: first line, first row, last line, last row. The combination will create a range with all cells between first and last selected rows and columns
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="nx">sheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
 
-  <span style="color:#75715e">// Write down the names of the columns into Sheet1
-</span><span style="color:#75715e"></span>  <span style="color:#75af00">headers</span><span style="color:#111">.</span><span style="color:#75af00">setValues</span><span style="color:#111">([[</span><span style="color:#d88200">&#39;Nome&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Email&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Data de Criação&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Empresa&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Origem da Primeira Conversão&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Estágio no Funil&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Lead Scoring&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Interesse&#39;</span><span style="color:#111">]]);</span>
+  <span class="c1">// Write down the names of the columns into Sheet1
+</span><span class="c1"></span>  <span class="nx">headers</span><span class="p">.</span><span class="nx">setValues</span><span class="p">([[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;Data de Criação&#39;</span><span class="p">,</span> <span class="s1">&#39;Empresa&#39;</span><span class="p">,</span> <span class="s1">&#39;Origem da Primeira Conversão&#39;</span><span class="p">,</span> <span class="s1">&#39;Estágio no Funil&#39;</span><span class="p">,</span> <span class="s1">&#39;Lead Scoring&#39;</span><span class="p">,</span> <span class="s1">&#39;Interesse&#39;</span><span class="p">]]);</span>
 
-  <span style="color:#75715e">// Lock Sheet1 so only the user that holds the lock can write on it
-</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">var</span> <span style="color:#75af00">lock</span> <span style="color:#f92672">=</span> <span style="color:#75af00">LockService</span><span style="color:#111">.</span><span style="color:#75af00">getScriptLock</span><span style="color:#111">();</span>
+  <span class="c1">// Lock Sheet1 so only the user that holds the lock can write on it
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">lock</span> <span class="o">=</span> <span class="nx">LockService</span><span class="p">.</span><span class="nx">getScriptLock</span><span class="p">();</span>
 
-  <span style="color:#75715e">// Wait for one second until the next lines of code finish
-</span><span style="color:#75715e"></span>  <span style="color:#75af00">lock</span><span style="color:#111">.</span><span style="color:#75af00">waitLock</span><span style="color:#111">(</span><span style="color:#ae81ff">1000</span><span style="color:#111">);</span>
+  <span class="c1">// Wait for one second until the next lines of code finish
+</span><span class="c1"></span>  <span class="nx">lock</span><span class="p">.</span><span class="nx">waitLock</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
 
-  <span style="color:#75715e">// Browse the data that arrived from the webhook
-</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#75af00">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">.</span><span style="color:#75af00">length</span><span style="color:#111">;</span> <span style="color:#75af00">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+  <span class="c1">// Browse the data that arrived from the webhook
+</span><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
-    <span style="color:#75715e">// Write down the data into Sheet1
-</span><span style="color:#75715e"></span>    <span style="color:#75af00">sheet</span><span style="color:#111">.</span><span style="color:#75af00">appendRow</span><span style="color:#111">([</span><span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">name</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">email</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">created_at</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">company</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">first_conversion</span><span style="color:#111">.</span><span style="color:#75af00">source</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">lead_stage</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">fit_score</span><span style="color:#111">,</span>
-                       <span style="color:#75af00">message</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">interest</span><span style="color:#111">]);</span>
+    <span class="c1">// Write down the data into Sheet1
+</span><span class="c1"></span>    <span class="nx">sheet</span><span class="p">.</span><span class="nx">appendRow</span><span class="p">([</span><span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">email</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">created_at</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">company</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">first_conversion</span><span class="p">.</span><span class="nx">source</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">lead_stage</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">fit_score</span><span class="p">,</span>
+                       <span class="nx">message</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">interest</span><span class="p">]);</span>
 
-    <span style="color:#75715e">// Update sheet with a new line
-</span><span style="color:#75715e"></span>    <span style="color:#75af00">SpreadsheetApp</span><span style="color:#111">.</span><span style="color:#75af00">flush</span><span style="color:#111">();</span>
-  <span style="color:#111">}</span>
+    <span class="c1">// Update sheet with a new line
+</span><span class="c1"></span>    <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">flush</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span style="color:#75715e">// Release the lock on Sheet1 so other users can write to this sheet
-</span><span style="color:#75715e"></span>  <span style="color:#75af00">lock</span><span style="color:#111">.</span><span style="color:#75af00">releaseLock</span><span style="color:#111">();</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+  <span class="c1">// Release the lock on Sheet1 so other users can write to this sheet
+</span><span class="c1"></span>  <span class="nx">lock</span><span class="p">.</span><span class="nx">releaseLock</span><span class="p">();</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Spaces and comments may give the impression that this code is doing a lot of things, when in reality it is not. It is doing the following:</p>

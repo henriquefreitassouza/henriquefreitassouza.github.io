@@ -245,31 +245,31 @@
 <p>Em geral, ferramentas de testes possuem tanto um editor de sites do tipo “clicar e arrastar” quanto um para inserção de código manual. Esses editores de código aceitam HTML, CSS e Javascript, e em algumas ferramentas possuem injeção de códigos em dois níveis: um global e um local. O editor de scripts global injeta trechos de código em todas as variações do teste, enquanto o local é carregado de acordo com a variação selecionada.</p>
 <p>Para o exemplo de implementação a seguir, o código será escrito no editor local.</p>
 <p>Com o Google Tag Manager instalado, basta chamar o método push do objeto dataLayer e enviar os dados para um evento que tenha sido registrado no Google Tag Manager:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#75af00">dataLayer</span><span style="color:#111">.</span><span style="color:#75af00">push</span><span style="color:#111">({</span>
-    <span style="color:#75af00">event</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;evento_no_gtm&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">category</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;categoria&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">action</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;acao&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">label</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;descricao&#39;</span>
-  <span style="color:#111">});</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="nx">event</span><span class="o">:</span> <span class="s1">&#39;evento_no_gtm&#39;</span><span class="p">,</span>
+    <span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;categoria&#39;</span><span class="p">,</span>
+    <span class="nx">action</span><span class="o">:</span> <span class="s1">&#39;acao&#39;</span><span class="p">,</span>
+    <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;descricao&#39;</span>
+  <span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Esse atributo &ldquo;event&rdquo; pertence ao objeto dataLayer e faz referência a uma tag no Google Tag Manager. Em uma instalação da versão 3 do Google Analytics sem o Google Tag Manager, será necessário mandar um disparo do tipo evento para dentro do Google Analytics:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#75af00">ga</span><span style="color:#111">(</span><span style="color:#d88200">&#39;send&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;event&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;categoria&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;acao&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;descricao&#39;</span><span style="color:#111">);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;acao&#39;</span><span class="p">,</span> <span class="s1">&#39;descricao&#39;</span><span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>No caso do push com o dataLayer, será feito um disparo de uma tag de evento que enviará os dados para o Google Analytics. Dentro do editor de scripts local, cada variação vai receber um trecho de código como um dos exemplos, que deve ser disparado em dois momentos diferentes para cada variação do teste. Os parâmetros serão:</p>
@@ -279,93 +279,93 @@
 <li>label: guardará a variação do teste. Pode ser uma letra ou o nome da alteração induzida.</li>
 </ul>
 <p>Category será igual em todas as chamadas ao código de disparo, label e action vão mudar conforme a variação do teste, e se foi feita uma visita ou uma conversão. A segunda chamada ao código de disparo do evento deve ser feita somente após o evento de conversão ter sido disparado, nesse caso é necessário criar um trigger que escute esse evento:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">onload</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">cta</span> <span style="color:#f92672">=</span> <span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">getElementById</span><span style="color:#111">(</span><span style="color:#d88200">&#39;cta&#39;</span><span style="color:#111">);</span>
-    <span style="color:#75af00">cta</span><span style="color:#111">.</span><span style="color:#75af00">onlick</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-      <span style="color:#75715e">// Se usar o Google Tag Manager
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">dataLayer</span><span style="color:#111">.</span><span style="color:#75af00">push</span><span style="color:#111">({</span>
-        <span style="color:#75af00">event</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;evento_no_gtm&#39;</span><span style="color:#111">,</span>
-        <span style="color:#75af00">category</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;categoria&#39;</span><span style="color:#111">,</span>
-        <span style="color:#75af00">action</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;acao&#39;</span><span style="color:#111">,</span>
-        <span style="color:#75af00">label</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;descricao&#39;</span>
-      <span style="color:#111">});</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cta</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;cta&#39;</span><span class="p">);</span>
+    <span class="nx">cta</span><span class="p">.</span><span class="nx">onlick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// Se usar o Google Tag Manager
+</span><span class="c1"></span>      <span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+        <span class="nx">event</span><span class="o">:</span> <span class="s1">&#39;evento_no_gtm&#39;</span><span class="p">,</span>
+        <span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;categoria&#39;</span><span class="p">,</span>
+        <span class="nx">action</span><span class="o">:</span> <span class="s1">&#39;acao&#39;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;descricao&#39;</span>
+      <span class="p">});</span>
 
-      <span style="color:#75715e">// Se não usar o Google Tag Manager
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">ga</span><span style="color:#111">(</span><span style="color:#d88200">&#39;send&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;event&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;categoria&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;acao&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;descricao&#39;</span><span style="color:#111">)</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">}</span></code></pre></td></tr></table>
+      <span class="c1">// Se não usar o Google Tag Manager
+</span><span class="c1"></span>      <span class="nx">ga</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;acao&#39;</span><span class="p">,</span> <span class="s1">&#39;descricao&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Dica: opte por usar javascript nativo quando possível para evitar a dependência de outras bibliotecas, o que pode tornar o tempo de carregamento maior e aumentar a possibilidade de o conteúdo da página &ldquo;piscar&rdquo; diante do usuário (FOOC).</p>
 <p>O uso de window.onload garante que o botão só será acessado após ter sido carregado. Pode acontecer de o trecho de código javascript carregar antes da página e ele tentar acessar elementos que ainda não foram carregados. O uso de DOMContentLoaded fica a cargo da pessoa desenvolvedora, considerando <a href="https://caniuse.com/#search=DOMContentLoaded" target="_blank" rel="noopener">que navegadores antigos não reconhecem este método</a>.</p>
 <p>O código completo a ser adicionado a cada variação do teste:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#75715e">// Código executado assim que o visitante é direcionado para uma das variações do teste
-</span><span style="color:#75715e"></span>  <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">onload</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75715e">// Se não usar Google Tag Manager dá pra fazer com ga(&#39;send&#39;, &#39;event&#39;, &#39;teste_no_cta&#39;, &#39;acesso&#39;, &#39;grupo_controle&#39;)
-</span><span style="color:#75715e"></span>    <span style="color:#75af00">dataLayer</span><span style="color:#111">.</span><span style="color:#75af00">push</span><span style="color:#111">({</span>
-      <span style="color:#75af00">event</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;testes_tag&#39;</span><span style="color:#111">,</span> <span style="color:#75715e">// Nome da tag no Google Tag Manager
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">category</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;teste_no_cta&#39;</span><span style="color:#111">,</span> <span style="color:#75715e">// Nome do teste
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">action</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;acesso&#39;</span><span style="color:#111">,</span> <span style="color:#75715e">// Acesso a página do teste
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">label</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;grupo-controle&#39;</span> <span style="color:#75715e">// O visitante caiu no grupo de controle.
-</span><span style="color:#75715e"></span>    <span style="color:#111">});</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="c1">// Código executado assim que o visitante é direcionado para uma das variações do teste
+</span><span class="c1"></span>  <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Se não usar Google Tag Manager dá pra fazer com ga(&#39;send&#39;, &#39;event&#39;, &#39;teste_no_cta&#39;, &#39;acesso&#39;, &#39;grupo_controle&#39;)
+</span><span class="c1"></span>    <span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+      <span class="nx">event</span><span class="o">:</span> <span class="s1">&#39;testes_tag&#39;</span><span class="p">,</span> <span class="c1">// Nome da tag no Google Tag Manager
+</span><span class="c1"></span>      <span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;teste_no_cta&#39;</span><span class="p">,</span> <span class="c1">// Nome do teste
+</span><span class="c1"></span>      <span class="nx">action</span><span class="o">:</span> <span class="s1">&#39;acesso&#39;</span><span class="p">,</span> <span class="c1">// Acesso a página do teste
+</span><span class="c1"></span>      <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;grupo-controle&#39;</span> <span class="c1">// O visitante caiu no grupo de controle.
+</span><span class="c1"></span>    <span class="p">});</span>
 
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">btn</span> <span style="color:#f92672">=</span> <span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">getElementById</span><span style="color:#111">(</span><span style="color:#d88200">&#39;cta&#39;</span><span style="color:#111">);</span>
+    <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;cta&#39;</span><span class="p">);</span>
 
-    <span style="color:#75af00">btn</span><span style="color:#111">.</span><span style="color:#75af00">onclick</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-      <span style="color:#75715e">// Se não usar Google Tag Manager dá pra fazer com ga(&#39;send&#39;, &#39;event&#39;, &#39;teste_no_cta&#39;, &#39;conversao&#39;, &#39;grupo_controle&#39;)
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">dataLayer</span><span style="color:#111">.</span><span style="color:#75af00">push</span><span style="color:#111">({</span>
-        <span style="color:#75af00">event</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;testes_tag&#39;</span><span style="color:#111">,</span> <span style="color:#75715e">// Nome da tag no Google Tag Manager
-</span><span style="color:#75715e"></span>        <span style="color:#75af00">category</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;teste_no_cta&#39;</span><span style="color:#111">,</span> <span style="color:#75715e">// Nome do teste
-</span><span style="color:#75715e"></span>        <span style="color:#75af00">action</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;conversao&#39;</span><span style="color:#111">,</span> <span style="color:#75715e">// Conversão na página do teste
-</span><span style="color:#75715e"></span>        <span style="color:#75af00">label</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;grupo-controle&#39;</span> <span style="color:#75715e">// O visitante caiu no grupo de controle.
-</span><span style="color:#75715e"></span>      <span style="color:#111">});</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">}</span></code></pre></td></tr></table>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// Se não usar Google Tag Manager dá pra fazer com ga(&#39;send&#39;, &#39;event&#39;, &#39;teste_no_cta&#39;, &#39;conversao&#39;, &#39;grupo_controle&#39;)
+</span><span class="c1"></span>      <span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+        <span class="nx">event</span><span class="o">:</span> <span class="s1">&#39;testes_tag&#39;</span><span class="p">,</span> <span class="c1">// Nome da tag no Google Tag Manager
+</span><span class="c1"></span>        <span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;teste_no_cta&#39;</span><span class="p">,</span> <span class="c1">// Nome do teste
+</span><span class="c1"></span>        <span class="nx">action</span><span class="o">:</span> <span class="s1">&#39;conversao&#39;</span><span class="p">,</span> <span class="c1">// Conversão na página do teste
+</span><span class="c1"></span>        <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;grupo-controle&#39;</span> <span class="c1">// O visitante caiu no grupo de controle.
+</span><span class="c1"></span>      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Navegue até o relatório de eventos em Behavior &gt; Events &gt; Top Events. Uma vez que o teste tenha iniciado, os eventos de acesso e conversão deverão ser registrados neste relatório. Veja a diferença entre as colunas de eventos e eventos únicos. Como o teste pode funcionar em mais de uma página ou os visitantes a recarregarem, acompanhe pelos eventos únicos, que não serão atualizados com múltiplos disparos sendo enviados ao Google Analytics. Para comparar a quantidade de eventos com usuários ou sessões, crie um relatório personalizado em Customization &gt; Custom Reports incluindo usuários únicos e eventos únicos, com quebra por categoria, ação e label.</p>

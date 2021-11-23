@@ -305,80 +305,80 @@
 <p>Once the project is configured, the following information will be provided in Google Cloud Console: a CLIENT ID and a CLIENT SECRET. These will be used to build another URL, the authentication URL. Copy this information and close Google Cloud Console.</p>
 <h3 id="3-write-the-code-that-will-authorize-and-access-the-api">3. Write the code that will authorize and access the API</h3>
 <p>Now that Google Cloud Console is ready to manage external requests it is possible to call this service from Google Apps Script, given that there are credentials with access to Search Console data. The first thing to be done is to write the code that will be used to authenticate users that will access Search Console data from the spreadsheet. There is a default file created in the editor called Code.gs and an empty function. I&rsquo;ve created a new file declaring global variables to ease maintenance. In this newly created file, declare the following variables:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">var</span> <span style="color:#75af00">CLIENT_ID</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;YOUR_CLIENT_ID&#39;</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">CLIENT_SECRET</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;YOUR_CLIENT_SECRET&#39;</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">SCOPE</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;https://www.googleapis.com/auth/webmasters.readonly&#39;</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">SITE</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;YOUR_SITE_ON_SEARCH_CONSOLE&#39;</span><span style="color:#111">;</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">CLIENT_ID</span> <span class="o">=</span> <span class="s1">&#39;YOUR_CLIENT_ID&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">CLIENT_SECRET</span> <span class="o">=</span> <span class="s1">&#39;YOUR_CLIENT_SECRET&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">SCOPE</span> <span class="o">=</span> <span class="s1">&#39;https://www.googleapis.com/auth/webmasters.readonly&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">SITE</span> <span class="o">=</span> <span class="s1">&#39;YOUR_SITE_ON_SEARCH_CONSOLE&#39;</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>CLIENT_ID and CLIENT_SECRET are credentials provided by Google Cloud Console when creating an authorization method. Replace both &ldquo;YOUR_CLIENT_ID&rdquo; and &ldquo;YOUR_CLIENT_SECRET&rdquo; with the ones that were copied from Google Cloud Console. Access scopes are a requirement for any OAuth2 flow and grant specific access permissions. All access scopes for OAuth2 flows at Google are available on the <a href="https://developers.google.com/identity/protocols/googlescopes" target="_blank" rel="noopener">documentation page</a>. Search Console have two scopes: readonly, which grants read privileges, and webmasters, which grants read and write privileges. This post will use readonly. The variable SITE declare the website that is registered in Search Console, whose data will be returned. The name of this website should match the one registered on Search Console. If the website is, for instance, <a href="http://henriquefreitas.com.br">http://henriquefreitas.com.br</a>, this variable should be filled accordingly.</p>
 <p>Create a new file on File &gt; New &gt; Script file. Give a name and hit OK. In this file, write the code that instantiate the OAuth2 object and start the authorization flow:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">getService</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">OAuth2</span><span style="color:#111">.</span><span style="color:#75af00">createService</span><span style="color:#111">(</span><span style="color:#d88200">&#39;searchconsole&#39;</span><span style="color:#111">)</span>
-      <span style="color:#111">.</span><span style="color:#75af00">setAuthorizationBaseUrl</span><span style="color:#111">(</span><span style="color:#d88200">&#39;https://accounts.google.com/o/oauth2/auth&#39;</span><span style="color:#111">)</span>
-      <span style="color:#111">.</span><span style="color:#75af00">setTokenUrl</span><span style="color:#111">(</span><span style="color:#d88200">&#39;https://accounts.google.com/o/oauth2/token&#39;</span><span style="color:#111">)</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getService</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">OAuth2</span><span class="p">.</span><span class="nx">createService</span><span class="p">(</span><span class="s1">&#39;searchconsole&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">setAuthorizationBaseUrl</span><span class="p">(</span><span class="s1">&#39;https://accounts.google.com/o/oauth2/auth&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">setTokenUrl</span><span class="p">(</span><span class="s1">&#39;https://accounts.google.com/o/oauth2/token&#39;</span><span class="p">)</span>
 
-      <span style="color:#111">.</span><span style="color:#75af00">setClientId</span><span style="color:#111">(</span><span style="color:#75af00">CLIENT_ID</span><span style="color:#111">)</span>
-      <span style="color:#111">.</span><span style="color:#75af00">setClientSecret</span><span style="color:#111">(</span><span style="color:#75af00">CLIENT_SECRET</span><span style="color:#111">)</span>
+      <span class="p">.</span><span class="nx">setClientId</span><span class="p">(</span><span class="nx">CLIENT_ID</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">setClientSecret</span><span class="p">(</span><span class="nx">CLIENT_SECRET</span><span class="p">)</span>
 
-      <span style="color:#111">.</span><span style="color:#75af00">setCallbackFunction</span><span style="color:#111">(</span><span style="color:#d88200">&#39;authCallback&#39;</span><span style="color:#111">)</span>
+      <span class="p">.</span><span class="nx">setCallbackFunction</span><span class="p">(</span><span class="s1">&#39;authCallback&#39;</span><span class="p">)</span>
 
-      <span style="color:#111">.</span><span style="color:#75af00">setPropertyStore</span><span style="color:#111">(</span><span style="color:#75af00">PropertiesService</span><span style="color:#111">.</span><span style="color:#75af00">getUserProperties</span><span style="color:#111">())</span>
+      <span class="p">.</span><span class="nx">setPropertyStore</span><span class="p">(</span><span class="nx">PropertiesService</span><span class="p">.</span><span class="nx">getUserProperties</span><span class="p">())</span>
 
-      <span style="color:#111">.</span><span style="color:#75af00">setScope</span><span style="color:#111">(</span><span style="color:#75af00">SCOPE</span><span style="color:#111">)</span>
+      <span class="p">.</span><span class="nx">setScope</span><span class="p">(</span><span class="nx">SCOPE</span><span class="p">)</span>
 
-      <span style="color:#111">.</span><span style="color:#75af00">setParam</span><span style="color:#111">(</span><span style="color:#d88200">&#39;login_hint&#39;</span><span style="color:#111">,</span> <span style="color:#75af00">Session</span><span style="color:#111">.</span><span style="color:#75af00">getActiveUser</span><span style="color:#111">().</span><span style="color:#75af00">getEmail</span><span style="color:#111">())</span>
-      <span style="color:#111">.</span><span style="color:#75af00">setParam</span><span style="color:#111">(</span><span style="color:#d88200">&#39;access_type&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;offline&#39;</span><span style="color:#111">);</span>
-<span style="color:#111">}</span>
+      <span class="p">.</span><span class="nx">setParam</span><span class="p">(</span><span class="s1">&#39;login_hint&#39;</span><span class="p">,</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">getActiveUser</span><span class="p">().</span><span class="nx">getEmail</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">setParam</span><span class="p">(</span><span class="s1">&#39;access_type&#39;</span><span class="p">,</span> <span class="s1">&#39;offline&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">authCallback</span><span style="color:#111">(</span><span style="color:#75af00">request</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">service</span> <span style="color:#f92672">=</span> <span style="color:#75af00">getService</span><span style="color:#111">();</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">isAuthorized</span> <span style="color:#f92672">=</span> <span style="color:#75af00">service</span><span style="color:#111">.</span><span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">request</span><span style="color:#111">);</span>
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">isAuthorized</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#75af00">HtmlService</span><span style="color:#111">.</span><span style="color:#75af00">createHtmlOutput</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Authenticated. You can close this tab.&#39;</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#75af00">HtmlService</span><span style="color:#111">.</span><span style="color:#75af00">createHtmlOutput</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Access denied. Check your credentials and try again. You can close this tab.&#39;</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<span class="kd">function</span> <span class="nx">authCallback</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">service</span> <span class="o">=</span> <span class="nx">getService</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">isAuthorized</span> <span class="o">=</span> <span class="nx">service</span><span class="p">.</span><span class="nx">handleCallback</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isAuthorized</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createHtmlOutput</span><span class="p">(</span><span class="s1">&#39;Authenticated. You can close this tab.&#39;</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createHtmlOutput</span><span class="p">(</span><span class="s1">&#39;Access denied. Check your credentials and try again. You can close this tab.&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Note that the variables that were created at the global variables file are recognized in this file. The function getService is responsible for creating and returning an OAuth2 object with defined scope and authentication flow. Different methods are chained to produce the final object:</p>
@@ -392,148 +392,148 @@
 </ul>
 <p>The function authCallback is triggered every time getService is called. This checks if users are authenticated and informs them. A sidebar is opened in the browser showing messages for login attempts.</p>
 <p>Create another file in File &gt; New &gt; Script file. Name this file and hit OK. This is the file that will request data from Search Console through its API. Write the following code:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">getSearchConsole</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">apiUrl</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;https://www.googleapis.com/webmasters/v3/sites/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">SITE</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;/searchAnalytics/query?fields=rows&amp;alt=json&#39;</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#75af00">getSearchConsoleData</span><span style="color:#111">(</span><span style="color:#75af00">apiUrl</span><span style="color:#111">,</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;query&#39;</span><span style="color:#111">]);</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getSearchConsole</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">apiUrl</span> <span class="o">=</span> <span class="s1">&#39;https://www.googleapis.com/webmasters/v3/sites/&#39;</span> <span class="o">+</span> <span class="nx">SITE</span> <span class="o">+</span> <span class="s1">&#39;/searchAnalytics/query?fields=rows&amp;alt=json&#39;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">getSearchConsoleData</span><span class="p">(</span><span class="nx">apiUrl</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]);</span>
 
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">response</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">json</span> <span style="color:#f92672">=</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">parse</span><span style="color:#111">(</span><span style="color:#75af00">response</span><span style="color:#111">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 
-    <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-      <span style="color:#00a8c8">var</span> <span style="color:#75af00">reportHeaders</span> <span style="color:#f92672">=</span> <span style="color:#111">[[</span><span style="color:#d88200">&#39;Keyword&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Clicks&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Impressions&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;CTR&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Position&#39;</span><span style="color:#111">]];</span>
-      <span style="color:#75af00">displaySearchConsoleData</span><span style="color:#111">(</span><span style="color:#75af00">json</span><span style="color:#111">,</span> <span style="color:#75af00">reportHeaders</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">json</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">reportHeaders</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Keyword&#39;</span><span class="p">,</span> <span class="s1">&#39;Clicks&#39;</span><span class="p">,</span> <span class="s1">&#39;Impressions&#39;</span><span class="p">,</span> <span class="s1">&#39;CTR&#39;</span><span class="p">,</span> <span class="s1">&#39;Position&#39;</span><span class="p">]];</span>
+      <span class="nx">displaySearchConsoleData</span><span class="p">(</span><span class="nx">json</span><span class="p">,</span> <span class="nx">reportHeaders</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">getSearchConsoleData</span><span style="color:#111">(</span><span style="color:#75af00">url</span><span style="color:#111">,</span> <span style="color:#75af00">dimensions</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">headers</span><span style="color:#111">,</span> <span style="color:#75af00">payload</span><span style="color:#111">,</span> <span style="color:#75af00">options</span><span style="color:#111">;</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">startDate</span> <span style="color:#f92672">=</span> <span style="color:#75af00">Utilities</span><span style="color:#111">.</span><span style="color:#75af00">formatDate</span><span style="color:#111">(</span><span style="color:#00a8c8">new</span> <span style="color:#111">Date</span><span style="color:#111">(</span><span style="color:#00a8c8">new</span> <span style="color:#111">Date</span><span style="color:#111">().</span><span style="color:#75af00">getTime</span><span style="color:#111">()</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">7</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span><span style="color:#111">),</span> <span style="color:#75af00">Session</span><span style="color:#111">.</span><span style="color:#75af00">getScriptTimeZone</span><span style="color:#111">(),</span> <span style="color:#d88200">&#39;yyyy-MM-dd&#39;</span><span style="color:#111">);</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">endDate</span> <span style="color:#f92672">=</span> <span style="color:#75af00">Utilities</span><span style="color:#111">.</span><span style="color:#75af00">formatDate</span><span style="color:#111">(</span><span style="color:#00a8c8">new</span> <span style="color:#111">Date</span><span style="color:#111">(),</span> <span style="color:#75af00">Session</span><span style="color:#111">.</span><span style="color:#75af00">getScriptTimeZone</span><span style="color:#111">(),</span> <span style="color:#d88200">&#39;yyyy-MM-dd&#39;</span><span style="color:#111">);</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">service</span> <span style="color:#f92672">=</span> <span style="color:#75af00">getService</span><span style="color:#111">();</span>
+<span class="kd">function</span> <span class="nx">getSearchConsoleData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">dimensions</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">payload</span><span class="p">,</span> <span class="nx">options</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="nx">Utilities</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">getScriptTimeZone</span><span class="p">(),</span> <span class="s1">&#39;yyyy-MM-dd&#39;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">endDate</span> <span class="o">=</span> <span class="nx">Utilities</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">getScriptTimeZone</span><span class="p">(),</span> <span class="s1">&#39;yyyy-MM-dd&#39;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">service</span> <span class="o">=</span> <span class="nx">getService</span><span class="p">();</span>
 
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">service</span><span style="color:#111">.</span><span style="color:#75af00">hasAccess</span><span style="color:#111">())</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">headers</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span><span style="color:#d88200">&#39;Authorization&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;Bearer &#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">service</span><span style="color:#111">.</span><span style="color:#75af00">getAccessToken</span><span style="color:#111">()</span> <span style="color:#111">};</span>
-    <span style="color:#75af00">payload</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
-      <span style="color:#d88200">&#39;startDate&#39;</span><span style="color:#f92672">:</span> <span style="color:#75af00">startDate</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;endDate&#39;</span><span style="color:#f92672">:</span> <span style="color:#75af00">endDate</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;dimensions&#39;</span><span style="color:#f92672">:</span> <span style="color:#75af00">dimensions</span>
-    <span style="color:#111">};</span>
-    <span style="color:#75af00">options</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
-      <span style="color:#d88200">&#39;headers&#39;</span><span style="color:#f92672">:</span> <span style="color:#75af00">headers</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;contentType&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;application/json&#39;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;method&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;post&#39;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;payload&#39;</span><span style="color:#f92672">:</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">stringify</span><span style="color:#111">(</span><span style="color:#75af00">payload</span><span style="color:#111">),</span>
-      <span style="color:#d88200">&#39;muteHttpExceptions&#39;</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">true</span>
-    <span style="color:#111">};</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">service</span><span class="p">.</span><span class="nx">hasAccess</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="nx">service</span><span class="p">.</span><span class="nx">getAccessToken</span><span class="p">()</span> <span class="p">};</span>
+    <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;startDate&#39;</span><span class="o">:</span> <span class="nx">startDate</span><span class="p">,</span>
+      <span class="s1">&#39;endDate&#39;</span><span class="o">:</span> <span class="nx">endDate</span><span class="p">,</span>
+      <span class="s1">&#39;dimensions&#39;</span><span class="o">:</span> <span class="nx">dimensions</span>
+    <span class="p">};</span>
+    <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;headers&#39;</span><span class="o">:</span> <span class="nx">headers</span><span class="p">,</span>
+      <span class="s1">&#39;contentType&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;payload&#39;</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
+      <span class="s1">&#39;muteHttpExceptions&#39;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">};</span>
 
-    <span style="color:#00a8c8">try</span> <span style="color:#111">{</span>
-      <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#75af00">UrlFetchApp</span><span style="color:#111">.</span><span style="color:#75af00">fetch</span><span style="color:#111">(</span><span style="color:#75af00">url</span><span style="color:#111">,</span> <span style="color:#75af00">options</span><span style="color:#111">);</span>
-    <span style="color:#111">}</span> <span style="color:#00a8c8">catch</span> <span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{}</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="nx">response</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span>
 
-  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">showDialog</span><span style="color:#111">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nx">showDialog</span><span class="p">();</span>
 
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">response</span><span style="color:#111">;</span>
-<span style="color:#111">}</span>
+  <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">displaySearchConsoleData</span><span style="color:#111">(</span><span style="color:#75af00">json</span><span style="color:#111">,</span> <span style="color:#75af00">reportHeaders</span><span style="color:#111">,</span> <span style="color:#75af00">numKeys</span><span style="color:#111">,</span> <span style="color:#75af00">initialColumnPosition</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">searchConsoleData</span> <span style="color:#f92672">=</span> <span style="color:#75af00">spreadsheet</span><span style="color:#111">.</span><span style="color:#75af00">getActiveSpreadsheet</span><span style="color:#111">().</span><span style="color:#75af00">getSheetByName</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Search Console&#39;</span><span style="color:#111">);</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">report</span> <span style="color:#f92672">=</span> <span style="color:#111">[];</span>
+<span class="kd">function</span> <span class="nx">displaySearchConsoleData</span><span class="p">(</span><span class="nx">json</span><span class="p">,</span> <span class="nx">reportHeaders</span><span class="p">,</span> <span class="nx">numKeys</span><span class="p">,</span> <span class="nx">initialColumnPosition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">searchConsoleData</span> <span class="o">=</span> <span class="nx">spreadsheet</span><span class="p">.</span><span class="nx">getActiveSpreadsheet</span><span class="p">().</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s1">&#39;Search Console&#39;</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">report</span> <span class="o">=</span> <span class="p">[];</span>
 
-  <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#00a8c8">in</span> <span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">rows</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">keys</span> <span style="color:#f92672">=</span> <span style="color:#111">[];</span>
-    <span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">var</span> <span style="color:#75af00">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#75af00">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#75af00">numKeys</span><span style="color:#111">;</span> <span style="color:#75af00">j</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-      <span style="color:#75af00">keys</span><span style="color:#111">.</span><span style="color:#75af00">push</span><span style="color:#111">(</span>
-        <span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">rows</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">keys</span><span style="color:#111">[</span><span style="color:#75af00">j</span><span style="color:#111">]</span>
-      <span style="color:#111">);</span>
-    <span style="color:#111">};</span>
-    <span style="color:#75af00">report</span><span style="color:#111">.</span><span style="color:#75af00">push</span><span style="color:#111">(</span><span style="color:#75af00">keys</span><span style="color:#111">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">json</span><span class="p">.</span><span class="nx">rows</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">keys</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">numKeys</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">keys</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+        <span class="nx">json</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">keys</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
+      <span class="p">);</span>
+    <span class="p">};</span>
+    <span class="nx">report</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">keys</span><span class="p">);</span>
 
-    <span style="color:#75af00">report</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">push</span><span style="color:#111">(</span>
-      <span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">rows</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">clicks</span><span style="color:#111">,</span>
-      <span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">rows</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">impressions</span><span style="color:#111">,</span>
-      <span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">rows</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">ctr</span><span style="color:#111">,</span>
-      <span style="color:#75af00">json</span><span style="color:#111">.</span><span style="color:#75af00">rows</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">].</span><span style="color:#75af00">position</span>
-    <span style="color:#111">);</span>
-  <span style="color:#111">};</span>
+    <span class="nx">report</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span>
+      <span class="nx">json</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">clicks</span><span class="p">,</span>
+      <span class="nx">json</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">impressions</span><span class="p">,</span>
+      <span class="nx">json</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">ctr</span><span class="p">,</span>
+      <span class="nx">json</span><span class="p">.</span><span class="nx">rows</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">position</span>
+    <span class="p">);</span>
+  <span class="p">};</span>
 
-  <span style="color:#75af00">searchConsoleData</span><span style="color:#111">.</span><span style="color:#75af00">getRange</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#75af00">initialColumnPosition</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#75af00">reportHeaders</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">].</span><span style="color:#75af00">length</span><span style="color:#111">).</span><span style="color:#75af00">setValues</span><span style="color:#111">(</span><span style="color:#75af00">reportHeaders</span><span style="color:#111">);</span>
-  <span style="color:#75af00">searchConsoleData</span><span style="color:#111">.</span><span style="color:#75af00">getRange</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#75af00">initialColumnPosition</span><span style="color:#111">,</span> <span style="color:#75af00">report</span><span style="color:#111">.</span><span style="color:#75af00">length</span><span style="color:#111">,</span> <span style="color:#75af00">reportHeaders</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">].</span><span style="color:#75af00">length</span><span style="color:#111">).</span><span style="color:#75af00">setValues</span><span style="color:#111">(</span><span style="color:#75af00">report</span><span style="color:#111">);</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+  <span class="nx">searchConsoleData</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">initialColumnPosition</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">reportHeaders</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">).</span><span class="nx">setValues</span><span class="p">(</span><span class="nx">reportHeaders</span><span class="p">);</span>
+  <span class="nx">searchConsoleData</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">initialColumnPosition</span><span class="p">,</span> <span class="nx">report</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">reportHeaders</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">).</span><span class="nx">setValues</span><span class="p">(</span><span class="nx">report</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>This code was split along different functions to modularize the project. It is possible to make different API call specifying different views of data. What this code does is:</p>
@@ -544,50 +544,50 @@
 <li>If there is data, decode the string, which is in JSON, and write the data into the spreadsheet using the method displaySearchConsoleData, created at the end of the file. This method receive as parameters the data that was returned from the API already decoded, a multidimensional list of headers that will identify each column of data, a number of keys that align with specific section of the decoded object and the column number from which the table of data will begin.</li>
 </ul>
 <p>Calls to Google Search Console API will return objects like the following one:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#111">{</span>
-  <span style="color:#111">{</span>
-    <span style="color:#75af00">keys</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-      <span style="color:#75af00">query</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;keyword&#39;</span>
-    <span style="color:#111">},</span>
-    <span style="color:#75af00">clicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span><span style="color:#111">,</span>
-    <span style="color:#75af00">impressions</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span><span style="color:#111">,</span>
-    <span style="color:#75af00">ctr</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0</span><span style="color:#111">,</span>
-    <span style="color:#75af00">position</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3.2</span>
-  <span style="color:#111">},</span>
-  <span style="color:#111">{</span>
-    <span style="color:#75af00">keys</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-      <span style="color:#75af00">query</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;another_keyword&#39;</span>
-    <span style="color:#111">},</span>
-    <span style="color:#75af00">clicks</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2000</span><span style="color:#111">,</span>
-    <span style="color:#75af00">impressions</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3000</span><span style="color:#111">,</span>
-    <span style="color:#75af00">ctr</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.6</span><span style="color:#111">,</span>
-    <span style="color:#75af00">position</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.2</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="p">{</span>
+    <span class="nx">keys</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">query</span><span class="o">:</span> <span class="s1">&#39;keyword&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">clicks</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="nx">impressions</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="nx">ctr</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="mf">3.2</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">keys</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">query</span><span class="o">:</span> <span class="s1">&#39;another_keyword&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">clicks</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span>
+    <span class="nx">impressions</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
+    <span class="nx">ctr</span><span class="o">:</span> <span class="mf">0.6</span><span class="p">,</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="mf">1.2</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>The section keys hold the dimensions (or qualities) of data, and all metrics are alongside the remaining properties of the object. The parameter that contains the number of keys corresponds to the number of dimensions that were returned. This is done so the print function build the data table correctly. The last parameter defines from which sheet column the function should start writing the table.</p>
@@ -610,96 +610,96 @@
 </ul>
 <h2 id="4-build-an-interface-that-will-allow-users-to-call-the-api">4. Build an interface that will allow users to call the API</h2>
 <p>Up to this moment there is no way to interact with this script from the spreadsheet. In Google Apps Script editor, create a new file and write the following code:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">showSidebar</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">service</span> <span style="color:#f92672">=</span> <span style="color:#75af00">getService</span><span style="color:#111">();</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">page</span><span style="color:#111">,</span> <span style="color:#75af00">template</span><span style="color:#111">;</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">showSidebar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">service</span> <span class="o">=</span> <span class="nx">getService</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">page</span><span class="p">,</span> <span class="nx">template</span><span class="p">;</span>
 
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#75af00">service</span><span style="color:#111">.</span><span style="color:#75af00">hasAccess</span><span style="color:#111">())</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">authorizationUrl</span> <span style="color:#f92672">=</span> <span style="color:#75af00">service</span><span style="color:#111">.</span><span style="color:#75af00">getAuthorizationUrl</span><span style="color:#111">();</span>
-    <span style="color:#75af00">template</span> <span style="color:#f92672">=</span> <span style="color:#75af00">HtmlService</span><span style="color:#111">.</span><span style="color:#75af00">createTemplate</span><span style="color:#111">(</span>
-      <span style="color:#d88200">&#39;&lt;h1&gt;Autentication&lt;/h1&gt; &#39;</span> <span style="color:#f92672">+</span>
-      <span style="color:#d88200">&#39;&lt;a href=&#34;&lt;?= authorizationUrl ?&gt;&#34; target=&#34;_blank&#34;&gt;Authorize this script to access Search Console data on your behalf.&lt;/a&gt;. &#39;</span> <span style="color:#f92672">+</span>
-      <span style="color:#d88200">&#39;&lt;p&gt;Why do I have to do this?&lt;/p&gt; &#39;</span> <span style="color:#f92672">+</span>
-      <span style="color:#d88200">&#39;&lt;p&gt;This app needs your permission in order to access data stored on Google Search Console.&lt;/p&gt;&#39;</span>
-    <span style="color:#111">);</span>
-    <span style="color:#75af00">template</span><span style="color:#111">.</span><span style="color:#75af00">authorizationUrl</span> <span style="color:#f92672">=</span> <span style="color:#75af00">authorizationUrl</span><span style="color:#111">;</span>
-  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">template</span> <span style="color:#f92672">=</span> <span style="color:#75af00">HtmlService</span><span style="color:#111">.</span><span style="color:#75af00">createTemplate</span><span style="color:#111">(</span><span style="color:#d88200">&#39;This script is already authorized to access data on Search Console. This tab can be closed.&#39;</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">service</span><span class="p">.</span><span class="nx">hasAccess</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">authorizationUrl</span> <span class="o">=</span> <span class="nx">service</span><span class="p">.</span><span class="nx">getAuthorizationUrl</span><span class="p">();</span>
+    <span class="nx">template</span> <span class="o">=</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createTemplate</span><span class="p">(</span>
+      <span class="s1">&#39;&lt;h1&gt;Autentication&lt;/h1&gt; &#39;</span> <span class="o">+</span>
+      <span class="s1">&#39;&lt;a href=&#34;&lt;?= authorizationUrl ?&gt;&#34; target=&#34;_blank&#34;&gt;Authorize this script to access Search Console data on your behalf.&lt;/a&gt;. &#39;</span> <span class="o">+</span>
+      <span class="s1">&#39;&lt;p&gt;Why do I have to do this?&lt;/p&gt; &#39;</span> <span class="o">+</span>
+      <span class="s1">&#39;&lt;p&gt;This app needs your permission in order to access data stored on Google Search Console.&lt;/p&gt;&#39;</span>
+    <span class="p">);</span>
+    <span class="nx">template</span><span class="p">.</span><span class="nx">authorizationUrl</span> <span class="o">=</span> <span class="nx">authorizationUrl</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">template</span> <span class="o">=</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createTemplate</span><span class="p">(</span><span class="s1">&#39;This script is already authorized to access data on Search Console. This tab can be closed.&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span style="color:#75af00">page</span> <span style="color:#f92672">=</span> <span style="color:#75af00">template</span><span style="color:#111">.</span><span style="color:#75af00">evaluate</span><span style="color:#111">();</span>
-  <span style="color:#75af00">SpreadsheetApp</span><span style="color:#111">.</span><span style="color:#75af00">getUi</span><span style="color:#111">().</span><span style="color:#75af00">showSidebar</span><span style="color:#111">(</span><span style="color:#75af00">page</span><span style="color:#111">);</span>
-<span style="color:#111">}</span>
+  <span class="nx">page</span> <span class="o">=</span> <span class="nx">template</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">();</span>
+  <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getUi</span><span class="p">().</span><span class="nx">showSidebar</span><span class="p">(</span><span class="nx">page</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">showDialog</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">service</span> <span style="color:#f92672">=</span> <span style="color:#75af00">getService</span><span style="color:#111">();</span>
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#75af00">service</span><span style="color:#111">.</span><span style="color:#75af00">hasAccess</span><span style="color:#111">())</span> <span style="color:#75af00">Browser</span><span style="color:#111">.</span><span style="color:#75af00">msgBox</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Authorize this script to access data on Google Search Console on your behalf. Access Search Console &gt; Login.&#39;</span><span style="color:#111">,</span> <span style="color:#75af00">Browser</span><span style="color:#111">.</span><span style="color:#75af00">Buttons</span><span style="color:#111">.</span><span style="color:#75af00">OK</span><span style="color:#111">);</span>
-<span style="color:#111">}</span>
+<span class="kd">function</span> <span class="nx">showDialog</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">service</span> <span class="o">=</span> <span class="nx">getService</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">service</span><span class="p">.</span><span class="nx">hasAccess</span><span class="p">())</span> <span class="nx">Browser</span><span class="p">.</span><span class="nx">msgBox</span><span class="p">(</span><span class="s1">&#39;Authorize this script to access data on Google Search Console on your behalf. Access Search Console &gt; Login.&#39;</span><span class="p">,</span> <span class="nx">Browser</span><span class="p">.</span><span class="nx">Buttons</span><span class="p">.</span><span class="nx">OK</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">getData</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">try</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">getSearchConsole</span><span style="color:#111">();</span>
-  <span style="color:#111">}</span> <span style="color:#00a8c8">catch</span> <span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">Browser</span><span style="color:#111">.</span><span style="color:#75af00">msgBox</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">,</span> <span style="color:#75af00">Browser</span><span style="color:#111">.</span><span style="color:#75af00">Buttons</span><span style="color:#111">.</span><span style="color:#75af00">OK</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">}</span>
+<span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="nx">getSearchConsole</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Browser</span><span class="p">.</span><span class="nx">msgBox</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">Browser</span><span class="p">.</span><span class="nx">Buttons</span><span class="p">.</span><span class="nx">OK</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">onOpen</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">ui</span> <span style="color:#f92672">=</span> <span style="color:#75af00">SpreadsheetApp</span><span style="color:#111">.</span><span style="color:#75af00">getUi</span><span style="color:#111">();</span>
-  <span style="color:#75af00">ui</span><span style="color:#111">.</span><span style="color:#75af00">createMenu</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Search Console&#39;</span><span style="color:#111">)</span>
-      <span style="color:#111">.</span><span style="color:#75af00">addItem</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Login&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;showSidebar&#39;</span><span style="color:#111">)</span>
-      <span style="color:#111">.</span><span style="color:#75af00">addItem</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Refresh data&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;getData&#39;</span><span style="color:#111">)</span>
-      <span style="color:#111">.</span><span style="color:#75af00">addToUi</span><span style="color:#111">();</span>
+<span class="kd">function</span> <span class="nx">onOpen</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">ui</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getUi</span><span class="p">();</span>
+  <span class="nx">ui</span><span class="p">.</span><span class="nx">createMenu</span><span class="p">(</span><span class="s1">&#39;Search Console&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">,</span> <span class="s1">&#39;showSidebar&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="s1">&#39;Refresh data&#39;</span><span class="p">,</span> <span class="s1">&#39;getData&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">addToUi</span><span class="p">();</span>
 
-  <span style="color:#75af00">showDialog</span><span style="color:#111">();</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+  <span class="nx">showDialog</span><span class="p">();</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Function showSidebar show a sidebar with a link to iniciate an OAuth2 flow. In case the user is already authenticated, this information will be known to him on this sidebar.</p>

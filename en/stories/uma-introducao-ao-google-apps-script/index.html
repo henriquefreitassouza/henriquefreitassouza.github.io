@@ -253,12 +253,12 @@
 </figure>
 
 <p>This log is different from the execution log. While the execution log register script execution outputs, the console log register data produced by the function throughout its execution. To send data to the console log, which can be used to test the output for instance, use the Logger class:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">Logger</span><span style="color:#111">.</span><span style="color:#75af00">log</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello World!&#34;</span><span style="color:#111">);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Hello World!&#34;</span><span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <figure >
@@ -273,51 +273,51 @@
 </figure>
 
 <p>Another interesting Google Apps Script resource is to setup the so called triggers, that can wait for a given event to execute tasks associated with that event. Triggers can be of two types: time based and event based. Time based triggers run periodically, and the interval is set by the user, and event based triggers run when a given event occur. Some event based triggers are:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">onEdit</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onEdit</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span><span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">onChange</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<span class="kd">function</span> <span class="nx">onChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span><span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">onOpen</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></td></tr></table>
+<span class="kd">function</span> <span class="nx">onOpen</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Event based triggers are created with functions, and the code inside those functions is executed when the event happens. A practical application on Google Spreadsheets, for instance, is to update cells based on user input. Consider the example:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">onEdit</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">.</span><span style="color:#75af00">range</span><span style="color:#111">.</span><span style="color:#75af00">getA1Notation</span><span style="color:#111">()</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;L8&#34;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">sheet</span> <span style="color:#f92672">=</span> <span style="color:#75af00">SpreadsheetApp</span><span style="color:#111">.</span><span style="color:#75af00">getActiveSheet</span><span style="color:#111">();</span>
-    <span style="color:#75af00">sheet</span><span style="color:#111">.</span><span style="color:#75af00">getRange</span><span style="color:#111">(</span><span style="color:#d88200">&#34;L9&#34;</span><span style="color:#111">).</span><span style="color:#75af00">setValue</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">.</span><span style="color:#75af00">oldValue</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onEdit</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">range</span><span class="p">.</span><span class="nx">getA1Notation</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;L8&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActiveSheet</span><span class="p">();</span>
+    <span class="nx">sheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="s2">&#34;L9&#34;</span><span class="p">).</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">oldValue</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>This function listen the event associated with editing any cell of a spreadsheet, verify if the cell being edited correspond to the postiion L8, and then update another cell with the edited cell&rsquo;s previous value.</p>
@@ -349,26 +349,26 @@
 <p>Standalone scripts work similar to bind scripts. Unlike the former, they are visible on Google Drive as files and can be used to create Web Apps or utilities, like a task automation utility. One example would be to organize new files that are stored on Google Drive in a given folder or with a given name.</p>
 <h2 id="web-apps">Web Apps</h2>
 <p>Scripts can be published on the internet, with a unique address. This is useful when the script should receive data from external systems. In order to be published on the internet and to be a web app, the project must contain at least one script with two declared functions:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">function</span> <span style="color:#75af00">doGet</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Return object from types HtmlOutput or TextOutput
-</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">doGet</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span>  <span class="c1">// Return object from types HtmlOutput or TextOutput
+</span><span class="c1"></span><span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">doPost</span><span style="color:#111">(</span><span style="color:#75af00">e</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></td></tr></table>
+<span class="kd">function</span> <span class="nx">doPost</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>The function doGet must return an object of either HtmlOutput or TextOutput types. To interact with the script from an external application, it must be published as a web app with proper permissions. Once it is published, external application can easily access its web address and send the data that will be used by the script.</p>

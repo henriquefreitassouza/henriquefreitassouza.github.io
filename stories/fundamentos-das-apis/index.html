@@ -214,73 +214,73 @@
 </ul>
 <p>Os principais formatos de dados que trafegam por APIs são <strong>XML</strong> e <strong>JSON</strong>.</p>
 <p>XML possui uma estrutura similar a HTML:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pedido&gt;</span>
-  <span style="color:#f92672">&lt;item&gt;</span>
-    <span style="color:#f92672">&lt;nome&gt;</span>Smartphone<span style="color:#f92672">&lt;/nome&gt;</span>
-    <span style="color:#f92672">&lt;preco&gt;</span>899.99<span style="color:#f92672">&lt;/preco&gt;</span>
-  <span style="color:#f92672">&lt;/item&gt;</span>
-  <span style="color:#f92672">&lt;item&gt;</span>
-    <span style="color:#f92672">&lt;nome&gt;</span>Smart TV<span style="color:#f92672">&lt;/nome&gt;</span>
-    <span style="color:#f92672">&lt;preco&gt;</span>1299.99<span style="color:#f92672">&lt;/preco&gt;</span>
-  <span style="color:#f92672">&lt;/item&gt;</span>
-  <span style="color:#f92672">&lt;total&gt;</span>2199.98<span style="color:#f92672">&lt;/total&gt;</span>
-  <span style="color:#f92672">&lt;status&gt;</span>aguardando pagamento<span style="color:#f92672">&lt;/status&gt;</span>
-<span style="color:#f92672">&lt;/pedido&gt;</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;pedido&gt;</span>
+  <span class="nt">&lt;item&gt;</span>
+    <span class="nt">&lt;nome&gt;</span>Smartphone<span class="nt">&lt;/nome&gt;</span>
+    <span class="nt">&lt;preco&gt;</span>899.99<span class="nt">&lt;/preco&gt;</span>
+  <span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>
+    <span class="nt">&lt;nome&gt;</span>Smart TV<span class="nt">&lt;/nome&gt;</span>
+    <span class="nt">&lt;preco&gt;</span>1299.99<span class="nt">&lt;/preco&gt;</span>
+  <span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;total&gt;</span>2199.98<span class="nt">&lt;/total&gt;</span>
+  <span class="nt">&lt;status&gt;</span>aguardando pagamento<span class="nt">&lt;/status&gt;</span>
+<span class="nt">&lt;/pedido&gt;</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>E JSON é bem similar a objetos Javascript:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span>
-  <span style="color:#f92672">&#34;pedido&#34;</span><span style="color:#111">:</span> <span style="color:#111">{</span>
-    <span style="color:#f92672">&#34;items&#34;</span><span style="color:#111">:</span> <span style="color:#111">[</span>
-      <span style="color:#111">{</span>
-        <span style="color:#f92672">&#34;nome&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Smartphone&#34;</span><span style="color:#111">,</span>
-        <span style="color:#f92672">&#34;preco&#34;</span><span style="color:#111">:</span> <span style="color:#ae81ff">899.99</span>
-      <span style="color:#111">},</span>
-      <span style="color:#111">{</span>
-        <span style="color:#f92672">&#34;nome&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Smart TV&#34;</span><span style="color:#111">,</span>
-        <span style="color:#f92672">&#34;preco&#34;</span><span style="color:#111">:</span> <span style="color:#ae81ff">1299.99</span>
-      <span style="color:#111">}</span>
-    <span style="color:#111">],</span>
-    <span style="color:#f92672">&#34;total&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;2199.98&#34;</span><span style="color:#111">,</span>
-    <span style="color:#f92672">&#34;status&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;aguardando pagamento&#34;</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;pedido&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;items&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&#34;nome&#34;</span><span class="p">:</span> <span class="s2">&#34;Smartphone&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;preco&#34;</span><span class="p">:</span> <span class="mf">899.99</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&#34;nome&#34;</span><span class="p">:</span> <span class="s2">&#34;Smart TV&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;preco&#34;</span><span class="p">:</span> <span class="mf">1299.99</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&#34;total&#34;</span><span class="p">:</span> <span class="s2">&#34;2199.98&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;aguardando pagamento&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Além de serem baseadas no protocolo HTTP e usarem formatos de dados já estabelecidos, a forma como APIs são construídas também possuem padrões. Os dois padrões mais conhecidos são <strong>SOAP</strong> e <strong>REST</strong>. Enquanto SOAP é um protocolo, REST é um estilo arquitetural, ou uma forma de organização dos componentes usados na comunicação entre sistemas. <a href="https://blog.smartbear.com/apis/understanding-soap-and-rest-basics/" target="_blank" rel="noopener">As principais diferenças entre os dois</a> são:</p>
@@ -317,38 +317,38 @@
 <p>O manuseio da API é feito por meio de <strong>endpoints</strong>, que são URLs que solicitam os dados que serão recuperados, enviados, modificados ou excluídos. Uma chamada a um endpoint como este, por exemplo:</p>
 <p><strong><a href="https://api.servico.com/dados">https://api.servico.com/dados</a></strong></p>
 <p>Poderia dar um retorno como este:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">{</span>
-  <span style="color:#f92672">&#34;clientes&#34;</span><span style="color:#111">:</span> <span style="color:#111">[</span>
-    <span style="color:#111">{</span>
-      <span style="color:#f92672">&#34;nome&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Miguel&#34;</span><span style="color:#111">,</span>
-      <span style="color:#f92672">&#34;email&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;cliente1@servico.com&#34;</span><span style="color:#111">,</span>
-      <span style="color:#f92672">&#34;telefone&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;11 4446-9965&#34;</span>
-    <span style="color:#111">},</span>
-    <span style="color:#111">{</span>
-      <span style="color:#f92672">&#34;nome&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Laura&#34;</span><span style="color:#111">,</span>
-      <span style="color:#f92672">&#34;email&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;cliente2@servico.com&#34;</span><span style="color:#111">,</span>
-      <span style="color:#f92672">&#34;telefone&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;13 4526-9847&#34;</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">]</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;clientes&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;nome&#34;</span><span class="p">:</span> <span class="s2">&#34;Miguel&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;cliente1@servico.com&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;telefone&#34;</span><span class="p">:</span> <span class="s2">&#34;11 4446-9965&#34;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;nome&#34;</span><span class="p">:</span> <span class="s2">&#34;Laura&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;cliente2@servico.com&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;telefone&#34;</span><span class="p">:</span> <span class="s2">&#34;13 4526-9847&#34;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>O endpoint se chama &ldquo;dados&rdquo; e retorna informações sobre clientes. Esta chamada de exemplo utilizou o método GET. Cada requisição no protocolo HTTP é feita com um destes métodos. O mais comum na internet é o GET, usado para recuperar informações do servidor. Outros métodos utilizados no protocolo HTTP e em APIs são:</p>
@@ -360,34 +360,34 @@
 </ul>
 <p>É importante notar que algumas APIs podem fazer uso do método POST também para fazer a leitura de registros no servidor.</p>
 <p>Uma requisição do tipo POST possivelmente vai ter um endpoint similar ao do GET, e em seu corpo serão transmitidos os dados que serão gravados no servidor. Um exemplo de tal requisição usando o <a href="https://developers.google.com/apps-script/" target="_blank" rel="noopener">Google Apps Script</a> seria:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#00a8c8">var</span> <span style="color:#75af00">customer</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
-    <span style="color:#d88200">&#34;nome&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Marcelo&#34;</span><span style="color:#111">,</span>
-    <span style="color:#d88200">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;cliente3@servico.com&#34;</span><span style="color:#111">,</span>
-    <span style="color:#d88200">&#34;telefone&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;11 9485-6685&#34;</span>
-  <span style="color:#111">};</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">customer</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;nome&#34;</span><span class="o">:</span> <span class="s2">&#34;Marcelo&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;email&#34;</span><span class="o">:</span> <span class="s2">&#34;cliente3@servico.com&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;telefone&#34;</span><span class="o">:</span> <span class="s2">&#34;11 9485-6685&#34;</span>
+  <span class="p">};</span>
 
-  <span style="color:#00a8c8">var</span> <span style="color:#75af00">options</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
-    <span style="color:#d88200">&#34;method&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;post&#34;</span><span style="color:#111">,</span>
-    <span style="color:#d88200">&#34;payload&#34;</span><span style="color:#f92672">:</span> <span style="color:#75af00">customer</span>
-  <span style="color:#111">};</span>
+  <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;method&#34;</span><span class="o">:</span> <span class="s2">&#34;post&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;payload&#34;</span><span class="o">:</span> <span class="nx">customer</span>
+  <span class="p">};</span>
 
-  <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#75af00">UrlFetchApp</span><span style="color:#111">.</span><span style="color:#75af00">fetch</span><span style="color:#111">(</span><span style="color:#d88200">&#34;https://api.servico.com/dados&#34;</span><span style="color:#111">,</span> <span style="color:#75af00">options</span><span style="color:#111">);</span></code></pre></td></tr></table>
+  <span class="nx">response</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;https://api.servico.com/dados&#34;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>O objeto <em>customer</em> recebe o conteúdo que será enviado no corpo da requisição. O método foi declarado como POST na chave &ldquo;method&rdquo; das opções, indicando que se trata de uma operação de envio de informações pelo protocolo HTTP.</p>

@@ -350,38 +350,38 @@
 </figure>
 
 <p>Let&rsquo;s create a database called rdstation. For that, write the following query using the query editor:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">DATABASE</span> <span style="color:#111">rdstation</span><span style="color:#111">;</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">rdstation</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Run the command using the lightning icon, in the toolbar above the text editor or using the shortcut CTRL + Enter (or command + Enter). A new database was created. We need now to create a table in this database to store leads coming from RD Station. Before creating the table we need to select a database. To select the newly created database execute the following query:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#00a8c8">USE</span> <span style="color:#111">rdstation</span><span style="color:#111">;</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">USE</span><span class="w"> </span><span class="n">rdstation</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>With the database selected, create a table called leads:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#00a8c8">CREATE</span> <span style="color:#00a8c8">TABLE</span> <span style="color:#75af00">leads</span><span style="color:#111">(</span>
-	<span style="color:#111">id</span> <span style="color:#00a8c8">INT</span> <span style="color:#00a8c8">NOT</span> <span style="color:#00a8c8">NULL</span> <span style="color:#00a8c8">AUTO_INCREMENT</span> <span style="color:#00a8c8">PRIMARY</span> <span style="color:#00a8c8">KEY</span><span style="color:#111">,</span>
-  <span style="color:#111">name</span> <span style="color:#00a8c8">VARCHAR</span><span style="color:#111">(</span><span style="color:#ae81ff">200</span><span style="color:#111">),</span>
-  <span style="color:#111">email</span> <span style="color:#00a8c8">VARCHAR</span><span style="color:#111">(</span><span style="color:#ae81ff">200</span><span style="color:#111">)</span>
-<span style="color:#111">);</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">leads</span><span class="p">(</span><span class="w">
+</span><span class="w">	</span><span class="n">id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="kp">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span><span class="w">  </span><span class="n">email</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>The database is now configured to store data from new leads coming from the webhook.</p>
@@ -447,22 +447,22 @@
 <p>The lambda function we&rsquo;ve created will orchestrate all resources used in this infrastructure. We need to teach it how to do that. Go to the lambda service page and select the function that was created. We could type all commands using the editor provided by AWS. There is a restriction with this editor, though: we can&rsquo;t install packages. Using Node.js as the server, we can&rsquo;t use NPM (Node Package Manager). We need the mysql package to establish a connection with the database from within the lambda function and this package is not available on this environment. All necessary dependencies for the project need to be available at AWS.</p>
 <p>To load all required files, create a folder in a directory on your local machine and start a new Node.js project in the root of this folder. If you don&rsquo;t have Node.js installed on your machine, <a href="https://nodejs.org/en/" target="_blank" rel="noopener">install it</a> before moving on.</p>
 <p>Once Node.js is installed on your machine, open a terminal and access the root folder of the project to be loaded on AWS Lambda. Inside this folder, run the command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm init</code></pre></td></tr></table>
 </div>
 </div>
 <p>This command will ask for some information to setup the project, like author name and initialization file. Fill this as you prefer, keep the entrance point as being index.js and confirm everything once you&rsquo;re done.</p>
 <p>It is necessary to install the mysql package, <a href="https://www.npmjs.com/package/mysql" target="_blank" rel="noopener">available on NPM</a>. Run the following command on your terminal:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install mysql</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install mysql</code></pre></td></tr></table>
 </div>
 </div>
 <p>The package will be installed in the project folder, with all its dependencies, inside a folder called node_modules.</p>
@@ -470,57 +470,57 @@
 <p>Open your code editor of choice and create, inside the root folder for this project, a file called index.js. This file will contain the code we&rsquo;ll write to catch the webhook from RD Station and store its data into the database.</p>
 <h3 id="the-basic-structure-of-a-lambda-function">The basic structure of a lambda function</h3>
 <p>All lambda functions are declared with a basic setup. In Javascript that is running on a Node.js server, this structure is:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">handler</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">async</span> <span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">)</span> <span style="color:#111">=&gt;</span> <span style="color:#111">{</span>
-	<span style="color:#75715e">// TODO
-</span><span style="color:#75715e"></span>  <span style="color:#00a8c8">const</span> <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span>
-    <span style="color:#75af00">body</span><span style="color:#f92672">:</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">stringify</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Hello from lambda!&#39;</span><span style="color:#111">)</span>
-  <span style="color:#111">};</span>
-  <span style="color:#00a8c8">return</span> <span style="color:#75af00">response</span><span style="color:#111">;</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+	<span class="c1">// TODO
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">statusCode</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s1">&#39;Hello from lambda!&#39;</span><span class="p">)</span>
+  <span class="p">};</span>
+  <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>This handler object stores the &ldquo;heart&rdquo; of the lambda function. Everything that&rsquo;s core is set to run inside a function that&rsquo;s stored inside the handler and its execution status is returned once finished. Before writing the code that goes into the function, we&rsquo;ll adjust this basic structure to run synchronously.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">handler</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">,</span> <span style="color:#75af00">context</span><span style="color:#111">,</span> <span style="color:#75af00">callback</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">context</span><span style="color:#111">.</span><span style="color:#75af00">callbackWaitsForEmptyEventLoop</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">false</span><span style="color:#111">;</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">callbackWaitsForEmptyEventLoop</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-  <span style="color:#75af00">callback</span><span style="color:#111">(</span><span style="color:#00a8c8">null</span><span style="color:#111">,</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span>
-    <span style="color:#75af00">body</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;Hello from lambda!&#39;</span><span style="color:#111">,</span>
-    <span style="color:#75af00">headers</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-      <span style="color:#d88200">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;application/json&#39;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;*&#39;</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">});</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+  <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">statusCode</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;Hello from lambda!&#39;</span><span class="p">,</span>
+    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">:</span> <span class="s1">&#39;*&#39;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>There are some things to be noticed after rewriting this function:</p>
@@ -531,115 +531,115 @@
 <li>The object to be returned now have a headers property to send headers along with the data. The header Access-Control-Allow-Origin allows the API to be called from services outside the domain where it is hosted, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html" target="_blank" rel="noopener">which is required for the API to read the data that will be sent by the webhook</a>.</li>
 </ul>
 <p>With this setup in place, let&rsquo;s write the function code inside index.js.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">const</span> <span style="color:#75af00">mysql</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;mysql&#39;</span><span style="color:#111">);</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mysql&#39;</span><span class="p">);</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">handleEvent</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">.</span><span style="color:#75af00">body</span> <span style="color:#f92672">!=</span> <span style="color:#00a8c8">null</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">parse</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">.</span><span style="color:#75af00">body</span><span style="color:#111">);</span>
+<span class="kd">function</span> <span class="nx">handleEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">body</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 
-  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
-<span style="color:#111">}</span>
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">callback</span><span style="color:#111">,</span> <span style="color:#75af00">error</span><span style="color:#111">,</span> <span style="color:#75af00">status_code</span><span style="color:#111">,</span> <span style="color:#75af00">message</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">callback</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">,</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">statusCode</span><span style="color:#f92672">:</span> <span style="color:#75af00">status_code</span><span style="color:#111">,</span>
-    <span style="color:#75af00">body</span><span style="color:#f92672">:</span> <span style="color:#75af00">message</span><span style="color:#111">,</span>
-    <span style="color:#75af00">headers</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-      <span style="color:#d88200">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;application/json&#39;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;*&#39;</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">});</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<span class="kd">function</span> <span class="nx">handleCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">status_code</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">statusCode</span><span class="o">:</span> <span class="nx">status_code</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="nx">message</span><span class="p">,</span>
+    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">:</span> <span class="s1">&#39;*&#39;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>We start by importing the package mysql. Next, we create two functions: handleEvent and handleCallback. The function handleEvent will treat the object event. This object carries information about the request and have a property called body. When a POST request is done and data is passed on its body (which is the case of the webhook from RD Station), this property will have data. To make this exercise simple, we&rsquo;ll just check if there&rsquo;s data in the property body and, if there is, we try to parse the object assuming it it formatted as JSON.</p>
 <p>The next function, handleCallback, abstract the call to callback, which is sent as a parameter to the function declared on the object handler. This function returns to the requester the status of its execution.</p>
 <p>We&rsquo;ll now create an object to connect with the database.
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">const</span> <span style="color:#75af00">connection</span> <span style="color:#f92672">=</span> <span style="color:#75af00">mysql</span><span style="color:#111">.</span><span style="color:#75af00">createConnection</span><span style="color:#111">({</span>
-  <span style="color:#75af00">host</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_HOST</span><span style="color:#111">,</span>
-  <span style="color:#75af00">user</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_USER</span><span style="color:#111">,</span>
-  <span style="color:#75af00">password</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_PASSWORD</span><span style="color:#111">,</span>
-  <span style="color:#75af00">port</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_PORT</span><span style="color:#111">,</span>
-  <span style="color:#75af00">database</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_DATABASE</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_HOST</span><span class="p">,</span>
+  <span class="nx">user</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_USER</span><span class="p">,</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_PASSWORD</span><span class="p">,</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_PORT</span><span class="p">,</span>
+  <span class="nx">database</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_DATABASE</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div></p>
 <p>We&rsquo;ll setup some environment variables inside the lambda function that will store the database access credentials. AWS have a service designed to store information like credentials called AWS Secrets Manager. This service, though, is not available in the free tier.</p>
 <p>Once everything is done, we&rsquo;ll now write the function that will receive the webhook and store its data into the database.</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">handler</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">,</span> <span style="color:#75af00">context</span><span style="color:#111">,</span> <span style="color:#75af00">callback</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">context</span><span style="color:#111">.</span><span style="color:#75af00">callbackWaitsForEmptyEventLoop</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">false</span><span style="color:#111">;</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">callbackWaitsForEmptyEventLoop</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-  <span style="color:#00a8c8">let</span> <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#75af00">handleEvent</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">);</span>
+  <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">handleEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">response</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#75af00">response</span><span style="color:#111">.</span><span style="color:#75af00">hasOwnProperty</span><span style="color:#111">(</span><span style="color:#d88200">&#39;leads&#39;</span><span style="color:#111">))</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">let</span> <span style="color:#75af00">lead</span> <span style="color:#f92672">=</span> <span style="color:#75af00">response</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">];</span>
-    <span style="color:#75af00">setTimeout</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-      <span style="color:#75715e">// This INSERT syntax is valid in MySQL but it isn&#39;t a default SQL standard
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">connection</span><span style="color:#111">.</span><span style="color:#75af00">query</span><span style="color:#111">(</span><span style="color:#d88200">&#39;INSERT INTO leads SET ?&#39;</span><span style="color:#111">,</span> <span style="color:#111">{</span><span style="color:#75af00">name</span><span style="color:#f92672">:</span> <span style="color:#75af00">lead</span><span style="color:#111">.</span><span style="color:#75af00">name</span><span style="color:#111">,</span> <span style="color:#75af00">email</span><span style="color:#f92672">:</span> <span style="color:#75af00">lead</span><span style="color:#111">.</span><span style="color:#75af00">email</span><span style="color:#111">},</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">,</span> <span style="color:#75af00">results</span><span style="color:#111">,</span> <span style="color:#75af00">fields</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-        <span style="color:#75af00">connection</span><span style="color:#111">.</span><span style="color:#75af00">release</span><span style="color:#111">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;leads&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">lead</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// This INSERT syntax is valid in MySQL but it isn&#39;t a default SQL standard
+</span><span class="c1"></span>      <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;INSERT INTO leads SET ?&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="nx">lead</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">email</span><span class="o">:</span> <span class="nx">lead</span><span class="p">.</span><span class="nx">email</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">,</span> <span class="nx">fields</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">connection</span><span class="p">.</span><span class="nx">release</span><span class="p">();</span>
 
-        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#00a8c8">throw</span> <span style="color:#75af00">error</span><span style="color:#111">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
 
-        <span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">callback</span><span style="color:#111">,</span> <span style="color:#00a8c8">null</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;ok&#39;</span><span style="color:#111">);</span>
-      <span style="color:#111">});</span>
-    <span style="color:#111">},</span> <span style="color:#ae81ff">1000</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">callback</span><span style="color:#111">,</span> <span style="color:#00a8c8">null</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Script ended&#39;</span><span style="color:#111">);</span>
-<span style="color:#111">};</span></code></pre></td></tr></table>
+        <span class="nx">handleCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nx">handleCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;Script ended&#39;</span><span class="p">);</span>
+<span class="p">};</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>This function:</p>
@@ -651,227 +651,227 @@
 <li>If there are leads, wait 1 second for a query to insert data into the database to run.</li>
 </ul>
 <p>* <a href="https://developers.rdstation.com/pt-BR/migration/webhooks" target="_blank" rel="noopener">The webhook format will change</a>. For reference, this is the content that we&rsquo;re expecting at the time this post was published:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#111">{</span>
-  <span style="color:#d88200">&#34;leads&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">[</span>
-    <span style="color:#111">{</span>
-      <span style="color:#d88200">&#34;id&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;1&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;uuid&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;c2f3d2b3-......-eef38be32f7f&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;email@email.com&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Lead Name&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;company&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Company Name&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;job_title&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Job&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;bio&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;This is my bio&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;created_at&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;2012-06-04T15:31:35-03:00&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;opportunity&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;false&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;number_conversions&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;3&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;user&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;email@example.com&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;first_conversion&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-        <span style="color:#d88200">&#34;content&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-          <span style="color:#d88200">&#34;identificador&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;ebook-abc&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;nome&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Lead Name&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;email_lead&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;email@email.com&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;telefone&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;99999999&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;empresa&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Company Name&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;cargo&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;IT&#34;</span>
-        <span style="color:#111">},</span>
-        <span style="color:#d88200">&#34;created_at&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;2012-06-04T15:31:35-03:00&#34;</span><span style="color:#111">,</span>
-        <span style="color:#d88200">&#34;cumulative_sum&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;1&#34;</span><span style="color:#111">,</span>
-        <span style="color:#d88200">&#34;source&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;source 1&#34;</span><span style="color:#111">,</span>
-        <span style="color:#d88200">&#34;conversion_origin&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-          <span style="color:#d88200">&#34;source&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;source 1&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;medium&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;medium 1&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;value&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;value 1&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;campaign&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;campaign 1&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;channel&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;channel 1&#34;</span>
-        <span style="color:#111">}</span>
-      <span style="color:#111">},</span>
-      <span style="color:#d88200">&#34;last_conversion&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-        <span style="color:#d88200">&#34;content&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-          <span style="color:#d88200">&#34;identificador&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;webinar-abc&#34;</span><span style="color:#111">,</span>
-          <span style="color:#d88200">&#34;email_lead&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;support@example.org&#34;</span>
-        <span style="color:#111">},</span>
-        <span style="color:#d88200">&#34;created_at&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;2012-06-04T15:31:35-03:00&#34;</span><span style="color:#111">,</span>
-        <span style="color:#d88200">&#34;cumulative_sum&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;2&#34;</span><span style="color:#111">,</span>
-        <span style="color:#d88200">&#34;source&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;source 2&#34;</span>
-      <span style="color:#111">},</span>
-      <span style="color:#d88200">&#34;custom_fields&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">{},</span>
-      <span style="color:#d88200">&#34;website&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;http://www.mywebsite.com&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;personal_phone&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;48 999999999&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;mobile_phone&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;48 999999999&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;city&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Florianópolis&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;state&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;SC&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;lead_stage&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;Lead&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;tags&#34;</span><span style="color:#f92672">:</span> <span style="color:#111">[</span>
-        <span style="color:#d88200">&#34;tag 1&#34;</span><span style="color:#111">,</span>
-        <span style="color:#d88200">&#34;tag 2&#34;</span>
-      <span style="color:#111">],</span>
-      <span style="color:#d88200">&#34;fit_score&#34;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#34;d&#34;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#34;interest&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">]</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&#34;leads&#34;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&#34;id&#34;</span><span class="o">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;uuid&#34;</span><span class="o">:</span> <span class="s2">&#34;c2f3d2b3-......-eef38be32f7f&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;email&#34;</span><span class="o">:</span> <span class="s2">&#34;email@email.com&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;name&#34;</span><span class="o">:</span> <span class="s2">&#34;Lead Name&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;company&#34;</span><span class="o">:</span> <span class="s2">&#34;Company Name&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;job_title&#34;</span><span class="o">:</span> <span class="s2">&#34;Job&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;bio&#34;</span><span class="o">:</span> <span class="s2">&#34;This is my bio&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;created_at&#34;</span><span class="o">:</span> <span class="s2">&#34;2012-06-04T15:31:35-03:00&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;opportunity&#34;</span><span class="o">:</span> <span class="s2">&#34;false&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;number_conversions&#34;</span><span class="o">:</span> <span class="s2">&#34;3&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;user&#34;</span><span class="o">:</span> <span class="s2">&#34;email@example.com&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;first_conversion&#34;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&#34;content&#34;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&#34;identificador&#34;</span><span class="o">:</span> <span class="s2">&#34;ebook-abc&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;nome&#34;</span><span class="o">:</span> <span class="s2">&#34;Lead Name&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;email_lead&#34;</span><span class="o">:</span> <span class="s2">&#34;email@email.com&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;telefone&#34;</span><span class="o">:</span> <span class="s2">&#34;99999999&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;empresa&#34;</span><span class="o">:</span> <span class="s2">&#34;Company Name&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;cargo&#34;</span><span class="o">:</span> <span class="s2">&#34;IT&#34;</span>
+        <span class="p">},</span>
+        <span class="s2">&#34;created_at&#34;</span><span class="o">:</span> <span class="s2">&#34;2012-06-04T15:31:35-03:00&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;cumulative_sum&#34;</span><span class="o">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;source&#34;</span><span class="o">:</span> <span class="s2">&#34;source 1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;conversion_origin&#34;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&#34;source&#34;</span><span class="o">:</span> <span class="s2">&#34;source 1&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;medium&#34;</span><span class="o">:</span> <span class="s2">&#34;medium 1&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;value&#34;</span><span class="o">:</span> <span class="s2">&#34;value 1&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;campaign&#34;</span><span class="o">:</span> <span class="s2">&#34;campaign 1&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;channel&#34;</span><span class="o">:</span> <span class="s2">&#34;channel 1&#34;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">&#34;last_conversion&#34;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&#34;content&#34;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&#34;identificador&#34;</span><span class="o">:</span> <span class="s2">&#34;webinar-abc&#34;</span><span class="p">,</span>
+          <span class="s2">&#34;email_lead&#34;</span><span class="o">:</span> <span class="s2">&#34;support@example.org&#34;</span>
+        <span class="p">},</span>
+        <span class="s2">&#34;created_at&#34;</span><span class="o">:</span> <span class="s2">&#34;2012-06-04T15:31:35-03:00&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;cumulative_sum&#34;</span><span class="o">:</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;source&#34;</span><span class="o">:</span> <span class="s2">&#34;source 2&#34;</span>
+      <span class="p">},</span>
+      <span class="s2">&#34;custom_fields&#34;</span><span class="o">:</span> <span class="p">{},</span>
+      <span class="s2">&#34;website&#34;</span><span class="o">:</span> <span class="s2">&#34;http://www.mywebsite.com&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;personal_phone&#34;</span><span class="o">:</span> <span class="s2">&#34;48 999999999&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;mobile_phone&#34;</span><span class="o">:</span> <span class="s2">&#34;48 999999999&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;city&#34;</span><span class="o">:</span> <span class="s2">&#34;Florianópolis&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;state&#34;</span><span class="o">:</span> <span class="s2">&#34;SC&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;lead_stage&#34;</span><span class="o">:</span> <span class="s2">&#34;Lead&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;tags&#34;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&#34;tag 1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;tag 2&#34;</span>
+      <span class="p">],</span>
+      <span class="s2">&#34;fit_score&#34;</span><span class="o">:</span> <span class="s2">&#34;d&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;interest&#34;</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>The final index.js file:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">const</span> <span style="color:#75af00">mysql</span> <span style="color:#f92672">=</span> <span style="color:#75af00">require</span><span style="color:#111">(</span><span style="color:#d88200">&#39;mysql&#39;</span><span style="color:#111">);</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mysql&#39;</span><span class="p">);</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">handleEvent</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">.</span><span style="color:#75af00">body</span> <span style="color:#f92672">!=</span> <span style="color:#00a8c8">null</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#75af00">JSON</span><span style="color:#111">.</span><span style="color:#75af00">parse</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">.</span><span style="color:#75af00">body</span><span style="color:#111">);</span>
+<span class="kd">function</span> <span class="nx">handleEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">body</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 
-  <span style="color:#00a8c8">return</span> <span style="color:#00a8c8">null</span><span style="color:#111">;</span>
-<span style="color:#111">}</span>
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">function</span> <span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">callback</span><span style="color:#111">,</span> <span style="color:#75af00">error</span><span style="color:#111">,</span> <span style="color:#75af00">status_code</span><span style="color:#111">,</span> <span style="color:#75af00">message</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">callback</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">,</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">statusCode</span><span style="color:#f92672">:</span> <span style="color:#75af00">status_code</span><span style="color:#111">,</span>
-    <span style="color:#75af00">body</span><span style="color:#f92672">:</span> <span style="color:#75af00">message</span><span style="color:#111">,</span>
-    <span style="color:#75af00">headers</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
-      <span style="color:#d88200">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;application/json&#39;</span><span style="color:#111">,</span>
-      <span style="color:#d88200">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#d88200">&#39;*&#39;</span>
-    <span style="color:#111">}</span>
-  <span style="color:#111">});</span>
-<span style="color:#111">}</span>
+<span class="kd">function</span> <span class="nx">handleCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">status_code</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">statusCode</span><span class="o">:</span> <span class="nx">status_code</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="nx">message</span><span class="p">,</span>
+    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="o">:</span> <span class="s1">&#39;*&#39;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
 
-<span style="color:#00a8c8">const</span> <span style="color:#75af00">connection</span> <span style="color:#f92672">=</span> <span style="color:#75af00">mysql</span><span style="color:#111">.</span><span style="color:#75af00">createConnection</span><span style="color:#111">({</span>
-  <span style="color:#75af00">host</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_HOST</span><span style="color:#111">,</span>
-  <span style="color:#75af00">user</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_USER</span><span style="color:#111">,</span>
-  <span style="color:#75af00">password</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_PASSWORD</span><span style="color:#111">,</span>
-  <span style="color:#75af00">port</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_PORT</span><span style="color:#111">,</span>
-  <span style="color:#75af00">database</span><span style="color:#f92672">:</span> <span style="color:#75af00">process</span><span style="color:#111">.</span><span style="color:#75af00">env</span><span style="color:#111">.</span><span style="color:#75af00">RDS_DATABASE</span>
-<span style="color:#111">});</span>
+<span class="kr">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_HOST</span><span class="p">,</span>
+  <span class="nx">user</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_USER</span><span class="p">,</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_PASSWORD</span><span class="p">,</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_PORT</span><span class="p">,</span>
+  <span class="nx">database</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">RDS_DATABASE</span>
+<span class="p">});</span>
 
-<span style="color:#75af00">exports</span><span style="color:#111">.</span><span style="color:#75af00">handler</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">,</span> <span style="color:#75af00">context</span><span style="color:#111">,</span> <span style="color:#75af00">callback</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#75af00">context</span><span style="color:#111">.</span><span style="color:#75af00">callbackWaitsForEmptyEventLoop</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">false</span><span style="color:#111">;</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">callbackWaitsForEmptyEventLoop</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-  <span style="color:#00a8c8">let</span> <span style="color:#75af00">response</span> <span style="color:#f92672">=</span> <span style="color:#75af00">handleEvent</span><span style="color:#111">(</span><span style="color:#75af00">event</span><span style="color:#111">);</span>
+  <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">handleEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 
-  <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">response</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#75af00">response</span><span style="color:#111">.</span><span style="color:#75af00">hasOwnProperty</span><span style="color:#111">(</span><span style="color:#d88200">&#39;leads&#39;</span><span style="color:#111">))</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">let</span> <span style="color:#75af00">lead</span> <span style="color:#f92672">=</span> <span style="color:#75af00">response</span><span style="color:#111">.</span><span style="color:#75af00">leads</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">];</span>
-    <span style="color:#75af00">setTimeout</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-      <span style="color:#75715e">// This INSERT syntax is valid in MySQL but it isn&#39;t a default SQL standard
-</span><span style="color:#75715e"></span>      <span style="color:#75af00">connection</span><span style="color:#111">.</span><span style="color:#75af00">query</span><span style="color:#111">(</span><span style="color:#d88200">&#39;INSERT INTO leads SET ?&#39;</span><span style="color:#111">,</span> <span style="color:#111">{</span><span style="color:#75af00">name</span><span style="color:#f92672">:</span> <span style="color:#75af00">lead</span><span style="color:#111">.</span><span style="color:#75af00">name</span><span style="color:#111">,</span> <span style="color:#75af00">email</span><span style="color:#f92672">:</span> <span style="color:#75af00">lead</span><span style="color:#111">.</span><span style="color:#75af00">email</span><span style="color:#111">},</span> <span style="color:#00a8c8">function</span><span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">,</span> <span style="color:#75af00">results</span><span style="color:#111">,</span> <span style="color:#75af00">fields</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-        <span style="color:#75af00">connection</span><span style="color:#111">.</span><span style="color:#75af00">release</span><span style="color:#111">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;leads&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">lead</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">leads</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// This INSERT syntax is valid in MySQL but it isn&#39;t a default SQL standard
+</span><span class="c1"></span>      <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;INSERT INTO leads SET ?&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="nx">lead</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">email</span><span class="o">:</span> <span class="nx">lead</span><span class="p">.</span><span class="nx">email</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">results</span><span class="p">,</span> <span class="nx">fields</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">connection</span><span class="p">.</span><span class="nx">release</span><span class="p">();</span>
 
-        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">error</span><span style="color:#111">)</span> <span style="color:#00a8c8">throw</span> <span style="color:#75af00">error</span><span style="color:#111">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
 
-        <span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">callback</span><span style="color:#111">,</span> <span style="color:#00a8c8">null</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;ok&#39;</span><span style="color:#111">);</span>
-      <span style="color:#111">});</span>
-    <span style="color:#111">},</span> <span style="color:#ae81ff">1000</span><span style="color:#111">);</span>
-  <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">handleCallback</span><span style="color:#111">(</span><span style="color:#75af00">callback</span><span style="color:#111">,</span> <span style="color:#00a8c8">null</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;Script ended&#39;</span><span style="color:#111">);</span>
-<span style="color:#111">};</span></code></pre></td></tr></table>
+        <span class="nx">handleCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="nx">handleCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;Script ended&#39;</span><span class="p">);</span>
+<span class="p">};</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Save the file. Select all files and folders created (index.js, node_modules and package.json) and add them into a compressed file. This file must be compressed as zip.</p>

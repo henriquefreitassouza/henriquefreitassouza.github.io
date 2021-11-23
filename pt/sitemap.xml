@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://www.automacaodedados.com.br/</loc>
     <lastmod>2021-06-05T13:50:35+00:00</lastmod>
@@ -14,7 +15,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/</loc>
     <lastmod>2021-06-05T13:50:35+00:00</lastmod>
     <xhtml:link
@@ -27,7 +30,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/categories/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/construcao-da-identidade-no-espaco-virtual/</loc>
     <lastmod>2021-06-05T13:50:35+00:00</lastmod>
     <xhtml:link
@@ -40,10 +45,14 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/construcao-da-identidade-no-espaco-virtual/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/governan%C3%A7a/</loc>
     <lastmod>2021-06-05T13:50:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/</loc>
     <lastmod>2021-06-05T13:50:35+00:00</lastmod>
     <xhtml:link
@@ -56,7 +65,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/como-escolher-o-melhor-grafico/</loc>
     <lastmod>2020-12-06T09:39:00+00:00</lastmod>
     <xhtml:link
@@ -69,13 +80,19 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/como-escolher-o-melhor-grafico/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/visualiza%C3%A7%C3%A3o/</loc>
     <lastmod>2020-12-06T09:39:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/automa%C3%A7%C3%A3o/</loc>
     <lastmod>2020-11-17T09:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/configurando-metabase-e-postgresql-no-docker/</loc>
     <lastmod>2020-11-17T09:10:00+00:00</lastmod>
     <xhtml:link
@@ -88,7 +105,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/configurando-metabase-e-postgresql-no-docker/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/rd-station-e-google-sheets-na-aws/</loc>
     <lastmod>2020-09-03T19:23:00+00:00</lastmod>
     <xhtml:link
@@ -101,10 +120,14 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/rd-station-e-google-sheets-na-aws/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/an%C3%A1lise/</loc>
     <lastmod>2020-02-16T11:37:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/o-que-faz-a-pessoa-analista-de-dados/</loc>
     <lastmod>2020-02-16T11:37:00+00:00</lastmod>
     <xhtml:link
@@ -117,7 +140,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/o-que-faz-a-pessoa-analista-de-dados/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/marketing/</loc>
     <lastmod>2019-05-20T20:05:00+00:00</lastmod>
     <xhtml:link
@@ -130,7 +155,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/categories/marketing/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/voce-usa-gerenciadores-de-tags-para-tudo/</loc>
     <lastmod>2019-05-20T20:05:00+00:00</lastmod>
     <xhtml:link
@@ -143,10 +170,14 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/voce-usa-gerenciadores-de-tags-para-tudo/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/empreendedorismo/</loc>
     <lastmod>2019-05-02T14:43:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/negocios-de-impacto-x-negocios-repetiveis-e-escalaveis/</loc>
     <lastmod>2019-05-02T14:43:00+00:00</lastmod>
     <xhtml:link
@@ -159,7 +190,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/negocios-de-impacto-x-negocios-repetiveis-e-escalaveis/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/as-pessoas-por-tras-das-personas/</loc>
     <lastmod>2019-04-21T22:43:00+00:00</lastmod>
     <xhtml:link
@@ -172,7 +205,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/as-pessoas-por-tras-das-personas/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/o-dia-em-que-o-marketing-saiu-dos-trilhos/</loc>
     <lastmod>2019-04-16T19:11:00+00:00</lastmod>
     <xhtml:link
@@ -185,7 +220,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/o-dia-em-que-o-marketing-saiu-dos-trilhos/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/paginas-de-agradecimento-dinamicas-no-rd-station/</loc>
     <lastmod>2019-02-10T21:37:00+00:00</lastmod>
     <xhtml:link
@@ -198,10 +235,14 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/paginas-de-agradecimento-dinamicas-no-rd-station/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/programa%C3%A7%C3%A3o/</loc>
     <lastmod>2018-09-15T16:29:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/workflow-para-desenvolvimento-wordpress/</loc>
     <lastmod>2018-09-15T16:29:00+00:00</lastmod>
     <xhtml:link
@@ -214,7 +255,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/workflow-para-desenvolvimento-wordpress/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/rd-station-e-google-sheets/</loc>
     <lastmod>2018-09-02T14:07:00+00:00</lastmod>
     <xhtml:link
@@ -227,7 +270,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/rd-station-e-google-sheets/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/apis-e-carrinhos-de-supermercado/</loc>
     <lastmod>2018-07-04T21:20:00+00:00</lastmod>
     <xhtml:link
@@ -240,7 +285,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/apis-e-carrinhos-de-supermercado/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/google-apps-script-com-oauth2/</loc>
     <lastmod>2018-01-29T14:42:00+00:00</lastmod>
     <xhtml:link
@@ -253,7 +300,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/google-apps-script-com-oauth2/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/sites-estaticos-com-jekyll/</loc>
     <lastmod>2018-01-01T19:47:00+00:00</lastmod>
     <xhtml:link
@@ -266,7 +315,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/sites-estaticos-com-jekyll/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/fundamentos-da-pesquisa-exploratoria/</loc>
     <lastmod>2017-12-21T21:04:00+00:00</lastmod>
     <xhtml:link
@@ -279,7 +330,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/fundamentos-da-pesquisa-exploratoria/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/experimentacao-no-mundo-dos-negocios/</loc>
     <lastmod>2017-12-20T09:51:00+00:00</lastmod>
     <xhtml:link
@@ -292,7 +345,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/experimentacao-no-mundo-dos-negocios/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/fundamentos-das-apis/</loc>
     <lastmod>2017-12-12T21:34:00+00:00</lastmod>
     <xhtml:link
@@ -305,7 +360,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/fundamentos-das-apis/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/calculadora-de-significancia-estatistica-para-testes-ab/</loc>
     <lastmod>2017-12-06T11:36:00+00:00</lastmod>
     <xhtml:link
@@ -318,10 +375,14 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/calculadora-de-significancia-estatistica-para-testes-ab/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/estat%C3%ADstica/</loc>
     <lastmod>2017-12-06T11:36:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/seo-e-cro/</loc>
     <lastmod>2017-12-03T08:34:00+00:00</lastmod>
     <xhtml:link
@@ -334,7 +395,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/seo-e-cro/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/design/</loc>
     <lastmod>2017-12-01T09:16:00+00:00</lastmod>
     <xhtml:link
@@ -347,7 +410,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/categories/design/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/fundamentos-de-ux-design/</loc>
     <lastmod>2017-12-01T09:16:00+00:00</lastmod>
     <xhtml:link
@@ -360,7 +425,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/fundamentos-de-ux-design/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/categories/analytics/</loc>
     <lastmod>2017-11-30T08:39:00+00:00</lastmod>
     <xhtml:link
@@ -373,7 +440,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/categories/analytics/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/dados-de-testes-ab-no-google/</loc>
     <lastmod>2017-11-30T08:39:00+00:00</lastmod>
     <xhtml:link
@@ -386,7 +455,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/dados-de-testes-ab-no-google/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-6/</loc>
     <lastmod>2017-11-29T09:12:00+00:00</lastmod>
     <xhtml:link
@@ -399,7 +470,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-6/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-5/</loc>
     <lastmod>2017-11-27T09:47:00+00:00</lastmod>
     <xhtml:link
@@ -412,7 +485,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-5/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-4/</loc>
     <lastmod>2017-11-26T09:59:00+00:00</lastmod>
     <xhtml:link
@@ -425,7 +500,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-4/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-3/</loc>
     <lastmod>2017-11-24T11:21:00+00:00</lastmod>
     <xhtml:link
@@ -438,7 +515,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-3/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-2/</loc>
     <lastmod>2017-11-23T11:07:00+00:00</lastmod>
     <xhtml:link
@@ -451,7 +530,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-2/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-1/</loc>
     <lastmod>2017-11-22T10:35:00+00:00</lastmod>
     <xhtml:link
@@ -464,7 +545,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/estatistica-em-testes-para-nao-matematicos-parte-1/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/a-parte-de-otimizacao-em-cro/</loc>
     <lastmod>2017-11-21T06:42:00+00:00</lastmod>
     <xhtml:link
@@ -477,7 +560,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/a-parte-de-otimizacao-em-cro/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/uma-introducao-ao-google-apps-script/</loc>
     <lastmod>2017-11-20T15:05:00+00:00</lastmod>
     <xhtml:link
@@ -490,7 +575,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/uma-introducao-ao-google-apps-script/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/geracao-de-relatorios-automatizados-por-apis/</loc>
     <lastmod>2017-11-19T13:13:00+00:00</lastmod>
     <xhtml:link
@@ -503,7 +590,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/geracao-de-relatorios-automatizados-por-apis/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/growth-value/</loc>
     <lastmod>2017-11-17T20:36:00+00:00</lastmod>
     <xhtml:link
@@ -516,7 +605,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/growth-value/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/search/</loc>
     <xhtml:link
                 rel="alternate"
@@ -528,7 +619,9 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/search/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -541,4 +634,5 @@
                 href="https://www.automacaodedados.com.br/tags/"
                 />
   </url>
+  
 </urlset>

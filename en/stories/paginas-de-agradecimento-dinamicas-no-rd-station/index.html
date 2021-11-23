@@ -234,18 +234,18 @@
 </figure>
 
 <p>Let&rsquo;s begin by creating the landing page. Use the editor to customize both the form and layout as you need. Made the adjustments, go to &ldquo;advanced options&rdquo; and then to &ldquo;advanced editing&rdquo; (or just &ldquo;advanced editing&rdquo; if using the beta editor available at the time this post was published). With the code editor opened, go to the tab &ldquo;Javascript on BODY&rdquo; and write the following code snippet inside &lt;script&gt; and &lt;/script&gt; tags:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75af00">$</span><span style="color:#111">(</span><span style="color:#d88200">&#39;#conversion-form&#39;</span><span style="color:#111">).</span><span style="color:#75af00">submit</span><span style="color:#111">(</span><span style="color:#00a8c8">function</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#75af00">$</span><span style="color:#111">(</span><span style="color:#d88200">&#34;#name&#34;</span><span style="color:#111">).</span><span style="color:#75af00">val</span><span style="color:#111">();</span>
-    <span style="color:#75af00">$</span><span style="color:#111">(</span><span style="color:#d88200">&#34;input[name=&#39;redirect_to&#39;&#34;</span><span style="color:#111">).</span><span style="color:#75af00">val</span><span style="color:#111">(</span><span style="color:#75af00">$</span><span style="color:#111">(</span><span style="color:#d88200">&#34;input[name=&#39;redirect_to&#39;&#34;</span><span style="color:#111">).</span><span style="color:#75af00">val</span><span style="color:#111">()</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#34;?name=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">name</span><span style="color:#111">);</span>
-<span style="color:#111">});</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#conversion-form&#39;</span><span class="p">).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#name&#34;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;input[name=&#39;redirect_to&#39;&#34;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;input[name=&#39;redirect_to&#39;&#34;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;?name=&#34;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">});</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Analyzing the code:</p>
@@ -282,32 +282,32 @@
 
 <p>I&rsquo;ve found the HTML element that renders the page title. It is a span that&rsquo;s inside an H1 with ID &ldquo;video-title&rdquo;. To select it using CSS use #video-title span.</p>
 <p>With this selector in our hands, go back to the thank you page editor. At the page editor, navigate to &ldquo;advanced options&rdquo; and &ldquo;avanced editing&rdquo; (or just &ldquo;advanced editing&rdquo; if using the beta editor available by the time this post was published). Inside the code editor, open the tab &ldquo;Javascript on BODY&rdquo; and paste the following code snippet between &lt;script&gt; and &lt;/script&gt; tags, and change the CSS selector to the one you&rsquo;ve found when inspecting the source code of the thank you page:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">var</span> <span style="color:#75af00">page_address</span> <span style="color:#f92672">=</span> <span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">location</span><span style="color:#111">.</span><span style="color:#75af00">href</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">url</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">URL</span><span style="color:#111">(</span><span style="color:#75af00">page_address</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">name</span> <span style="color:#f92672">=</span> <span style="color:#75af00">url</span><span style="color:#111">.</span><span style="color:#75af00">searchParams</span><span style="color:#111">.</span><span style="color:#75af00">get</span><span style="color:#111">(</span><span style="color:#d88200">&#39;name&#39;</span><span style="color:#111">);</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">page_title</span> <span style="color:#f92672">=</span> <span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">querySelector</span><span style="color:#111">(</span><span style="color:#d88200">&#39;[YOUR_SELECTOR]&#39;</span><span style="color:#111">);</span> <span style="color:#75715e">// Change [YOUR_SELECTOR] to the one you&#39;ve found when inspecting the source code of the thank you page.
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#75af00">name</span> <span style="color:#f92672">!=</span> <span style="color:#00a8c8">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#75af00">name</span> <span style="color:#f92672">!=</span> <span style="color:#d88200">&#39;null&#39;</span><span style="color:#111">)</span>
-  <span style="color:#75af00">page_title</span><span style="color:#111">.</span><span style="color:#75af00">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Thank you &#39;</span> <span style="color:#f92672">+</span> <span style="color:#75af00">name</span> <span style="color:#f92672">+</span> <span style="color:#d88200">&#39;!&#39;</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">else</span>
-  <span style="color:#75af00">page_title</span><span style="color:#111">.</span><span style="color:#75af00">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;Thank you!&#39;</span><span style="color:#111">;</span> <span style="color:#75715e">// Optional treatment
-</span><span style="color:#75715e"></span>
-<span style="color:#111">window</span><span style="color:#111">.</span><span style="color:#75af00">history</span><span style="color:#111">.</span><span style="color:#75af00">pushState</span><span style="color:#111">(</span><span style="color:#d88200">&#39;&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;&#39;</span><span style="color:#111">,</span> <span style="color:#75af00">url</span><span style="color:#111">.</span><span style="color:#75af00">pathname</span><span style="color:#111">);</span> <span style="color:#75715e">// Optional treatment
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">page_address</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nx">page_address</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">page_title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;[YOUR_SELECTOR]&#39;</span><span class="p">);</span> <span class="c1">// Change [YOUR_SELECTOR] to the one you&#39;ve found when inspecting the source code of the thank you page.
+</span><span class="c1"></span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">name</span> <span class="o">!=</span> <span class="s1">&#39;null&#39;</span><span class="p">)</span>
+  <span class="nx">page_title</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;Thank you &#39;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">;</span>
+<span class="k">else</span>
+  <span class="nx">page_title</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;Thank you!&#39;</span><span class="p">;</span> <span class="c1">// Optional treatment
+</span><span class="c1"></span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">.</span><span class="nx">pathname</span><span class="p">);</span> <span class="c1">// Optional treatment
 </span></code></pre></td></tr></table>
 </div>
 </div>

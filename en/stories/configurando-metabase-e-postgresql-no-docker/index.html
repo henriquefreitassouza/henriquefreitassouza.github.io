@@ -194,7 +194,7 @@
   <div class="container container-box mx-auto">
     <div class="max-w-3xl px-2 mx-auto flex flex-col">
       <main id="post" itemprop="articleBody">
-        <strong class="inline-block text-base mb-4 dark:text-white">Estimated time to read: 14 minutes</strong>
+        <strong class="inline-block text-base mb-4 dark:text-white">Estimated time to read: 13 minutes</strong>
         <p>Published on November 17, 2020 and updated on November 20, 2021.</p>
 <h2 id="isolating-environments-with-docker">Isolating environments with Docker</h2>
 <p>A infrastructure that scale as demand increase is essential for any digital product with reach. The ability to scale depends on many things, from the technical specifications used by server machines to the chosen architecture. One of these variables, topic to be discussed in this post, is the configuration for the environment. A well planned environment is easy to maintain and change, helping to avoid &ndash; or to reduce the impact &ndash; of a maintenance, being it scheduled or not.</p>
@@ -203,21 +203,21 @@
 <p>Let&rsquo;s explore Docker, one example of a Dockerfile and find out how to manage more than one container, or environment.</p>
 <h2 id="docker-installation">Docker installation</h2>
 <p>The first step is to install Docker on your computer. Docker can be downloaded on its <a href="https://www.docker.com/" target="_blank" rel="noopener">official website</a>. Once Docker is installed, open a console and type the following command (if you&rsquo;re using Linux, you may need to use sudo to grant root level permissions to Docker):</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker --version</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker --version</code></pre></td></tr></table>
 </div>
 </div>
 <p>If Docker is installed, you should see on the screen which version of Docker is installed. The next step is to install <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener">Docker Compose</a>, a Docker utility that ease managing multiple containers. Download and install Docker Compose on your computer. Next, open a terminal and type the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose --version</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker-compose --version</code></pre></td></tr></table>
 </div>
 </div>
 <p>If Docker Compose is installed, you will see on the screen which version of Docker Compose is installed.</p>
@@ -236,66 +236,66 @@
 <p>Now that Docker is installed on the machine, we can create the containers which we&rsquo;ll use in this tutorial: one with <a href="https://www.metabase.com/" target="_blank" rel="noopener">Metabase</a> and another one with <a href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL</a>.</p>
 <p>Beyond ensuring a controlled environment for hosting software, another great advantage of Docker is its portability. You can create and configure an environment and share with other people so they don&rsquo;t have to do the same work from scratch. This is so common among Docker community that there is even a repository with templates for environments ready to be used, called <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>. These environment templates are called <strong>images</strong>. An image have all files and tools necessary for the environment to work in isolation. Images are like the plant of a house while the house is a container. It is based on the image that the container is created. There are official images for many popular apps including WordPress, MySQL or Node.js and other images that were created by people from Docker community.</p>
 <p>We&rsquo;ll use two images: one from <a href="https://hub.docker.com/r/metabase/metabase" target="_blank" rel="noopener">Metabase</a> and one from <a href="https://hub.docker.com/_/postgres" target="_blank" rel="noopener">PostgreSQL</a>. It is necessary to download both images from Docker Hub. To download the PostgreSQL image, open a terminal and type the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull postgres</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker pull postgres</code></pre></td></tr></table>
 </div>
 </div>
 <p>You can check out the download progress using the terminal. Once this is finished, download the image from Metabase typing the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull metabase/metabase</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker pull metabase/metabase</code></pre></td></tr></table>
 </div>
 </div>
 <p>Each image available on Docker Hub have a version, and the latest version is identified by a tag called latest. It is this version that is downloaded by default when no tag is specified. You may need different versions for apps that need to run on tools with specific versions. <a href="https://www.mautic.org/" >Mautic</a>, a marketing automation tool, is an example of such app, which by the time this post was published it don&rsquo;t work with PHP 7.3 or above, so the environment must have at most PHP 7.2. Each image on Docker Hub have a page with instructions on how to download each version of an image.</p>
 <p>With all images ready to be used on your machine, it is time to configure the containers.</p>
 <h2 id="creating-a-container">Creating a container</h2>
 <p>To use the images it is necessary to inform Docker how they will be used. You can use each image as it was downloaded from the repository or modify it before creating the container. If using the image the way it was downloaded, Docker know what it needs to do and you can simply create a container. To create a container using the Metabase image, for instance, just run the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 3000:3000 metabase/metabase</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -p 3000:3000 metabase/metabase</code></pre></td></tr></table>
 </div>
 </div>
 <p>A new container is created with the command run and some arguments. The only required argument is the name of the image that will be used to generate a container. For Metabase to be accessible, it is necessary to map a port from your machine to a port from the container. This is done by using the flag &ldquo;p&rdquo;. The first specified port is one from your machine and the second one is from the container, separated by colons (:). <strong>Make sure port 3000 on your machine is free, otherwise use a door that is free</strong>.</p>
 <p>By default, the container running Metabase expose port 3000. Open a browser and type localhost:3000. You should see a screen to setup Metabase. Since we&rsquo;ll use Metabase along with PostgreSQL, shutdown the connection between the terminal and the container by accessing the terminal and making a forced stop with shortcut CTRL + C. This stop just closed the connection between the terminal and the container, but the container is still running. It needs to be stopped so the port 3000 gets released. To do that, we&rsquo;ll list all containers that are running with the command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker ps</code></pre></td></tr></table>
 </div>
 </div>
 <p>See in the terminal that the last column is called name. This column identifies each container created, and these names are automatically generated if not specified. Each time you create a new container, Docker will give a random name for that container. You can specify the name using the flag &ldquo;name&rdquo;. For now, shutdown the container with the command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop container_name</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker stop container_name</code></pre></td></tr></table>
 </div>
 </div>
 <p>Where container_name is the name Docker gave to the newly created container, which is different from the name of the image.</p>
 <h2 id="creating-a-dockerfile">Creating a Dockerfile</h2>
 <p>You can modify an image downloaded from a repository or create an image from scratch. For that, you&rsquo;ll need to create a file called <strong>Dockerfile</strong> and configure it. Once the file is configured, you must inform Docker how to find this file and execute all commands that will create a new image.</p>
 <p>To create a new image, create a folder in any directory from your computer and, right after, open a notepad. With the notepad opened, type the following lines:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#00a8c8">FROM</span><span style="color:#d88200"> metabase/metabase:latest</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#00a8c8">LABEL</span> <span style="color:#111">Description</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;This is a custom build based on the official Metabase image.&#34;</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span><span class="s"> metabase/metabase:latest</span><span class="err">
+</span><span class="err"></span><span class="k">LABEL</span> <span class="nv">Description</span><span class="o">=</span><span class="s2">&#34;This is a custom build based on the official Metabase image.&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Save the file in the directory created with the name Dockerfile. This Dockerfile have only two instructions:</p>
@@ -305,13 +305,13 @@
 </ul>
 <p>There are many commands that can be used in a Dockerfile, useful to do things like add other dependencies to an environment. The complete list of commands can be found at <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noopener">the official Docker documentation</a>.</p>
 <p>Open a terminal and type the following commands, remembering to alter the code so that the directory is the one in your machine where there&rsquo;s a Dockerfile:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">cd</span> /path/to/Dockerfile
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /path/to/Dockerfile
 docker build --tag latest metabase_sandbox .</code></pre></td></tr></table>
 </div>
 </div>
@@ -321,144 +321,144 @@ docker build --tag latest metabase_sandbox .</code></pre></td></tr></table>
 <li>Command build create a new image based on the image specified in the Dockerfile. The flag &ldquo;tag&rdquo; specify that a tag called latest should be added to the image, the name of the image will be metabase_sandbox and the path to the Dockerfile is the current directory (note the period after the name of the image, separated by an empty space. If the Dockerfile was in another directory the period would need to be replaced with the path to the Dockerfile).</li>
 </ul>
 <p>You can check out each step on the creating of the image in your terminal. At the end, run the following command on the terminal:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image ls</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker image ls</code></pre></td></tr></table>
 </div>
 </div>
 <p>All images that you have on your computer will be shown on the terminal, including the newly created one, called metabase_sandbox. Test this new image running the command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 3000:3000 metabase_sandbox</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run -p 3000:3000 metabase_sandbox</code></pre></td></tr></table>
 </div>
 </div>
 <p>The result should be the same as when you created a container directly from the original image. Open a browser and type localhost:3000. The same Metabase configuration screen will appear.</p>
 <p>Close the connection between the terminal and the container using CTRL + C. All images and containers created use physical space on your computer and you can save space by deleting everything that won&rsquo;t be used anymore. To do the cleaning, start by typing the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps -a</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker ps -a</code></pre></td></tr></table>
 </div>
 </div>
 <p>Command ps will show all containers that were created, and flag &ldquo;a&rdquo; will also show all containers that aren&rsquo;t running. To delete the newly created container run the command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rm container_name</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker rm container_name</code></pre></td></tr></table>
 </div>
 </div>
 <p>Where container_name is the name that Docker automatically gave after its creation or the name you gave by specifying the flag &ldquo;name&rdquo; when using the command run. The container will be deleted from your system. You can make the process of deleting a container automatic by appending the flag &ldquo;rm&rdquo; to run. This way, the container will be automatically deleted once it is shutdown.</p>
 <p>Delete also the image metabase_sandbox. For that, with all containers that make use of this image stopped, run the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image rm metabase_sandbox</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker image rm metabase_sandbox</code></pre></td></tr></table>
 </div>
 </div>
 <p>You can check that the image doesn&rsquo;t exist anymore by running the command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker image ls</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker image ls</code></pre></td></tr></table>
 </div>
 </div>
 <p>A Dockerfile is necessary to customize an existing image or creating one from scratch, but what when we need more than one service and these services have dependencies among themselves?</p>
 <h2 id="multiple-containers-in-docker-with-docker-compose">Multiple containers in Docker with Docker Compose</h2>
 <p>There are tools designed specifically to work with multiple Docker containers. We&rsquo;ll use one tool that does that to centralize all environment configurations in a single place, and this tool is <strong>Docker Compose</strong>. Docker Compose uses a single file to configure all containers, and each container can have its own Dockerfile if necessary. This file used by Docker Container is called <strong>docker-compose.yml</strong> and it is written using <a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">yaml</a>. We&rsquo;ll create this file in the same directory in which the Dockerfile was created prior. Access this directory and create a new text file using this code:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;3.8&#34;</span>
-
-<span style="color:#f92672">services</span><span style="color:#111">:</span>
-	<span style="color:#f92672">db</span><span style="color:#111">:</span>
-    		<span style="color:#f92672">image</span><span style="color:#111">:</span> <span style="color:#ae81ff">postgres</span>
-    		<span style="color:#f92672">container_name</span><span style="color:#111">:</span> <span style="color:#ae81ff">postgresql_metabase</span>
-    		<span style="color:#f92672">restart</span><span style="color:#111">:</span> <span style="color:#ae81ff">always</span>
-    		<span style="color:#f92672">environment</span><span style="color:#111">:</span>
-        		<span style="color:#f92672">POSTGRES_DB</span><span style="color:#111">:</span> <span style="color:#ae81ff">metabase</span>
-        		<span style="color:#f92672">POSTGRES_USER</span><span style="color:#111">:</span> <span style="color:#ae81ff">metabase</span>
-        		<span style="color:#f92672">POSTGRES_PASSWORD</span><span style="color:#111">:</span> <span style="color:#ae81ff">db_password</span>
-    		<span style="color:#f92672">volumes</span><span style="color:#111">:</span>
-        		- <span style="color:#ae81ff">db_data:/var/lib/postgresql/data</span>
-    		<span style="color:#f92672">ports</span><span style="color:#111">:</span>
-      	  	- <span style="color:#ae81ff">5432</span><span style="color:#111">:</span><span style="color:#ae81ff">5432</span>
-
-	<span style="color:#f92672">dataviz</span><span style="color:#111">:</span>
-    		<span style="color:#f92672">image</span><span style="color:#111">:</span> <span style="color:#ae81ff">metabase/metabase</span>
-    		<span style="color:#f92672">container_name</span><span style="color:#111">:</span> <span style="color:#ae81ff">metabase</span>
-    		<span style="color:#f92672">restart</span><span style="color:#111">:</span> <span style="color:#ae81ff">always</span>
-    		<span style="color:#f92672">environment</span><span style="color:#111">:</span>
-     	   	<span style="color:#f92672">MB_DB_TYPE</span><span style="color:#111">:</span> <span style="color:#ae81ff">postgres</span>
-       	 	<span style="color:#f92672">MB_DB_DBNAME</span><span style="color:#111">:</span> <span style="color:#ae81ff">metabase</span>
-       	 	<span style="color:#f92672">MB_DB_PORT</span><span style="color:#111">:</span> <span style="color:#ae81ff">5432</span>
-        		<span style="color:#f92672">MB_DB_USER</span><span style="color:#111">:</span> <span style="color:#ae81ff">metabase</span>
-        		<span style="color:#f92672">MB_DB_PASS</span><span style="color:#111">:</span> <span style="color:#ae81ff">db_password</span>
-       	 	<span style="color:#f92672">MB_DB_HOST</span><span style="color:#111">:</span> <span style="color:#ae81ff">db</span>
-       	 	<span style="color:#f92672">MB_DB_FILE</span><span style="color:#111">:</span> <span style="color:#ae81ff">/metabase-data/metabase.db</span>
-    		<span style="color:#f92672">depends_on</span><span style="color:#111">:</span>
-      	  	- <span style="color:#ae81ff">db</span>
-    		<span style="color:#f92672">volumes</span><span style="color:#111">:</span>
-       	 	- <span style="color:#ae81ff">dataviz_data:/metabase-data</span>
-    		<span style="color:#f92672">ports</span><span style="color:#111">:</span>
-       	 	- <span style="color:#ae81ff">3000</span><span style="color:#111">:</span><span style="color:#ae81ff">3000</span>
-
-<span style="color:#f92672">volumes</span><span style="color:#111">:</span>
-	<span style="color:#f92672">db_data</span><span style="color:#111">:</span>
-	<span style="color:#ae81ff">dataviz_data:</span></code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.8&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span><span class="w">	</span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span><span class="w">    		</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">postgres</span><span class="w">
+</span><span class="w">    		</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">postgresql_metabase</span><span class="w">
+</span><span class="w">    		</span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span><span class="w">    		</span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">        		</span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l">metabase</span><span class="w">
+</span><span class="w">        		</span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l">metabase</span><span class="w">
+</span><span class="w">        		</span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">db_password</span><span class="w">
+</span><span class="w">    		</span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">        		</span>- <span class="l">db_data:/var/lib/postgresql/data</span><span class="w">
+</span><span class="w">    		</span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      	  	</span>- <span class="m">5432</span><span class="p">:</span><span class="m">5432</span><span class="w">
+</span><span class="w">
+</span><span class="w">	</span><span class="nt">dataviz</span><span class="p">:</span><span class="w">
+</span><span class="w">    		</span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">metabase/metabase</span><span class="w">
+</span><span class="w">    		</span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">metabase</span><span class="w">
+</span><span class="w">    		</span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span><span class="w">    		</span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">     	   	</span><span class="nt">MB_DB_TYPE</span><span class="p">:</span><span class="w"> </span><span class="l">postgres</span><span class="w">
+</span><span class="w">       	 	</span><span class="nt">MB_DB_DBNAME</span><span class="p">:</span><span class="w"> </span><span class="l">metabase</span><span class="w">
+</span><span class="w">       	 	</span><span class="nt">MB_DB_PORT</span><span class="p">:</span><span class="w"> </span><span class="m">5432</span><span class="w">
+</span><span class="w">        		</span><span class="nt">MB_DB_USER</span><span class="p">:</span><span class="w"> </span><span class="l">metabase</span><span class="w">
+</span><span class="w">        		</span><span class="nt">MB_DB_PASS</span><span class="p">:</span><span class="w"> </span><span class="l">db_password</span><span class="w">
+</span><span class="w">       	 	</span><span class="nt">MB_DB_HOST</span><span class="p">:</span><span class="w"> </span><span class="l">db</span><span class="w">
+</span><span class="w">       	 	</span><span class="nt">MB_DB_FILE</span><span class="p">:</span><span class="w"> </span><span class="l">/metabase-data/metabase.db</span><span class="w">
+</span><span class="w">    		</span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span><span class="w">      	  	</span>- <span class="l">db</span><span class="w">
+</span><span class="w">    		</span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">       	 	</span>- <span class="l">dataviz_data:/metabase-data</span><span class="w">
+</span><span class="w">    		</span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">       	 	</span>- <span class="m">3000</span><span class="p">:</span><span class="m">3000</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">	</span><span class="nt">db_data</span><span class="p">:</span><span class="w">
+</span><span class="w">	</span><span class="l">dataviz_data:</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>There are many configurations in this file. This could all be done in separate Dockerfiles, except establishing a relationship among both containers. What this file is doing is:</p>
@@ -486,12 +486,12 @@ docker build --tag latest metabase_sandbox .</code></pre></td></tr></table>
 </ul>
 <p>Save the file with name docker-compose.yml. Note that we didn&rsquo;t used the Dockerfile previously created, but it is possible to specify its address inside docker-compose.yml if it is necessary to customize the image. We&rsquo;ll use the default images, setting up only the environment variables from each container, volumes to specify where to save data that can&rsquo;t be lost upon shutting down the container and the order of initialization.</p>
 <p>Open a terminal and, in the directory in which there&rsquo;s a docker-compose.yml, type the following command:</p>
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker-compose up</code></pre></td></tr></table>
 </div>
 </div>
 <p>Once the command is executed, both containers initialized. Browse to localhost:3000 and start the process of configuring Metabase. After setting up the database, select the option others and type the same data that were used to fill the environment variables for both Metabase and PostgreSQL. In the host field just type the name of the service created at docker-compose.yml, named db. Finish the configuration and, at the home screen of Metabase, you should see a database with some tables created next to the default database.</p>
