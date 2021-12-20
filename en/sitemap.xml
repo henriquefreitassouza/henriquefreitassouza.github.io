@@ -608,6 +608,20 @@
   </url>
   
   <url>
+    <loc>https://www.automacaodedados.com.br/en/stories/o-metaverso-pos-meta/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://www.automacaodedados.com.br/stories/o-metaverso-pos-meta/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.automacaodedados.com.br/en/stories/o-metaverso-pos-meta/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/en/search/</loc>
     <xhtml:link
                 rel="alternate"
