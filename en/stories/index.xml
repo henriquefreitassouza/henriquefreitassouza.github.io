@@ -5,7 +5,16 @@
     <link>https://www.automacaodedados.com.br/en/stories/</link>
     <description>Recent content in All stories on Data Automation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 14 May 2021 19:24:32 +0000</lastBuildDate><atom:link href="https://www.automacaodedados.com.br/en/stories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 06:37:00 +0000</lastBuildDate><atom:link href="https://www.automacaodedados.com.br/en/stories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Metaverse post Meta</title>
+      <link>https://www.automacaodedados.com.br/en/stories/o-metaverso-pos-meta/</link>
+      <pubDate>Mon, 20 Dec 2021 06:37:00 +0000</pubDate>
+      
+      <guid>https://www.automacaodedados.com.br/en/stories/o-metaverso-pos-meta/</guid>
+      <description>Facebook&#39;s name change defined a milestone in the history of a technology that&amp;rsquo;s decades old, but how big is the impact of such change to the development of the metaverse?</description>
+    </item>
+    
     <item>
       <title>Identity development in the digital space</title>
       <link>https://www.automacaodedados.com.br/en/stories/construcao-da-identidade-no-espaco-virtual/</link>
@@ -48,7 +57,7 @@
       <pubDate>Sun, 16 Feb 2020 11:37:00 +0000</pubDate>
       
       <guid>https://www.automacaodedados.com.br/en/stories/o-que-faz-a-pessoa-analista-de-dados/</guid>
-      <description>Data analysts, data scientists, data engineers&amp;hellip; There are many professionals who work with data. In this post, we will understand what data analysts do and deliver, and how he or she work alongside other data professionals</description>
+      <description>Data analysts, data scientists, data engineers... There are many professionals who work with data. In this post, we will understand what data analysts do and deliver, and how he or she work alongside other data professionals</description>
     </item>
     
     <item>
@@ -75,7 +84,7 @@
       <pubDate>Sun, 21 Apr 2019 22:43:00 +0000</pubDate>
       
       <guid>https://www.automacaodedados.com.br/en/stories/as-pessoas-por-tras-das-personas/</guid>
-      <description>Customers today are very different from those from previous decades. Throughout this post, we&amp;rsquo;ll get to know some important milestones that changed customer behavior to understand how to conquer and retain customers that are looking for much more than quality.</description>
+      <description>Customers today are very different from those from previous decades. Throughout this post, we&#39;ll get to know some important milestones that changed customer behavior to understand how to conquer and retain customers that are looking for much more than quality.</description>
     </item>
     
     <item>
@@ -192,7 +201,7 @@
       <pubDate>Fri, 01 Dec 2017 09:16:00 +0000</pubDate>
       
       <guid>https://www.automacaodedados.com.br/en/stories/fundamentos-de-ux-design/</guid>
-      <description>The phrase &amp;ldquo;a good design is invisible&amp;rdquo; surfaces with some frequency when searched online. Good designs are invisible when experiences are fluid. There are people that dedicate their careers to make memorable experiences, but we all are experience designers. We just don&amp;rsquo;t know it yet</description>
+      <description>The phrase &#39;a good design is invisible&#39; surfaces with some frequency when searched online. Good designs are invisible when experiences are fluid. There are people that dedicate their careers to make memorable experiences, but we all are experience designers. We just don&amp;rsquo;t know it yet</description>
     </item>
     
     <item>
@@ -292,15 +301,6 @@
       
       <guid>https://www.automacaodedados.com.br/en/stories/growth-value/</guid>
       <description>What is Growth Value?</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.automacaodedados.com.br/en/stories/o-metaverso-pos-meta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.automacaodedados.com.br/en/stories/o-metaverso-pos-meta/</guid>
-      <description></description>
     </item>
     
   </channel>
