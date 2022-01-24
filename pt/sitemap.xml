@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.automacaodedados.com.br/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/</loc>
+    <lastmod>2022-01-24T10:37:14+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.automacaodedados.com.br/en/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://www.automacaodedados.com.br/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/</loc>
     <lastmod>2021-12-20T06:37:00+00:00</lastmod>
     <xhtml:link

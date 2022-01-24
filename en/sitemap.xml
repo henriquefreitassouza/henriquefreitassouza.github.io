@@ -623,6 +623,20 @@
   </url>
   
   <url>
+    <loc>https://www.automacaodedados.com.br/en/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://www.automacaodedados.com.br/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.automacaodedados.com.br/en/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/en/search/</loc>
     <xhtml:link
                 rel="alternate"
