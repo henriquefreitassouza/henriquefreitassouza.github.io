@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.automacaodedados.com.br/</loc>
+    <lastmod>2022-01-24T10:37:14+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.automacaodedados.com.br/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://www.automacaodedados.com.br/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.automacaodedados.com.br/categories/an%C3%A1lise/</loc>
+    <lastmod>2022-01-24T10:37:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.automacaodedados.com.br/categories/</loc>
+    <lastmod>2022-01-24T10:37:14+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.automacaodedados.com.br/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://www.automacaodedados.com.br/categories/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.automacaodedados.com.br/stories/ferramentas-e-tecnicas-para-a-analise-de-dados/</loc>
     <lastmod>2022-01-24T10:37:14+00:00</lastmod>
     <xhtml:link
@@ -18,32 +53,17 @@
   </url>
   
   <url>
-    <loc>https://www.automacaodedados.com.br/</loc>
-    <lastmod>2021-12-20T06:37:00+00:00</lastmod>
+    <loc>https://www.automacaodedados.com.br/stories/</loc>
+    <lastmod>2022-01-24T10:37:14+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.automacaodedados.com.br/en/"
+                href="https://www.automacaodedados.com.br/en/stories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://www.automacaodedados.com.br/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.automacaodedados.com.br/categories/</loc>
-    <lastmod>2021-12-20T06:37:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.automacaodedados.com.br/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://www.automacaodedados.com.br/categories/"
+                href="https://www.automacaodedados.com.br/stories/"
                 />
   </url>
   
@@ -64,21 +84,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/o-metaverso-pos-meta/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://www.automacaodedados.com.br/stories/</loc>
-    <lastmod>2021-12-20T06:37:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.automacaodedados.com.br/en/stories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://www.automacaodedados.com.br/stories/"
                 />
   </url>
   
@@ -150,11 +155,6 @@
                 hreflang="pt"
                 href="https://www.automacaodedados.com.br/stories/rd-station-e-google-sheets-na-aws/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://www.automacaodedados.com.br/categories/an%C3%A1lise/</loc>
-    <lastmod>2021-11-19T11:37:00+00:00</lastmod>
   </url>
   
   <url>
