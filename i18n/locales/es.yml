@@ -1,0 +1,63 @@
+# Solo textos de la interfaz. Los textos de páginas y artículos están en content/.
+a11y:
+  home: Inicio
+  skipToContent: Saltar al contenido
+  mainMenu: Menú principal
+  footerMenu: Enlaces institucionales
+  breadcrumb: Usted está aquí
+language:
+  label: Idioma
+  homeOnly: página de inicio
+blog:
+  latest: Publicaciones recientes
+  allPosts: Ver todas las publicaciones
+  otherLanguages: Publicaciones en otros idiomas
+  empty: Todavía no hay publicaciones.
+  tag: "Publicaciones con la etiqueta «{tag}»"
+  tagDescription: "Lista de publicaciones del blog clasificadas con la etiqueta «{tag}»."
+  page: "Blog — página {page}"
+  pageDescription: "Página {page} de la lista de publicaciones del blog, de las más recientes a las más antiguas."
+  feed: Suscribirse al feed RSS
+pagination:
+  label: Paginación
+  previous: Página anterior
+  next: Página siguiente
+  page: "Página {page}"
+post:
+  by: Por
+  published: Publicado el
+  updated: Actualizado el
+  readingTime: "Lectura de unos {minutes} min"
+  tags: Etiquetas
+  abstract: Resumen
+  plainLanguageSummary: En lenguaje sencillo
+  toc: En esta página
+  references: Referencias
+  footnotes: Notas
+  footnoteBack: Volver al texto
+  howToCite: Cómo citar este artículo
+  draft: Borrador — no publicado
+media:
+  longDescription: Descripción detallada
+  viewData: Ver los datos en una tabla
+  downloadCsv: Descargar los datos (CSV)
+  source: Fuente
+  credit: Crédito
+  embedNotice: "Este contenido se carga desde {provider}. Al cargarlo, {provider} recibe una solicitud de su navegador."
+  embedLoad: "Cargar contenido de {provider}"
+  embedOpen: "Abrir en {provider}"
+  diagram: Diagrama
+code:
+  copy: Copiar código
+  copied: Código copiado
+callout:
+  note: Nota
+  warning: Atención
+  definition: Definición
+error:
+  notFound: Página no encontrada
+  notFoundHelp: Esta página no existe o cambió de dirección. Quizás algo de lo que sigue te interese.
+  latest: Publicaciones más recientes
+  allPosts: Ver todas las publicaciones
+  generic: Se produjo un error
+  home: Ir a la página de inicio

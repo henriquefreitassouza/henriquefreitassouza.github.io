@@ -1,0 +1,32 @@
+# Rascunho de demonstração: mostra todos os componentes e serve de teste de acessibilidade no CI.
+# Não é publicado (draft: true). Os dados do gráfico são fictícios.
+title: Guia de componentes dos artigos
+description: Demonstração de todos os recursos disponíveis nos artigos — gráficos, tabelas, diagramas, fórmulas, citações e conteúdo incorporado.
+translationKey: component-guide
+draft: true
+datePublished: 2026-11-27
+tags:
+  - Guia de estilo
+  - Acessibilidade
+abstract: Este texto demonstra, em um único artigo, cada componente que um autor pode usar no blog e como cada um oferece alternativas acessíveis.
+plainLanguageSummary: Esta página é um exemplo. Ela mostra os tipos de conteúdo que um artigo pode ter, como gráficos e tabelas, e como cada um também pode ser lido em texto.
+references:
+  - id: freire1996
+    type: book
+    title: "Pedagogia da autonomia: saberes necessários à prática educativa"
+    author:
+      - family: Freire
+        given: Paulo
+    issued:
+      date-parts: [[1996]]
+    publisher: Paz e Terra
+    publisher-place: São Paulo
+  - id: inep2024
+    type: report
+    title: "Censo Escolar da Educação Básica 2023: resumo técnico"
+    author:
+      - literal: INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA
+    issued:
+      date-parts: [[2024]]
+    publisher: Inep
+    publisher-place: Brasília
