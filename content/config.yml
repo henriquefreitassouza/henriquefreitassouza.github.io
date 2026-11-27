@@ -1,0 +1,49 @@
+# Site-wide settings, read at build time.
+# Keys under pageDefaults and postDefaults are defaults: a page's own .yml can override any of them.
+
+site:
+  url: https://henriquefreitassouza.github.io
+  name: Henrique Freitas Souza
+  defaultLocale: pt-BR
+  postsPerPage: 10
+
+# The first locale is the default (no URL prefix). The others get /<code>/.
+locales:
+  - code: pt-BR
+    name: Português
+  - code: en
+    name: English
+  - code: es
+    name: Español
+
+# Main menu and footer links, per locale. Paths must exist (the link checker fails the build otherwise).
+navigation:
+  pt-BR:
+    main:
+      - { label: Blog, path: /blog/ }
+      - { label: Sobre, path: /sobre/ }
+    footer:
+      - { label: Acessibilidade, path: /acessibilidade/ }
+      - { label: Privacidade, path: /privacidade/ }
+  en:
+    main:
+      - { label: Blog, path: /en/blog/ }
+      - { label: About, path: /en/about/ }
+    footer:
+      - { label: Accessibility, path: /en/accessibility/ }
+      - { label: Privacy, path: /en/privacy/ }
+  es:
+    main:
+      - { label: Blog, path: /es/blog/ }
+      - { label: Acerca de, path: /es/acerca-de/ }
+    footer:
+      - { label: Accesibilidad, path: /es/accesibilidad/ }
+      - { label: Privacidad, path: /es/privacidad/ }
+
+pageDefaults:
+  noindex: false
+
+postDefaults:
+  authors:
+    - name: Henrique Freitas Souza
+  citationStyle: abnt

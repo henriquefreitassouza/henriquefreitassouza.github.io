@@ -1,0 +1,22 @@
+# Demo draft: shows every component and serves as the CI accessibility test. Not published (draft: true).
+title: Article component guide
+description: A demonstration of every feature available in articles — charts, tables, diagrams, formulas, citations and embedded content.
+translationKey: component-guide
+draft: true
+datePublished: 2026-11-27
+citationStyle: apa
+tags:
+  - Style guide
+abstract: This text demonstrates, in a single article, how the English version of a post links to its Portuguese original and uses the APA citation style.
+plainLanguageSummary: This page is an example. It shows that an article can have versions in several languages.
+references:
+  - id: freire1996
+    type: book
+    title: "Pedagogia da autonomia: saberes necessários à prática educativa"
+    author:
+      - family: Freire
+        given: Paulo
+    issued:
+      date-parts: [[1996]]
+    publisher: Paz e Terra
+    publisher-place: São Paulo

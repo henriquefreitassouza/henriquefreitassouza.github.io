@@ -1,0 +1,6 @@
+# pnpm settings. Only these packages may run install scripts.
+allowBuilds:
+  esbuild: true
+  sharp: true
+  '@parcel/watcher': true
+  vue-demi: true

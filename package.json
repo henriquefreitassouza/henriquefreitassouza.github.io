@@ -1,0 +1,46 @@
+{
+  "name": "henriquefreitassouza-blog",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": "24.16.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "python3 -I tests/e2e/pages_server.py .output/public 3000",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && INCLUDE_DRAFTS=1 pnpm generate && pnpm validate:html && pnpm test:e2e",
+    "validate:html": "html-validate \".output/public/**/index.html\" .output/public/404.html"
+  },
+  "dependencies": {
+    "@citation-js/core": "^0.9.0",
+    "@citation-js/plugin-csl": "^0.9.0",
+    "@nuxt/content": "3.17.0",
+    "@nuxt/image": "^2.2.1",
+    "@nuxtjs/i18n": "10.7.0",
+    "@nuxtjs/seo": "6.1.0",
+    "mermaid": "^12.3.0",
+    "nuxt": "4.7.0",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.1",
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/kit": "4.7.0",
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^24.19.4",
+    "eslint": "^10.15.0",
+    "html-validate": "^11.23.0",
+    "typescript": "6.0.3",
+    "vitest": "^5.1.2",
+    "vue-tsc": "^3.3.14"
+  }
+}

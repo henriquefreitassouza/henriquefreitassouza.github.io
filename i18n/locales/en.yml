@@ -1,0 +1,63 @@
+# Interface text only. Page and article text lives in content/.
+a11y:
+  home: Home
+  skipToContent: Skip to content
+  mainMenu: Main menu
+  footerMenu: Site information links
+  breadcrumb: You are here
+language:
+  label: Language
+  homeOnly: home page
+blog:
+  latest: Latest posts
+  allPosts: See all posts
+  otherLanguages: Posts in other languages
+  empty: No posts yet.
+  tag: "Posts tagged “{tag}”"
+  tagDescription: "List of blog posts tagged “{tag}”."
+  page: "Blog — page {page}"
+  pageDescription: "Page {page} of the list of blog posts, from newest to oldest."
+  feed: Subscribe to the RSS feed
+pagination:
+  label: Pagination
+  previous: Previous page
+  next: Next page
+  page: "Page {page}"
+post:
+  by: By
+  published: Published on
+  updated: Updated on
+  readingTime: "About {minutes} min read"
+  tags: Tags
+  abstract: Abstract
+  plainLanguageSummary: In plain language
+  toc: On this page
+  references: References
+  footnotes: Notes
+  footnoteBack: Back to the text
+  howToCite: How to cite this article
+  draft: Draft — not published
+media:
+  longDescription: Detailed description
+  viewData: View the data as a table
+  downloadCsv: Download the data (CSV)
+  source: Source
+  credit: Credit
+  embedNotice: "This content loads from {provider}. Loading it sends a request from your browser to {provider}."
+  embedLoad: "Load content from {provider}"
+  embedOpen: "Open on {provider}"
+  diagram: Diagram
+code:
+  copy: Copy code
+  copied: Code copied
+callout:
+  note: Note
+  warning: Warning
+  definition: Definition
+error:
+  notFound: Page not found
+  notFoundHelp: This page doesn't exist or has moved. Maybe something below will interest you.
+  latest: Latest posts
+  allPosts: See all posts
+  generic: Something went wrong
+  home: Go to the home page

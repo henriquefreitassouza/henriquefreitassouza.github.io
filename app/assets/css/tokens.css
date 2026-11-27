@@ -1,0 +1,28 @@
+/*
+  Design tokens. v1 is deliberately text-first: system fonts and the browser's own system colours,
+  which follow the reader's light/dark and high-contrast settings. A future theme changes only this
+  file, and must keep body text at 7:1 contrast and UI boundaries at 3:1
+  (see docs/principles/information-design.md).
+*/
+:root {
+  color-scheme: light dark;
+
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", "Noto Sans Mono", Menlo, Consolas, monospace;
+
+  --color-text: CanvasText;
+  --color-background: Canvas;
+  --color-link: LinkText;
+  --color-link-visited: VisitedText;
+  --color-border: color-mix(in srgb, CanvasText 55%, Canvas);
+  --color-surface: color-mix(in srgb, CanvasText 6%, Canvas);
+
+  --measure: 70ch;
+  --line-height: 1.6;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --target-size: 2.75rem; /* 44 px at the default text size (WCAG 2.5.5) */
+  --focus-ring: 0.1875rem solid CanvasText;
+}

@@ -1,0 +1,63 @@
+# Interface text only. Page and article text lives in content/.
+a11y:
+  home: Início
+  skipToContent: Pular para o conteúdo
+  mainMenu: Menu principal
+  footerMenu: Links institucionais
+  breadcrumb: Você está aqui
+language:
+  label: Idioma
+  homeOnly: página inicial
+blog:
+  latest: Publicações recentes
+  allPosts: Ver todas as publicações
+  otherLanguages: Publicações em outros idiomas
+  empty: Ainda não há publicações.
+  tag: "Publicações com a etiqueta “{tag}”"
+  tagDescription: "Lista de publicações do blog classificadas com a etiqueta “{tag}”."
+  page: "Blog — página {page}"
+  pageDescription: "Página {page} da lista de publicações do blog, das mais recentes para as mais antigas."
+  feed: Assinar o feed RSS
+pagination:
+  label: Paginação
+  previous: Página anterior
+  next: Próxima página
+  page: "Página {page}"
+post:
+  by: Por
+  published: Publicado em
+  updated: Atualizado em
+  readingTime: "Leitura de cerca de {minutes} min"
+  tags: Etiquetas
+  abstract: Resumo
+  plainLanguageSummary: Em linguagem simples
+  toc: Nesta página
+  references: Referências
+  footnotes: Notas
+  footnoteBack: Voltar ao texto
+  howToCite: Como citar este artigo
+  draft: Rascunho — não publicado
+media:
+  longDescription: Descrição detalhada
+  viewData: Ver os dados em tabela
+  downloadCsv: Baixar os dados (CSV)
+  source: Fonte
+  credit: Crédito
+  embedNotice: "Este conteúdo é carregado de {provider}. Ao carregá-lo, {provider} recebe uma requisição do seu navegador."
+  embedLoad: "Carregar conteúdo de {provider}"
+  embedOpen: "Abrir em {provider}"
+  diagram: Diagrama
+code:
+  copy: Copiar código
+  copied: Código copiado
+callout:
+  note: Nota
+  warning: Atenção
+  definition: Definição
+error:
+  notFound: Página não encontrada
+  notFoundHelp: Esta página não existe ou mudou de endereço. Talvez algo abaixo interesse a você.
+  latest: Publicações mais recentes
+  allPosts: Ver todas as publicações
+  generic: Ocorreu um erro
+  home: Ir para a página inicial
